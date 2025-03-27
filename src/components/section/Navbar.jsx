@@ -9,8 +9,8 @@ export const Navbar = ({menuOpen, setMenuOpen}) => {
     <nav className="fixed top-0 w-full z-40 bg-[rgba(10,10,10,0.8)] backdrop-blur-lg border-b border-white/10 shadow-lg">
       <div className="max-w-5xl mx-auto px-4">
         <div className="flex justify-between items-center h-16">
-          <a href="#Home" className="font-mono text-xl font-bold text-white">
-            RGB <span className="text-blue-500"></span>visuals(" ")
+          <a href="#Home" className="font-mono text-xl font-bold  bg-gradient-to-r text-transparent from-purple-700 to-pink-400 bg-clip-text leading-right">
+            RGB<span className=" bg-gradient-to-r text-transparent from-purple-700 to-pink-400 bg-clip-text leading-right">.</span>visuals
           </a>
         </div>
 
