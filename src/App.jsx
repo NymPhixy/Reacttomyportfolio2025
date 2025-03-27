@@ -7,6 +7,7 @@ import { Navbar } from "./components/section/navbar";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { MobileMenu } from "./components/section/MobileMenu";
 import { Home } from "./components/section/Home";
+import { About } from "./components/section/About";
 
 function App() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -22,6 +23,7 @@ function App() {
         <Navbar menuOpen={isMenuOpen} setMenuOpen={setMenuOpen} />
         <MobileMenu menuOpen={isMenuOpen} setMenuOpen={setMenuOpen} />
         <Home />
+        <About/>
       </div>
     </ErrorBoundary>
   );
