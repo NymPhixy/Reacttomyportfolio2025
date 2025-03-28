@@ -1,0 +1,16 @@
+stages:
+  - build
+  - test
+
+build:
+  image: golang:1.19
+  stage: build
+  script:
+    - go mod tidy
+    - go build -o my-app
+
+test:
+  image: golang:1.19
+  stage: test
+  script:
+    - go test ./...
