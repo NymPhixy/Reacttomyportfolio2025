@@ -1,10 +1,13 @@
+import { RevealOnScroll } from "./RevealOnScroll";
+
 export const Home = () => {
   return (
     <section
       id="home"
       className="min-h-screen flex relative justify-center items-center"
     >
-      <div className="z-10 px-4">
+      <RevealOnScroll>
+        <div className="z-10 px-4">
         <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r text-transparent from-purple-700 to-pink-400 bg-clip-text leading-right ">
           {" "}
           Hi, I'm Ruben{" "}
@@ -33,7 +36,8 @@ export const Home = () => {
             Contact Me
           </a>
         </div>
-      </div>
+          </div>
+        </RevealOnScroll>
     </section>
   );
 };

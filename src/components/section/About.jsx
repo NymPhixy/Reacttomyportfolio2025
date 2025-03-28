@@ -1,3 +1,5 @@
+import { RevealOnScroll } from "./RevealOnScroll";
+
 export const About = () => {
   const frontendSkills = [
     "HTML",
@@ -15,6 +17,7 @@ return (
         id="about"
         className="min-h-screen flex py-20 justify-center items-center"
     >
+        <RevealOnScroll>
         <div className="max-w-3xl mx-auto px-4">
             <h2 className="text-3xl font-bold mb-8 bg-gradient-to-r text-transparent from-purple-700 to-pink-400 bg-clip-text leading-tight">
                 About me
@@ -94,6 +97,7 @@ return (
                 </div>
             </div>
         </div>
+        </RevealOnScroll>
     </section>
 );
 };

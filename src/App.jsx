@@ -1,17 +1,19 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import "./App.css";
-import { Loadingscreen } from "./components/section/loadingscreen";
 import "./index.css";
-import { Navbar } from "./components/section/navbar";
-import ErrorBoundary from "./components/ErrorBoundary";
+import { Loadingscreen } from "./components/section/loadingscreen";
+import { Navbar } from "./components/section/Navbar";
 import { MobileMenu } from "./components/section/MobileMenu";
 import { Home } from "./components/section/Home";
 import { About } from "./components/section/About";
+import { Project } from "./components/section/Project";
+import { Contact } from "./components/section/Contact";
+import ErrorBoundary from "./components/ErrorBoundary";
 
 function App() {
   const [isLoaded, setIsLoaded] = useState(false);
   const [isMenuOpen, setMenuOpen] = useState(false);
+
   return (
     <ErrorBoundary>
       {!isLoaded && <Loadingscreen onComplete={() => setIsLoaded(true)} />}
@@ -23,7 +25,9 @@ function App() {
         <Navbar menuOpen={isMenuOpen} setMenuOpen={setMenuOpen} />
         <MobileMenu menuOpen={isMenuOpen} setMenuOpen={setMenuOpen} />
         <Home />
-        <About/>
+        <About />
+        <Project />
+        <Contact />
       </div>
     </ErrorBoundary>
   );
