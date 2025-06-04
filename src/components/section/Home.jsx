@@ -14,7 +14,7 @@ export const Home = () => {
             <img
               src={image}
               alt="Ruben"
-              className="w-55 h-70 object-cover rounded-full shadow-lg"
+              className="w-70 h-100 object-cover rounded-full shadow-lg"
             />
           </div>
           {/* Tekst rechts van de afbeelding */}
@@ -41,7 +41,7 @@ export const Home = () => {
                 View Projects
               </a>
               <a
-                href="#Contact"
+                href="#contact"
                 className="bg-pink-300 border-purple-500/50 text-white py-3 px-6 rounded font-medium transition-al duration-200 relative overflow-hidden hover:-translate-y-0.5 hover:shadow-[0_0_15px_rgba(255,38,92,0.8)]"
               >
                 Contact Me
