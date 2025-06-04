@@ -33,7 +33,7 @@ export const Contact = () => {
       className="min-h-screen flex py-20 justify-center items-center"
     >
       <RevealOnScroll>
-        <div className="px-4 w-150">
+        <div className="px-4 w-250">
           <h2 className="bg-purple-500 border-pink-500/50 text-white py-3 px-6 rounded font-medium transition-al duration-200 relative overflow-hidden hover:-translate-y-0.5 hover:shadow-[0_0_15px_rgba(255,38,92,0.8)]">
             Get In Touch
           </h2>

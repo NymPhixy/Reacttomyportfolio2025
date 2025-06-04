@@ -18,22 +18,21 @@ export const Project = () => {
     >
       <RevealOnScroll>
         <div className="max-w-5xl mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-8 bg-gradient-to-r text-transparent from-purple-700 to-pink-400 bg-clip-text leading-tight">
+          <h2 className="text-5xl font-bold mb-8 bg-gradient-to-r text-transparent from-purple-700 to-pink-400 bg-clip-text leading-tight">
             Featured Projects
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="p-6 rounded-xl border-white/10 border hover:-translate-y-1 hover:border-pink-500/30 hover:shadow-[rgba(201,71,143,0.8)] ">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Card 1 */}
+            <div className="p-6 rounded-2xl border border-white/20 bg-gradient-to-br from-white/20 via-white/10 to-purple-200/10 backdrop-blur-xl shadow-2xl hover:-translate-y-1 hover:border-pink-400/40 hover:shadow-[0_8px_32px_0_rgba(201,71,143,0.25)] transition-all duration-300">
               <h3 className="text-xl font-bold mb-2">ShoppingUI</h3>
-              {/* Mockup image placeholder */}
               <div className="mb-4">
-                {/* Replace src with your mockup image */}
                 <img
                   src="/assets/mockupuso.png"
                   alt="ShoppingUI Mockup"
                   className="w-full rounded-lg shadow"
                 />
               </div>
-              <p className="text-gray-300 mb-4">
+              <p className="text-gray-200 mb-4">
                 A simple shopping UI made using HTML/CSS and Javascript
               </p>
               <div className="flex flex-wrap gap-2">
@@ -49,7 +48,7 @@ export const Project = () => {
               <div className="flex justify-between items-center mt-4">
                 <a
                   href="https://delightful-dieffenbachia-8b92e2.netlify.app/"
-                  className="text-purple-500 hover:text-purple-300 transition-colors"
+                  className="text-purple-400 hover:text-pink-400 transition-colors font-semibold"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -57,10 +56,9 @@ export const Project = () => {
                 </a>
               </div>
             </div>
-
-            <div className="p-6 rounded-xl border-white/10 border hover:-translate-y-1 hover:border-pink-500/30 hover:shadow-[rgba(201,71,143,0.8)] ">
+            {/* Card 2 */}
+            <div className="p-6 rounded-2xl border border-white/20 bg-gradient-to-br from-white/20 via-white/10 to-purple-200/10 backdrop-blur-xl shadow-2xl hover:-translate-y-1 hover:border-pink-400/40 hover:shadow-[0_8px_32px_0_rgba(201,71,143,0.25)] transition-all duration-300">
               <h3 className="text-xl font-bold mb-2">My Portfolio website</h3>
-              {/* Mockup image placeholder */}
               <div className="mb-4">
                 <img
                   src="/assets/laptopmockupportoflio.png"
@@ -68,7 +66,7 @@ export const Project = () => {
                   className="w-full rounded-lg shadow"
                 />
               </div>
-              <p className="text-gray-300 mb-4">
+              <p className="text-gray-200 mb-4">
                 A simple and elegant portfolio website showcasing my skills,
                 projects, and achievements, built with React and Vite.
               </p>
@@ -87,15 +85,15 @@ export const Project = () => {
               <div className="flex justify-between items-center mt-4">
                 <button
                   onClick={handleDownloadPortfolio}
-                  className="text-purple-500 hover:text-purple-300 transition-colors"
+                  className="text-purple-400 hover:text-pink-400 transition-colors font-semibold"
                 >
                   View Portfolio⬇️
                 </button>
               </div>
             </div>
-            <div className="p-6 rounded-xl border-white/10 border hover:-translate-y-1 hover:border-pink-500/30 hover:shadow-[rgba(201,71,143,0.8)] ">
+            {/* Card 3 */}
+            <div className="p-6 rounded-2xl border border-white/20 bg-gradient-to-br from-white/20 via-white/10 to-purple-200/10 backdrop-blur-xl shadow-2xl hover:-translate-y-1 hover:border-pink-400/40 hover:shadow-[0_8px_32px_0_rgba(201,71,143,0.25)] transition-all duration-300">
               <h3 className="text-xl font-bold mb-2">MKC MOTO Scrollstory</h3>
-              {/* Mockup image placeholder */}
               <div className="mb-4">
                 <img
                   src="/assets/mockupino.png"
@@ -103,7 +101,7 @@ export const Project = () => {
                   className="w-full rounded-lg shadow"
                 />
               </div>
-              <p className="text-gray-300 mb-4">
+              <p className="text-gray-200 mb-4">
                 A simpel scrollstory that makes motorcycle leaners easier the
                 buy the right clothing at MKC
               </p>
@@ -120,7 +118,7 @@ export const Project = () => {
               <div className="flex justify-between items-center mt-4">
                 <a
                   href="https://super-cranachan-0b0cff.netlify.app/"
-                  className="text-purple-500 hover:text-purple-300 transition-colors"
+                  className="text-purple-400 hover:text-pink-400 transition-colors font-semibold"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -128,9 +126,9 @@ export const Project = () => {
                 </a>
               </div>
             </div>
-            <div className="p-6 rounded-xl border-white/10 border hover:-translate-y-1 hover:border-pink-500/30 hover:shadow-[rgba(201,71,143,0.8)] ">
+            {/* Card 4 */}
+            <div className="p-6 rounded-2xl border border-white/20 bg-gradient-to-br from-white/20 via-white/10 to-purple-200/10 backdrop-blur-xl shadow-2xl hover:-translate-y-1 hover:border-pink-400/40 hover:shadow-[0_8px_32px_0_rgba(201,71,143,0.25)] transition-all duration-300">
               <h3 className="text-xl font-bold mb-2">Coming soon..</h3>
-              {/* Mockup image placeholder */}
               <div className="mb-4">
                 <img
                   src="/assets/mockup-comingsoon.png"
@@ -138,7 +136,7 @@ export const Project = () => {
                   className="w-full rounded-lg shadow"
                 />
               </div>
-              <p className="text-gray-300 mb-4">
+              <p className="text-gray-200 mb-4">
                 So far my journey, there is much to add !
               </p>
               <div className="flex flex-wrap gap-2">
@@ -155,7 +153,7 @@ export const Project = () => {
                 <a
                   href="design_portfolio_ino_rubenjanssen_469974.pdf"
                   target="_blank"
-                  className="text-purple-500 hover:text-purple-300 transition-colors"
+                  className="text-purple-400 hover:text-pink-400 transition-colors font-semibold"
                 >
                   View Project ➡️
                 </a>
