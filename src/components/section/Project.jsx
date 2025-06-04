@@ -4,10 +4,7 @@ export const Project = () => {
   // Helper function to handle portfolio download
   const handleDownloadPortfolio = () => {
     const link = document.createElement("a");
-    link.href = process.env.PUBLIC_URL
-      ? process.env.PUBLIC_URL +
-        "/assets/design_portfolio_ino_rubenjanssen_469974.pdf"
-      : "/assets/design_portfolio_ino_rubenjanssen_469974.pdf";
+    link.href = "/assets/design_portfolio_ino_rubenjanssen_469974.pdf";
     link.download = "Ruben_Janssen_Portfolio.pdf";
     document.body.appendChild(link);
     link.click();
