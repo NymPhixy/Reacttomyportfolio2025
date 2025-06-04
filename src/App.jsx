@@ -18,16 +18,21 @@ function App() {
     <ErrorBoundary>
       {!isLoaded && <Loadingscreen onComplete={() => setIsLoaded(true)} />}
       <div
-        className={`min-h-screen transition-opacity duration-700 ${
+        className={`relative min-h-screen transition-opacity duration-700 ${
           isLoaded ? "opacity-100" : "opacity-0"
-        } bg-black text-gray-100`}
+        } text-gray-100`}
       >
-        <Navbar menuOpen={isMenuOpen} setMenuOpen={setMenuOpen} />
-        <MobileMenu menuOpen={isMenuOpen} setMenuOpen={setMenuOpen} />
-        <Home />
-        <About />
-        <Project />
-        <Contact />
+        {/* Glass overlay */}
+        <div className="absolute inset-0 bg-black/60 backdrop-blur-sm z-0"></div>
+        {/* Content */}
+        <div className="relative z-10">
+          <Navbar menuOpen={isMenuOpen} setMenuOpen={setMenuOpen} />
+          <MobileMenu menuOpen={isMenuOpen} setMenuOpen={setMenuOpen} />
+          <Home />
+          <About />
+          <Project />
+          <Contact />
+        </div>
       </div>
     </ErrorBoundary>
   );
