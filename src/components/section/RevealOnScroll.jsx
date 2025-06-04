@@ -60,3 +60,12 @@ export const RevealOnScroll = ({ children }) => {
     </div>
   );
 };
+
+export default function App() {
+  return (
+    <div>
+      <AnimatedBackground />
+      {/* ...rest van je app... */}
+    </div>
+  );
+}

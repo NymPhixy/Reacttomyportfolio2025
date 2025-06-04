@@ -9,6 +9,7 @@ import { About } from "./components/section/About";
 import { Project } from "./components/section/Project";
 import { Contact } from "./components/section/Contact";
 import ErrorBoundary from "./components/ErrorBoundary";
+import AnimatedBackground from "./components/AnimatedBackground";
 
 function App() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -33,6 +34,7 @@ function App() {
           <Project />
           <Contact />
         </div>
+        <AnimatedBackground />
       </div>
     </ErrorBoundary>
   );

@@ -5,10 +5,10 @@ export const Home = () => {
   return (
     <section
       id="home"
-      className="min-h-screen flex relative justify-center items-center"
+      className="min-h-screen flex relative justify-center items-center "
     >
       <RevealOnScroll>
-        <div className="z-10 px-4 flex flex-row items-center justify-center gap-10">
+        <div className="z-10 px-4 flex flex-row items-center justify-center gap-10 bg">
           {/* Afbeelding links van de tekst */}
           <div className="flex-shrink-0">
             <img
