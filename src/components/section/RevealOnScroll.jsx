@@ -55,7 +55,7 @@ export const RevealOnScroll = ({ children }) => {
   }, []);
 
   return (
-    <div ref={ref} className="reveal">
+    <div ref={ref} className="reveal w-full flex justify-center max-w-5xl">
       {children}
     </div>
   );

@@ -1,0 +1,56 @@
+{
+  "frontendSkills": [
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "React",
+    "Tailwind CSS",
+    "Figma",
+    "Adobe XD"
+  ],
+  "main": [
+    {
+      "title": "About me",
+      "description": "I am a passionate and creative web developer with a strong foundation in both frontend and backend technologies. I enjoy building user-friendly interfaces and robust server-side applications. My goal is to create seamless digital experiences that engage users and solve real-world problems."
+    }
+  ],
+  "backendSkills": ["Node.js", "Express", "MongoDB", "Firebase", "SQL"],
+  "education": [
+    {
+      "degree": "🎨BA Communication Multimedia and design",
+      "period": "2024-Present"
+    },
+    {
+      "degree": "🎓 MBO 4 Sport management",
+      "extra": "⚽KNVB TC3",
+      "period": "2022-2023"
+    },
+    {
+      "degree": "🎓 MBO 3 Sport and Movement",
+      "extra": "⚽Juniors and Pupils",
+      "period": "2019-2022"
+    },
+    {
+      "degree": "🎓 MBO 2 Sport and Recreation",
+      "extra": "🏊‍♂️ Lifeguard",
+      "period": "2017-2019"
+    }
+  ],
+  "work": [
+    {
+      "company": "🏍️ MKC MOTO",
+      "role": "Sales-Specialist",
+      "period": "2024-Present"
+    },
+    {
+      "company": "Jumbo Supermarkets",
+      "role": "Shelf-Stacker",
+      "period": "2016-2020"
+    },
+    {
+      "company": "🍽️ Paviljoen Appelberge",
+      "role": "Waiter",
+      "period": "2016-2024"
+    }
+  ]
+}

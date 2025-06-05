@@ -1,0 +1,62 @@
+[
+  {
+    "title": "ShoppingUI",
+    "img": {
+      "src": "/assets/mockupuso.png",
+      "alt": "ShoppingUI Mockup"
+    },
+    "description": "A simple shopping UI made using HTML/CSS and Javascript",
+    "tech": ["HTML", "Javascript", "CSS"],
+    "action": {
+      "type": "link",
+      "label": "View Project ➡️",
+      "href": "https://delightful-dieffenbachia-8b92e2.netlify.app/",
+      "target": "_blank",
+      "rel": "noopener noreferrer"
+    }
+  },
+  {
+    "title": "My Portfolio website",
+    "img": {
+      "src": "/assets/laptopmockupportoflio.png",
+      "alt": "Portfolio Website Mockup"
+    },
+    "description": "A simple and elegant portfolio website showcasing my skills, projects, and achievements, built with React and Vite.",
+    "tech": ["Node.JS", "React", "Javascript", "Tailwindcss", "Vite"],
+    "action": {
+      "type": "button",
+      "label": "View Portfolio⬇️"
+    }
+  },
+  {
+    "title": "MKC MOTO Scrollstory",
+    "img": {
+      "src": "/assets/mockupino.png",
+      "alt": "MKC MOTO Scrollstory Mockup"
+    },
+    "description": "A simpel scrollstory that makes motorcycle leaners easier the buy the right clothing at MKC",
+    "tech": ["Figma", "Javascript", "CSS", "HTML"],
+    "action": {
+      "type": "link",
+      "label": "View Project ➡️",
+      "href": "https://super-cranachan-0b0cff.netlify.app/",
+      "target": "_blank",
+      "rel": "noopener noreferrer"
+    }
+  },
+  {
+    "title": "Coming soon..",
+    "img": {
+      "src": "/assets/mockup-comingsoon.png",
+      "alt": "Coming Soon Mockup"
+    },
+    "description": "So far my journey, there is much to add !",
+    "tech": ["Chrome", "Tiktok", "Youtube"],
+    "action": {
+      "type": "link",
+      "label": "View Project ➡️",
+      "href": "design_portfolio_ino_rubenjanssen_469974.pdf",
+      "target": "_blank"
+    }
+  }
+]
