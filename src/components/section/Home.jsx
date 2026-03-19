@@ -1,5 +1,6 @@
 import { RevealOnScroll } from "./RevealOnScroll";
 import image from "../../assets/profielpikv3.jpg"; // <-- use relative path
+import cvFile from "../../assets/cvrubenjanssen.pdf";
 
 export const Home = () => {
   return (
@@ -50,6 +51,13 @@ export const Home = () => {
                   className="bg-pink-300 border-purple-500/50 text-white py-3 px-6 rounded font-medium transition-all duration-200 relative overflow-hidden hover:-translate-y-0.5 hover:shadow-[0_0_15px_rgba(255,38,92,0.8)]"
                 >
                   Contact Me
+                </a>
+                <a
+                  href={cvFile}
+                  download
+                  className="bg-white/20 border border-white/40 text-white py-3 px-6 rounded font-medium transition-all duration-200 relative overflow-hidden hover:-translate-y-0.5 hover:bg-white/30 hover:shadow-[0_0_15px_rgba(255,255,255,0.35)]"
+                >
+                  Download My CV
                 </a>
               </div>
             </div>
