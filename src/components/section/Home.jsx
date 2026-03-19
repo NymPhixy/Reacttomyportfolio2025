@@ -1,5 +1,5 @@
 import { RevealOnScroll } from "./RevealOnScroll";
-import image from "../../assets/profielpik.jpg"; // <-- use relative path
+import image from "../../assets/profielpikv3.jpg"; // <-- use relative path
 
 export const Home = () => {
   return (
@@ -26,13 +26,17 @@ export const Home = () => {
                 Hi, I'm Ruben{" "}
               </h1>
               <p className="text-gray-200 text-lg mb-8 max-w-lg mx-auto">
-                I'm first-year UI/UX designer studying at Hanze in Groningen. I am
-                currently developing my expertise in software engineering and
-                UI/UX design, with a strong focus on creating intuitive and
-                visually engaging digital experiences. As a passionate motorcycle
-                enthusiast, I love combining my passion for motorcycles with the
-                digital world. My goal is to merge technology and design to craft
-                user-friendly and immersive experiences.
+                I’m a second-year Communication & Multimedia Design student at
+                the Hanze University of Applied Sciences in Groningen. I work at
+                the intersection of concept development, user experience and
+                front-end development, with a focus on translating ideas into
+                intuitive and interactive digital products. I’m currently
+                developing my skills in React, modern front-end technologies and
+                UX design methods such as research, prototyping and iteration.
+                As a passionate motorcycle enthusiast, I enjoy connecting my
+                interest in motorsport with the digital world, exploring how
+                technology and design can create engaging and user-centered
+                experiences.
               </p>
               <div className="justify-center flex space-x-4">
                 <a

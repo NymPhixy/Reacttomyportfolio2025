@@ -9,10 +9,10 @@
     "Adobe XD"
   ],
   "main": [
-    {
-      "title": "About me",
-      "description": "I am a passionate and creative web developer with a strong foundation in both frontend and backend technologies. I enjoy building user-friendly interfaces and robust server-side applications. My goal is to create seamless digital experiences that engage users and solve real-world problems."
-    }
+{
+  "title": "About me",
+  "description": "I'm a creative developer with a focus on front-end development and user experience. I enjoy building interactive and user-friendly digital products that combine strong design with functional code.\n\nMy work is centered around translating ideas into working prototypes using modern technologies like React, while applying UX principles such as research, testing and iteration.\n\nMy goal is to create digital experiences that not only look good, but also truly connect with users and solve real problems."
+}
   ],
   "backendSkills": ["Node.js", "Express", "MongoDB", "Firebase", "SQL"],
   "education": [
