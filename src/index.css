@@ -139,6 +139,15 @@ p {
   flex-wrap: wrap;
 }
 
+.carousel-scroll {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.carousel-scroll::-webkit-scrollbar {
+  display: none;
+}
+
 @media (max-width: 640px) {
   html,
   body {

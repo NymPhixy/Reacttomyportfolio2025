@@ -4,6 +4,7 @@ import projects from "../../data/provider/projects/projectsData.json"; // Import
 
 export const Project = () => {
   const carouselRefs = useRef({});
+  const [scrollProgress, setScrollProgress] = useState({});
 
   // Helper function to handle portfolio download
   const handleDownloadPortfolio = () => {
@@ -66,6 +67,39 @@ export const Project = () => {
     carousel.scrollBy({ left: direction * scrollAmount, behavior: "smooth" });
   };
 
+  const updateScrollProgress = (year) => {
+    const carousel = carouselRefs.current[year];
+    if (!carousel) return;
+
+    const maxScroll = carousel.scrollWidth - carousel.clientWidth;
+    const progress =
+      maxScroll > 0 ? Math.min(carousel.scrollLeft / maxScroll, 1) : 0;
+
+    setScrollProgress((prev) => ({
+      ...prev,
+      [year]: progress,
+    }));
+  };
+
+  const handleProgressBarClick = (year, event) => {
+    const carousel = carouselRefs.current[year];
+    if (!carousel) return;
+
+    const rect = event.currentTarget.getBoundingClientRect();
+    const ratio = (event.clientX - rect.left) / rect.width;
+    const target = Math.max(0, Math.min(1, ratio));
+    const maxScroll = carousel.scrollWidth - carousel.clientWidth;
+
+    carousel.scrollTo({
+      left: maxScroll * target,
+      behavior: "smooth",
+    });
+  };
+
+  useEffect(() => {
+    visibleYears.forEach((year) => updateScrollProgress(year));
+  }, [activeYear]);
+
   return (
     <section
       id="Projects"
@@ -122,8 +156,12 @@ export const Project = () => {
                 <div
                   ref={(el) => {
                     carouselRefs.current[year] = el;
+                    if (el) {
+                      requestAnimationFrame(() => updateScrollProgress(year));
+                    }
                   }}
-                  className="flex gap-6 overflow-x-auto pb-4 snap-x snap-mandatory scroll-smooth"
+                  onScroll={() => updateScrollProgress(year)}
+                  className="carousel-scroll flex gap-6 overflow-x-auto pb-2 snap-x snap-mandatory scroll-smooth"
                 >
                   {projectsByYear[year].map((project, index) => (
                     <div
@@ -189,6 +227,31 @@ export const Project = () => {
                       </div>
                     </div>
                   ))}
+                </div>
+
+                <div className="mt-3 px-1">
+                  <div className="flex items-center justify-between mb-2">
+                    <p className="text-xs sm:text-sm text-gray-300/90">
+                      Swipe om door projecten te bladeren
+                    </p>
+                    <span className="text-xs text-pink-300/80">
+                      {Math.round((scrollProgress[year] || 0) * 100)}%
+                    </span>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={(event) => handleProgressBarClick(year, event)}
+                    className="group relative w-full h-2.5 rounded-full bg-white/15 border border-white/20 overflow-hidden"
+                    aria-label={`Scroll voortgang voor ${year}`}
+                  >
+                    <span
+                      className="absolute left-0 top-0 h-full bg-gradient-to-r from-purple-400 via-fuchsia-400 to-pink-400 transition-[width] duration-200"
+                      style={{
+                        width: `${Math.max((scrollProgress[year] || 0) * 100, 8)}%`,
+                      }}
+                    />
+                    <span className="absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-white/15 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </button>
                 </div>
               </div>
             ))}
