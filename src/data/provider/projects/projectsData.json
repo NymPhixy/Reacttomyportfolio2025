@@ -175,7 +175,15 @@
       "label": "Designdocument downloaden 📥",
       "href": "/assets/Projecten/leerjaar2/p1/RubenJanssen_OXR_469974.pdf",
       "filename": "OXR_Ruben_Janssen.pdf"
-    }
+    },
+    "additionalActions": [
+      {
+        "type": "download",
+        "label": "Video bekijken 🎥",
+        "href": "/assets/Projecten/jaar2/p1/video.mp4",
+        "filename": "OXR_Video.mp4"
+      }
+    ]
   },
   {
     "year": "Leerjaar 2",
