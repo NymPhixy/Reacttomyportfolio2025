@@ -12,6 +12,16 @@ export const Project = () => {
     document.body.removeChild(link);
   };
 
+  // Helper function to handle document downloads
+  const handleDownloadDocument = (href, filename) => {
+    const link = document.createElement("a");
+    link.href = encodeURI(href);
+    link.download = filename;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <section
       id="Projects"
@@ -20,7 +30,7 @@ export const Project = () => {
       <RevealOnScroll>
         <div className="max-w-5xl mx-auto px-4 w-full">
           <h2 className="text-4xl sm:text-5xl font-bold mb-8 bg-gradient-to-r text-transparent from-purple-400 to-pink-400 bg-clip-text leading-tight">
-            Featured Projects
+            Projecten
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {projects.map((project) => (
@@ -52,7 +62,19 @@ export const Project = () => {
                   ))}
                 </div>
                 <div className="flex justify-between items-center mt-4">
-                  {project.action.type === "link" ? (
+                  {project.action.type === "download" ? (
+                    <button
+                      onClick={() =>
+                        handleDownloadDocument(
+                          project.action.href,
+                          project.action.filename,
+                        )
+                      }
+                      className="text-purple-400 hover:text-pink-400 transition-colors font-semibold"
+                    >
+                      {project.action.label}
+                    </button>
+                  ) : project.action.type === "link" ? (
                     <a
                       href={project.action.href}
                       className="text-purple-400 hover:text-pink-400 transition-colors font-semibold"

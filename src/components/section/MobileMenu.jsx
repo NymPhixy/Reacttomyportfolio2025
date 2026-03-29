@@ -34,7 +34,7 @@ export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
         }
         `}
       >
-        About
+        Over mij
       </a>
       <a
         href="#Projects"
@@ -44,7 +44,7 @@ export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
         }
         `}
       >
-        Portfolio
+        Projecten
       </a>
       <a
         href="#Contact"

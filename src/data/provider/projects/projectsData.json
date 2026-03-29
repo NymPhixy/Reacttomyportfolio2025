@@ -1,18 +1,204 @@
 [
   {
+    "year": "Leerjaar 1",
+    "period": "Periode 1",
+    "title": "OWE - Orientatie op het werkveld",
+    "img": {
+      "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400'%3E%3Crect fill='%23e0e0e0' width='600' height='400'/%3E%3Ctext x='50%25' y='50%25' font-family='Arial' font-size='24' fill='%23999' text-anchor='middle' dominant-baseline='middle'%3EOWE - Orientatie%3C/text%3E%3C/svg%3E",
+      "alt": "OWE - Orientatie op het werkveld"
+    },
+    "description": "Orientatie op het werkveld - Introductie tot mijn designreis",
+    "tech": ["Figma", "Design"],
+    "action": {
+      "type": "download",
+      "label": "Document Downloaden 📥",
+      "href": "/src/assets/Projecten/Leerjaar 1/p4/OWE_Ruben_Janssen_469974.pdf",
+      "filename": "OWE_Ruben_Janssen.pdf"
+    }
+  },
+  {
+    "year": "Leerjaar 1",
+    "period": "Periode 2",
+    "title": "USO - Usability Ontwerp",
+    "img": {
+      "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400'%3E%3Crect fill='%23e0e0e0' width='600' height='400'/%3E%3Ctext x='50%25' y='50%25' font-family='Arial' font-size='24' fill='%23999' text-anchor='middle' dominant-baseline='middle'%3EUSO - Usability%3C/text%3E%3C/svg%3E",
+      "alt": "USO Design Document"
+    },
+    "description": "Usability-gericht ontwerp voor optimalisatie van gebruikerservaring",
+    "tech": ["Figma", "UX/UI", "Design"],
+    "action": {
+      "type": "download",
+      "label": "Document Downloaden 📥",
+      "href": "/src/assets/Projecten/Leerjaar 1/p2/USO_designdocument_Ruben_Janssen_469974.pdf",
+      "filename": "USO_Ruben_Janssen.pdf"
+    }
+  },
+  {
+    "year": "Leerjaar 1",
+    "period": "Periode 2",
+    "title": "CVA - Creative Vaardigheden",
+    "img": {
+      "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400'%3E%3Crect fill='%23e0e0e0' width='600' height='400'/%3E%3Ctext x='50%25' y='50%25' font-family='Arial' font-size='24' fill='%23999' text-anchor='middle' dominant-baseline='middle'%3ECVA - Creative%3C/text%3E%3C/svg%3E",
+      "alt": "CVA Assignment"
+    },
+    "description": "Communicatie en Visuele Esthetica opdracht voor P2",
+    "tech": ["Design", "Communication"],
+    "action": {
+      "type": "download",
+      "label": "Document Downloaden 📥",
+      "href": "/src/assets/Projecten/Leerjaar 1/p2/CVA OPdracht 1 p2.pdf",
+      "filename": "CVA_Ruben_Janssen.pdf"
+    }
+  },
+  {
+    "year": "Leerjaar 1",
+    "period": "Periode 3",
+    "title": "INO - Interactie Ontwerp",
+    "img": {
+      "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400'%3E%3Crect fill='%23e0e0e0' width='600' height='400'/%3E%3Ctext x='50%25' y='50%25' font-family='Arial' font-size='24' fill='%23999' text-anchor='middle' dominant-baseline='middle'%3EINO - Interactie%3C/text%3E%3C/svg%3E",
+      "alt": "INO Design Portfolio"
+    },
+    "description": "Interactie ontwerp portfolio met creatieve probleemoplossing",
+    "tech": ["Figma", "Design", "Interactie"],
+    "action": {
+      "type": "download",
+      "label": "Document Downloaden 📥",
+      "href": "/src/assets/Projecten/Leerjaar 1/P3/Design_portfolioINO_Ruben_Janssen_469974.pdf",
+      "filename": "INO_Ruben_Janssen.pdf"
+    }
+  },
+  {
+    "year": "Leerjaar 1",
+    "period": "Periode 3",
+    "title": "INO - Interactie Ontwerp (Ontwerp Portfolio)",
+    "img": {
+      "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400'%3E%3Crect fill='%23e0e0e0' width='600' height='400'/%3E%3Ctext x='50%25' y='50%25' font-family='Arial' font-size='24' fill='%23999' text-anchor='middle' dominant-baseline='middle'%3EOntwerp Portfolio%3C/text%3E%3C/svg%3E",
+      "alt": "Development Portfolio"
+    },
+    "description": "Ontwerp en ontwikkelings portfolio dat mijn leerproces documenteert",
+    "tech": ["Design", "Development"],
+    "action": {
+      "type": "download",
+      "label": "Document Downloaden 📥",
+      "href": "/src/assets/Projecten/Leerjaar 1/P3/ontwikkelportfolio_RubenJanssen_469974.pdf",
+      "filename": "Ontwerp_Portfolio_Ruben_Janssen.pdf"
+    }
+  },
+  {
+    "year": "Leerjaar 1",
+    "period": "Periode 4",
+    "title": "INI - Interactieve Interface",
+    "img": {
+      "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400'%3E%3Crect fill='%23e0e0e0' width='600' height='400'/%3E%3Ctext x='50%25' y='50%25' font-family='Arial' font-size='24' fill='%23999' text-anchor='middle' dominant-baseline='middle'%3EINI - Interactief%3C/text%3E%3C/svg%3E",
+      "alt": "INI Project"
+    },
+    "description": "Interactieve interface project met geavanceerd design denken",
+    "tech": ["Design", "Interactie"],
+    "action": {
+      "type": "download",
+      "label": "Document Downloaden 📥",
+      "href": "/src/assets/Projecten/Leerjaar 1/p4/INI_Ruben_Janssen_469974_v2.pdf",
+      "filename": "INI_Ruben_Janssen.pdf"
+    }
+  },
+  {
+    "year": "Leerjaar 1",
+    "period": "Periode 4",
+    "title": "OWE - Optimale Web Experience",
+    "img": {
+      "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400'%3E%3Crect fill='%23e0e0e0' width='600' height='400'/%3E%3Ctext x='50%25' y='50%25' font-family='Arial' font-size='24' fill='%23999' text-anchor='middle' dominant-baseline='middle'%3EOWE - Web%3C/text%3E%3C/svg%3E",
+      "alt": "OWE Project"
+    },
+    "description": "Optimale Web Experience project met focus op gebruiker-gericht design",
+    "tech": ["Web Design", "UX/UI"],
+    "action": {
+      "type": "download",
+      "label": "Document Downloaden 📥",
+      "href": "/src/assets/Projecten/Leerjaar 1/p4/OWE_Ruben_Janssen_469974.pdf",
+      "filename": "OWE_Ruben_Janssen.pdf"
+    }
+  },
+  {
+    "year": "Leerjaar 1",
+    "period": "Periode 4",
+    "title": "PED - Project Experience Design",
+    "img": {
+      "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400'%3E%3Crect fill='%23e0e0e0' width='600' height='400'/%3E%3Ctext x='50%25' y='50%25' font-family='Arial' font-size='24' fill='%23999' text-anchor='middle' dominant-baseline='middle'%3EPED - Experience%3C/text%3E%3C/svg%3E",
+      "alt": "PED Project"
+    },
+    "description": "Project Experience Design portfolio voor professionele ontwikkeling",
+    "tech": ["Professional Development"],
+    "action": {
+      "type": "download",
+      "label": "Document Downloaden 📥",
+      "href": "/src/assets/Projecten/Leerjaar 1/p4/PED_Ruben_Janssenv2_CMD_469974.pdf",
+      "filename": "PED_Ruben_Janssen.pdf"
+    }
+  },
+  {
+    "year": "Jaar 2",
+    "period": "Periode 1",
+    "title": "MWE - Mediawijsheid",
+    "img": {
+      "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400'%3E%3Crect fill='%23e0e0e0' width='600' height='400'/%3E%3Ctext x='50%25' y='50%25' font-family='Arial' font-size='24' fill='%23999' text-anchor='middle' dominant-baseline='middle'%3EMWE - Media%3C/text%3E%3C/svg%3E",
+      "alt": "MWE Project"
+    },
+    "description": "Mediawijsheid project voor responsieve en toegankelijke design",
+    "tech": ["Mobile Design", "Responsive", "Web"],
+    "action": {
+      "type": "download",
+      "label": "Document Downloaden 📥",
+      "href": "/src/assets/Projecten/Jaar 2/p1/RubenJanssen_MWE_469974.pdf",
+      "filename": "MWE_Ruben_Janssen.pdf"
+    }
+  },
+  {
+    "year": "Jaar 2",
+    "period": "Periode 1",
+    "title": "OXR - Experience Design in VR/AR",
+    "img": {
+      "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400'%3E%3Crect fill='%23e0e0e0' width='600' height='400'/%3E%3Ctext x='50%25' y='50%25' font-family='Arial' font-size='24' fill='%23999' text-anchor='middle' dominant-baseline='middle'%3EOXR - VR/AR%3C/text%3E%3C/svg%3E",
+      "alt": "OXR Project"
+    },
+    "description": "Experience Design in VR/AR project: gebruikersinzichten met design innovatie",
+    "tech": ["UX Research", "Design", "VR/AR"],
+    "action": {
+      "type": "download",
+      "label": "Document Downloaden 📥",
+      "href": "/src/assets/Projecten/Jaar 2/p1/RubenJanssen_OXR_469974.pdf",
+      "filename": "OXR_Ruben_Janssen.pdf"
+    }
+  },
+  {
+    "year": "Jaar 2",
+    "period": "Periode 1",
+    "title": "TMS - Transmediale Storytelling",
+    "img": {
+      "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400'%3E%3Crect fill='%23e0e0e0' width='600' height='400'/%3E%3Ctext x='50%25' y='50%25' font-family='Arial' font-size='24' fill='%23999' text-anchor='middle' dominant-baseline='middle'%3ETMS - Storytelling%3C/text%3E%3C/svg%3E",
+      "alt": "TMS Project"
+    },
+    "description": "Transmediale Storytelling project: digitale oplossingen integreren",
+    "tech": ["Strategy", "Storytelling", "Technology"],
+    "action": {
+      "type": "download",
+      "label": "Document Downloaden 📥",
+      "href": "/src/assets/Projecten/Jaar 2/p1/RubenJanssen_TMS_469974.pdf",
+      "filename": "TMS_Ruben_Janssen.pdf"
+    }
+  },
+  {
     "title": "ShoppingUI",
     "img": {
       "src": "/assets/mockupuso.png",
       "alt": "ShoppingUI Mockup"
     },
-    "description": "A simple shopping UI made using HTML/CSS and Javascript",
-    "tech": ["HTML", "Javascript", "CSS"],
+    "description": "A simple shopping UI made using HTML/CSS and Javascript with USO research document",
+    "tech": ["HTML", "Javascript", "CSS", "UX/UI"],
     "action": {
-      "type": "link",
-      "label": "View Project ➡️",
-      "href": "https://delightful-dieffenbachia-8b92e2.netlify.app/",
-      "target": "_blank",
-      "rel": "noopener noreferrer"
+      "type": "download",
+      "label": "USO Verslag Downloaden 📥",
+      "href": "/src/assets/Projecten/Leerjaar 1/p2/USO_designdocument_Ruben_Janssen_469974.pdf",
+      "filename": "USO_Verslag_Ruben_Janssen.pdf"
     }
   },
   {
@@ -22,10 +208,19 @@
       "alt": "Portfolio Website Mockup"
     },
     "description": "A simple and elegant portfolio website showcasing my skills, projects, and achievements, built with React and Vite.",
-    "tech": ["Node.JS", "React", "Javascript", "Tailwindcss", "Vite"],
+    "tech": [
+      "Node.JS",
+      "React",
+      "Javascript",
+      "Tailwindcss",
+      "Vite",
+      "Web Design"
+    ],
     "action": {
-      "type": "button",
-      "label": "View Portfolio⬇️"
+      "type": "download",
+      "label": "OWE Verslag Downloaden 📥",
+      "href": "/src/assets/Projecten/Leerjaar 1/p4/OWE_Ruben_Janssen_469974.pdf",
+      "filename": "OWE_Verslag_Ruben_Janssen.pdf"
     }
   },
   {
@@ -35,28 +230,13 @@
       "alt": "MKC MOTO Scrollstory Mockup"
     },
     "description": "A simpel scrollstory that makes motorcycle leaners easier the buy the right clothing at MKC",
-    "tech": ["Figma", "Javascript", "CSS", "HTML"],
+    "tech": ["Figma", "Javascript", "CSS", "HTML", "Design"],
     "action": {
-      "type": "link",
-      "label": "View Project ➡️",
-      "href": "https://super-cranachan-0b0cff.netlify.app/",
-      "target": "_blank",
-      "rel": "noopener noreferrer"
-    }
-  },
-  {
-    "title": "Coming soon..",
-    "img": {
-      "src": "/assets/mockup-comingsoon.png",
-      "alt": "Coming Soon Mockup"
-    },
-    "description": "So far my journey, there is much to add !",
-    "tech": ["Chrome", "Tiktok", "Youtube"],
-    "action": {
-      "type": "link",
-      "label": "View Project ➡️",
-      "href": "design_portfolio_ino_rubenjanssen_469974.pdf",
-      "target": "_blank"
+      "type": "download",
+      "label": "Design Verslag Downloaden 📥",
+      "href": "/src/assets/Projecten/Leerjaar 1/P3/Design_portfolioINO_Ruben_Janssen_469974.pdf",
+      "filename": "Design_Verslag_Ruben_Janssen.pdf"
     }
   }
 ]
+

@@ -42,7 +42,7 @@ export const Home = () => {
                   href="#Projects"
                   className="bg-purple-600 hover:bg-purple-700 text-white py-3 px-6 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/50"
                 >
-                  View Projects
+                  Projecten bekijken
                 </a>
                 <a
                   href="#Contact"
