@@ -14,7 +14,7 @@ const Project = React.lazy(() =>
   import("./components/section/Project").then((m) => ({ default: m.Project })),
 );
 const Contact = React.lazy(() =>
-  import("./components/section/contact").then((m) => ({ default: m.Contact })),
+  import("./components/section/Contact").then((m) => ({ default: m.Contact })),
 );
 
 // Loading fallback component
