@@ -48,7 +48,15 @@
       "label": "Designdocument downloaden 📥",
       "href": "/assets/Projecten/leerjaar1/p2/CVA OPdracht 1 p2.pdf",
       "filename": "CVA_Ruben_Janssen.pdf"
-    }
+    },
+    "additionalActions": [
+      {
+        "type": "download",
+        "label": "Video bekijken 🎥",
+        "href": "/assets/Projecten/leerjaar1/p2/Eindopdracht_CVA_Ruben_Janssen_469974.mp4",
+        "filename": "Eindopdracht_CVA.mp4"
+      }
+    ]
   },
   {
     "year": "Leerjaar 1",
