@@ -12,7 +12,7 @@
     "action": {
       "type": "download",
       "label": "Designdocument downloaden 📥",
-      "href": "/src/assets/Projecten/Leerjaar 1/p4/OWE_Ruben_Janssen_469974.pdf",
+      "href": "/assets/Projecten/leerjaar1/p4/OWE_Ruben_Janssen_469974.pdf",
       "filename": "OWE_Ruben_Janssen.pdf"
     }
   },
@@ -29,7 +29,7 @@
     "action": {
       "type": "download",
       "label": "Designdocument downloaden 📥",
-      "href": "/src/assets/Projecten/Leerjaar 1/p2/USO_designdocument_Ruben_Janssen_469974.pdf",
+      "href": "/assets/Projecten/leerjaar1/p2/USO_designdocument_Ruben_Janssen_469974.pdf",
       "filename": "USO_Ruben_Janssen.pdf"
     }
   },
@@ -46,7 +46,7 @@
     "action": {
       "type": "download",
       "label": "Designdocument downloaden 📥",
-      "href": "/src/assets/Projecten/Leerjaar 1/p2/CVA OPdracht 1 p2.pdf",
+      "href": "/assets/Projecten/leerjaar1/p2/CVA OPdracht 1 p2.pdf",
       "filename": "CVA_Ruben_Janssen.pdf"
     }
   },
@@ -63,7 +63,7 @@
     "action": {
       "type": "download",
       "label": "Designdocument downloaden 📥",
-      "href": "/src/assets/Projecten/Leerjaar 1/P3/Design_portfolioINO_Ruben_Janssen_469974.pdf",
+      "href": "/assets/Projecten/leerjaar1/p3/Design_portfolioINO_Ruben_Janssen_469974.pdf",
       "filename": "INO_Ruben_Janssen.pdf"
     }
   },
@@ -80,7 +80,7 @@
     "action": {
       "type": "download",
       "label": "Designdocument downloaden 📥",
-      "href": "/src/assets/Projecten/Leerjaar 1/P3/ontwikkelportfolio_RubenJanssen_469974.pdf",
+      "href": "/assets/Projecten/leerjaar1/p3/ontwikkelportfolio_RubenJanssen_469974.pdf",
       "filename": "Ontwerp_Portfolio_Ruben_Janssen.pdf"
     }
   },
@@ -97,7 +97,7 @@
     "action": {
       "type": "download",
       "label": "Designdocument downloaden 📥",
-      "href": "/src/assets/Projecten/Leerjaar 1/p4/INI_Ruben_Janssen_469974_v2.pdf",
+      "href": "/assets/Projecten/leerjaar1/p4/INI_Ruben_Janssen_469974_v2.pdf",
       "filename": "INI_Ruben_Janssen.pdf"
     }
   },
@@ -114,7 +114,7 @@
     "action": {
       "type": "download",
       "label": "Designdocument downloaden 📥",
-      "href": "/src/assets/Projecten/Leerjaar 1/p4/OWE_Ruben_Janssen_469974.pdf",
+      "href": "/assets/Projecten/leerjaar1/p4/OWE_Ruben_Janssen_469974.pdf",
       "filename": "OWE_Ruben_Janssen.pdf"
     }
   },
@@ -131,7 +131,7 @@
     "action": {
       "type": "download",
       "label": "Designdocument downloaden 📥",
-      "href": "/src/assets/Projecten/Leerjaar 1/p4/PED_Ruben_Janssenv2_CMD_469974.pdf",
+      "href": "/assets/Projecten/leerjaar1/p4/PED_Ruben_Janssenv2_CMD_469974.pdf",
       "filename": "PED_Ruben_Janssen.pdf"
     }
   },
@@ -148,7 +148,7 @@
     "action": {
       "type": "download",
       "label": "Designdocument downloaden 📥",
-      "href": "/src/assets/Projecten/Jaar 2/p1/RubenJanssen_MWE_469974.pdf",
+      "href": "/assets/Projecten/leerjaar2/p1/RubenJanssen_MWE_469974.pdf",
       "filename": "MWE_Ruben_Janssen.pdf"
     }
   },
@@ -165,7 +165,7 @@
     "action": {
       "type": "download",
       "label": "Designdocument downloaden 📥",
-      "href": "/src/assets/Projecten/Jaar 2/p1/RubenJanssen_OXR_469974.pdf",
+      "href": "/assets/Projecten/leerjaar2/p1/RubenJanssen_OXR_469974.pdf",
       "filename": "OXR_Ruben_Janssen.pdf"
     }
   },
@@ -182,7 +182,7 @@
     "action": {
       "type": "download",
       "label": "Designdocument downloaden 📥",
-      "href": "/src/assets/Projecten/Jaar 2/p1/RubenJanssen_TMS_469974.pdf",
+      "href": "/assets/Projecten/leerjaar2/p1/RubenJanssen_TMS_469974.pdf",
       "filename": "TMS_Ruben_Janssen.pdf"
     }
   },
@@ -199,7 +199,7 @@
     "action": {
       "type": "download",
       "label": "Designdocument downloaden 📥",
-      "href": "/src/assets/Projecten/Leerjaar 1/p2/USO_designdocument_Ruben_Janssen_469974.pdf",
+      "href": "/assets/Projecten/leerjaar1/p2/USO_designdocument_Ruben_Janssen_469974.pdf",
       "filename": "USO_Verslag_Ruben_Janssen.pdf"
     }
   },
@@ -223,7 +223,7 @@
     "action": {
       "type": "download",
       "label": "Designdocument downloaden 📥",
-      "href": "/src/assets/Projecten/Leerjaar 1/p4/OWE_Ruben_Janssen_469974.pdf",
+      "href": "/assets/Projecten/leerjaar1/p4/OWE_Ruben_Janssen_469974.pdf",
       "filename": "OWE_Verslag_Ruben_Janssen.pdf"
     }
   },
@@ -240,7 +240,7 @@
     "action": {
       "type": "download",
       "label": "Designdocument downloaden 📥",
-      "href": "/src/assets/Projecten/Leerjaar 1/P3/Design_portfolioINO_Ruben_Janssen_469974.pdf",
+      "href": "/assets/Projecten/leerjaar1/p3/Design_portfolioINO_Ruben_Janssen_469974.pdf",
       "filename": "Design_Verslag_Ruben_Janssen.pdf"
     }
   }
