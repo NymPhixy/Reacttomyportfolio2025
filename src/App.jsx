@@ -1,40 +1,63 @@
-import React, { useState } from "react";
+import React, { useEffect, useState, Suspense } from "react";
 import "./App.css";
 import "./index.css";
-import { Loadingscreen } from "./components/section/loadingscreen";
 import { Navbar } from "./components/section/Navbar";
 import { MobileMenu } from "./components/section/MobileMenu";
-import { Home } from "./components/section/Home";
-import { About } from "./components/section/About";
-import { Project } from "./components/section/Project";
-import { Contact } from "./components/section/Contact";
 import ErrorBoundary from "./components/ErrorBoundary";
-import AnimatedBackground from "./components/AnimatedBackground";
+import { Home } from "./components/section/Home";
+
+// Lazy load sections for better code splitting
+const About = React.lazy(() =>
+  import("./components/section/About").then((m) => ({ default: m.About })),
+);
+const Project = React.lazy(() =>
+  import("./components/section/Project").then((m) => ({ default: m.Project })),
+);
+const Contact = React.lazy(() =>
+  import("./components/section/contact").then((m) => ({ default: m.Contact })),
+);
+
+// Loading fallback component
+const SectionFallback = () => (
+  <section className="min-h-screen flex items-center justify-center">
+    <div className="text-gray-300">Loading...</div>
+  </section>
+);
 
 function App() {
-  const [isLoaded, setIsLoaded] = useState(false);
   const [isMenuOpen, setMenuOpen] = useState(false);
+  const [showDeferredSections, setShowDeferredSections] = useState(false);
+
+  useEffect(() => {
+    const timeoutId = window.setTimeout(
+      () => setShowDeferredSections(true),
+      1200,
+    );
+    return () => window.clearTimeout(timeoutId);
+  }, []);
 
   return (
     <ErrorBoundary>
-      {!isLoaded && <Loadingscreen onComplete={() => setIsLoaded(true)} />}
-      <div
-        className={`relative min-h-screen transition-opacity duration-700 ${
-          isLoaded ? "opacity-100" : "opacity-0"
-        } text-gray-100`}
-      >
-        {/* Glass overlay */}
-        <div className="absolute inset-0 bg-black/60 backdrop-blur-sm z-0"></div>
+      <div className="relative min-h-screen text-gray-100">
         {/* Content */}
         <div className="relative z-10">
           <Navbar menuOpen={isMenuOpen} setMenuOpen={setMenuOpen} />
           <MobileMenu menuOpen={isMenuOpen} setMenuOpen={setMenuOpen} />
           <Home />
-          <About />
-          <Project />
-          <Contact />
+          {showDeferredSections && (
+            <>
+              <Suspense fallback={<SectionFallback />}>
+                <About />
+              </Suspense>
+              <Suspense fallback={<SectionFallback />}>
+                <Project />
+              </Suspense>
+              <Suspense fallback={<SectionFallback />}>
+                <Contact />
+              </Suspense>
+            </>
+          )}
         </div>
-        <AnimatedBackground />
       </div>
     </ErrorBoundary>
   );

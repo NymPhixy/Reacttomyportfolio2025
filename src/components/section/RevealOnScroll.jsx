@@ -1,30 +1,4 @@
-import React, { Component, useEffect, useRef } from "react";
-
-export class ErrorBoundary extends Component {
-  static getDerivedStateFromError() {
-    // Update state so the next render shows the fallback UI.
-    return { hasError: true };
-  }
-
-  constructor(props) {
-    super(props);
-    this.state = { hasError: false };
-  }
-
-  componentDidCatch(error, errorInfo) {
-    // You can also log the error to an error reporting service
-    console.error("ErrorBoundary caught an error", error, errorInfo);
-  }
-
-  render() {
-    if (this.state.hasError) {
-      // You can render any custom fallback UI
-      return <h1>Something went wrong.</h1>;
-    }
-
-    return this.props.children;
-  }
-}
+import { useEffect, useRef } from "react";
 
 export const RevealOnScroll = ({ children }) => {
   const ref = useRef(null);
@@ -40,7 +14,7 @@ export const RevealOnScroll = ({ children }) => {
       {
         threshold: 0.2,
         rootMargin: "0px 0px -50px 0px",
-      }
+      },
     );
 
     if (node) {
@@ -60,12 +34,3 @@ export const RevealOnScroll = ({ children }) => {
     </div>
   );
 };
-
-export default function App() {
-  return (
-    <div>
-      <AnimatedBackground />
-      {/* ...rest van je app... */}
-    </div>
-  );
-}

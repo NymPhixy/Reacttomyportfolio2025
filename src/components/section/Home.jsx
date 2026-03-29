@@ -1,63 +1,61 @@
 import { RevealOnScroll } from "./RevealOnScroll";
-import image from "../../assets/profielpikv3.jpg"; // <-- use relative path
-import cvFile from "../../assets/cvrubenjanssen.pdf";
+import image from "../../assets/me.jpg"; // <-- use relative path
+import cvFile from "../../assets/Ruben_Janssen_CV.pdf";
 
 export const Home = () => {
   return (
     <section
       id="home"
-      className="min-h-screen flex relative justify-center items-center"
+      className="min-h-screen flex relative justify-center items-center py-10 sm:py-20"
     >
       <RevealOnScroll>
-        <div className="z-10 px-4 flex flex-row items-center justify-center gap-10">
-          {/* Glassmorphic Card */}
-          <div className="backdrop-blur-md bg-white/20 border border-white/30 rounded-3xl shadow-2xl p-10 flex flex-row items-center gap-10 max-w-4xl w-full">
-            {/* Afbeelding links van de tekst */}
-            <div className="flex-shrink-0">
+        <div className="z-10 px-4 w-full flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-10">
+          {/* Main Card */}
+          <div className="glass-card rounded-3xl p-6 sm:p-10 flex flex-col sm:flex-row items-center gap-6 sm:gap-10 max-w-4xl w-full">
+            {/* Afbeelding - responsive sizing */}
+            <div className="flex-shrink-0 flex justify-center">
               <img
                 src={image}
                 alt="Ruben"
-                className="w-60 h-100 object-cover rounded-full shadow-lg"
+                width="240"
+                height="400"
+                loading="eager"
+                fetchPriority="high"
+                decoding="async"
+                className="w-48 sm:w-60 h-auto object-cover rounded-full shadow-lg border-4 border-purple-400/30"
               />
             </div>
             {/* Tekst rechts van de afbeelding */}
-            <div>
-              <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r text-transparent from-purple-700 to-pink-400 bg-clip-text leading-right">
-                {" "}
-                Hi, I'm Ruben{" "}
+            <div className="text-white">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 sm:mb-6 bg-gradient-to-r text-transparent from-purple-400 to-pink-400 bg-clip-text">
+                Hi, I'm Ruben
               </h1>
-              <p className="text-gray-200 text-lg mb-8 max-w-lg mx-auto">
-                I’m a second-year Communication & Multimedia Design student at
+              <p className="text-sm sm:text-base md:text-lg text-gray-100 mb-6 sm:mb-8 leading-relaxed">
+                I'm a second-year Communication & Multimedia Design student at
                 the Hanze University of Applied Sciences in Groningen. I work at
                 the intersection of concept development, user experience and
                 front-end development, with a focus on translating ideas into
-                intuitive and interactive digital products. I’m currently
-                developing my skills in React, modern front-end technologies and
-                UX design methods such as research, prototyping and iteration.
-                As a passionate motorcycle enthusiast, I enjoy connecting my
-                interest in motorsport with the digital world, exploring how
-                technology and design can create engaging and user-centered
-                experiences.
+                intuitive and interactive digital products.
               </p>
-              <div className="justify-center flex space-x-4">
+              <div className="button-group justify-center sm:justify-start">
                 <a
                   href="#Projects"
-                  className="bg-purple-500 text-white py-3 px-6 rounded font-medium transition relative overflow-hidden hover:-translate-y-0.5 hover:shadow-[0_0_15px_rgba(59,130,246,0.4)]"
+                  className="bg-purple-600 hover:bg-purple-700 text-white py-3 px-6 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/50"
                 >
                   View Projects
                 </a>
                 <a
                   href="#Contact"
-                  className="bg-pink-300 border-purple-500/50 text-white py-3 px-6 rounded font-medium transition-all duration-200 relative overflow-hidden hover:-translate-y-0.5 hover:shadow-[0_0_15px_rgba(255,38,92,0.8)]"
+                  className="bg-pink-500 hover:bg-pink-600 text-white py-3 px-6 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-pink-500/50"
                 >
                   Contact Me
                 </a>
                 <a
                   href={cvFile}
                   download
-                  className="bg-white/20 border border-white/40 text-white py-3 px-6 rounded font-medium transition-all duration-200 relative overflow-hidden hover:-translate-y-0.5 hover:bg-white/30 hover:shadow-[0_0_15px_rgba(255,255,255,0.35)]"
+                  className="bg-white/20 hover:bg-white/30 border border-white/40 text-white py-3 px-6 rounded-lg font-semibold transition-all duration-300 shadow-lg"
                 >
-                  Download My CV
+                  Download CV
                 </a>
               </div>
             </div>

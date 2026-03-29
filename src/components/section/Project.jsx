@@ -15,34 +15,38 @@ export const Project = () => {
   return (
     <section
       id="Projects"
-      className="min-h-screen flex py-20 justify-center items-center"
+      className="min-h-screen flex py-10 sm:py-20 justify-center items-center"
     >
       <RevealOnScroll>
-        <div className="max-w-5xl mx-auto px-4">
-          <h2 className="text-5xl font-bold mb-8 bg-gradient-to-r text-transparent from-purple-700 to-pink-400 bg-clip-text leading-tight">
+        <div className="max-w-5xl mx-auto px-4 w-full">
+          <h2 className="text-4xl sm:text-5xl font-bold mb-8 bg-gradient-to-r text-transparent from-purple-400 to-pink-400 bg-clip-text leading-tight">
             Featured Projects
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {projects.map((project, idx) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            {projects.map((project) => (
               <div
                 key={project.title}
-                className="p-6 rounded-2xl border border-white/20 bg-gradient-to-br from-white/20 via-white/10 to-purple-200/10 backdrop-blur-xl shadow-2xl hover:-translate-y-1 hover:border-pink-400/40 hover:shadow-[0_8px_32px_0_rgba(201,71,143,0.25)] transition-all duration-300"
+                className="glass-card p-6 rounded-2xl border border-white/20 hover:-translate-y-1 hover:border-pink-400/40 hover:shadow-[0_8px_32px_0_rgba(201,71,143,0.25)] transition-all duration-300"
               >
-                <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-                <div className="mb-4">
+                <h3 className="text-lg sm:text-xl font-bold mb-3">
+                  {project.title}
+                </h3>
+                <div className="mb-4 rounded-lg overflow-hidden">
                   <img
                     src={project.img.src}
                     alt={project.img.alt}
-                    className="w-full rounded-lg shadow"
+                    width="400"
+                    height="300"
+                    loading="lazy"
+                    className="w-full h-48 sm:h-56 object-cover shadow-md hover:scale-105 transition-transform duration-300"
                   />
                 </div>
-                <p className="text-gray-200 mb-4">{project.description}</p>
-                <div className="flex flex-wrap gap-2">
+                <p className="text-gray-200 mb-4 text-sm sm:text-base leading-relaxed">
+                  {project.description}
+                </p>
+                <div className="flex flex-wrap gap-2 mb-4">
                   {project.tech.map((tech) => (
-                    <span
-                      key={tech}
-                      className="bg-purple-500/10 text-pink-200 py-1 px-3 rounded-full text-sm hover:bg-purple-500/20 hover:shadow-[rgba(201,71,143,0.8)]"
-                    >
+                    <span key={tech} className="skill-badge text-xs sm:text-sm">
                       {tech}
                     </span>
                   ))}
