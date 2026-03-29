@@ -224,20 +224,23 @@ export const Project = () => {
                             {project.action.label}
                           </button>
                         )}
-                        {project.additionalActions && project.additionalActions.map((additionalAction, idx) => (
-                          <button
-                            key={idx}
-                            onClick={() =>
-                              handleDownloadDocument(
-                                additionalAction.href,
-                                additionalAction.filename,
-                              )
-                            }
-                            className="text-purple-400 hover:text-pink-400 transition-colors font-semibold text-left"
-                          >
-                            {additionalAction.label}
-                          </button>
-                        ))}
+                        {project.additionalActions &&
+                          project.additionalActions.map(
+                            (additionalAction, idx) => (
+                              <button
+                                key={idx}
+                                onClick={() =>
+                                  handleDownloadDocument(
+                                    additionalAction.href,
+                                    additionalAction.filename,
+                                  )
+                                }
+                                className="text-purple-400 hover:text-pink-400 transition-colors font-semibold text-left"
+                              >
+                                {additionalAction.label}
+                              </button>
+                            ),
+                          )}
                       </div>
                     </div>
                   ))}
@@ -265,7 +268,6 @@ export const Project = () => {
                       }}
                     />
                     <span className="absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-white/15 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                  </button>
                   </button>
                 </div>
               </div>
