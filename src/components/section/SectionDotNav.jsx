@@ -114,6 +114,8 @@ export const SectionDotNav = () => {
   const ringRadius = 20;
   const ringCircumference = 2 * Math.PI * ringRadius;
   const ringOffset = ringCircumference * (1 - activeProgress);
+  const activeLink =
+    sectionLinks.find((link) => link.id === activeSection) ?? sectionLinks[0];
 
   return (
     <nav
@@ -124,6 +126,11 @@ export const SectionDotNav = () => {
       }`}
       aria-label="Sectienavigatie"
     >
+      <div className="mb-2 flex justify-center">
+        <span className="glass-card inline-flex items-center rounded-full border border-pink-300/45 bg-pink-500/12 px-3 py-1 text-xs font-medium tracking-wide text-pink-100">
+          {activeLink.name}
+        </span>
+      </div>
       <ul className="glass-card flex items-center gap-1 sm:gap-2 px-2 py-2 rounded-full">
         {sectionLinks.map((link) => {
           const Icon = link.icon;
