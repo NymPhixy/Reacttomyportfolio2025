@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { FaHome, FaBriefcase, FaUser, FaPhone } from "react-icons/fa";
 
 const sectionLinks = [
@@ -12,6 +12,7 @@ export const SectionDotNav = () => {
   const [activeSection, setActiveSection] = useState("home");
   const [activeProgress, setActiveProgress] = useState(0);
   const [isVisible, setIsVisible] = useState(true);
+  const labelRef = useRef(null);
 
   const getSectionProgress = (sectionId) => {
     const section = document.getElementById(sectionId);
@@ -111,11 +112,34 @@ export const SectionDotNav = () => {
     };
   }, [activeSection]);
 
+  useEffect(() => {
+    if (!labelRef.current) {
+      return;
+    }
+
+    labelRef.current.animate(
+      [
+        { opacity: 0.5, transform: "translateY(4px) scale(0.98)" },
+        { opacity: 1, transform: "translateY(0) scale(1)" },
+      ],
+      {
+        duration: 180,
+        easing: "ease-out",
+      },
+    );
+  }, [activeSection]);
+
   const ringRadius = 20;
   const ringCircumference = 2 * Math.PI * ringRadius;
   const ringOffset = ringCircumference * (1 - activeProgress);
   const activeLink =
     sectionLinks.find((link) => link.id === activeSection) ?? sectionLinks[0];
+  const focusActiveSection = () => {
+    const section = document.getElementById(activeLink.id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
 
   return (
     <nav
@@ -127,9 +151,16 @@ export const SectionDotNav = () => {
       aria-label="Sectienavigatie"
     >
       <div className="mb-2 flex justify-center">
-        <span className="glass-card inline-flex items-center rounded-full border border-pink-300/45 bg-pink-500/12 px-3 py-1 text-xs font-medium tracking-wide text-pink-100">
+        <button
+          ref={labelRef}
+          type="button"
+          onClick={focusActiveSection}
+          className="glass-card inline-flex items-center rounded-full border border-pink-300/45 bg-pink-500/12 px-3 py-1 text-xs font-medium tracking-wide text-pink-100 transition-colors hover:border-pink-200/70 hover:bg-pink-500/20 focus:outline-none focus:ring-2 focus:ring-pink-400/80"
+          aria-label={`Ga naar begin van sectie ${activeLink.name}`}
+          title={`Ga naar ${activeLink.name}`}
+        >
           {activeLink.name}
-        </span>
+        </button>
       </div>
       <ul className="glass-card flex items-center gap-1 sm:gap-2 px-2 py-2 rounded-full">
         {sectionLinks.map((link) => {
