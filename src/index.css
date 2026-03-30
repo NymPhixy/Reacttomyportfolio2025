@@ -144,6 +144,30 @@ p {
   display: none;
 }
 
+@keyframes footerGlowShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.footer-social-glow {
+  background-image:
+    linear-gradient(
+      120deg,
+      rgba(236, 72, 153, 0.08),
+      rgba(56, 189, 248, 0.08),
+      rgba(236, 72, 153, 0.08)
+    );
+  background-size: 220% 220%;
+  animation: footerGlowShift 9s ease infinite;
+}
+
 @media (max-width: 640px) {
   html,
   body {
