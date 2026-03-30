@@ -63,7 +63,7 @@ function App() {
       <div className="relative min-h-screen text-gray-100">
         {showLaunchVideo && (
           <div
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/65 backdrop-blur-md px-4"
+            className="fixed inset-x-0 bottom-0 top-16 z-50 flex items-center justify-center bg-black/65 backdrop-blur-md px-4"
             onClick={closeLaunchVideo}
             role="dialog"
             aria-modal="true"
