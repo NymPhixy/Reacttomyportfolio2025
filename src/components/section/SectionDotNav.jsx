@@ -11,6 +11,7 @@ const sectionLinks = [
 export const SectionDotNav = () => {
   const [activeSection, setActiveSection] = useState("home");
   const [activeProgress, setActiveProgress] = useState(0);
+  const [isVisible, setIsVisible] = useState(true);
 
   const getSectionProgress = (sectionId) => {
     const section = document.getElementById(sectionId);
@@ -70,13 +71,30 @@ export const SectionDotNav = () => {
 
   useEffect(() => {
     let ticking = false;
+    let lastScrollY = window.scrollY;
 
     const updateProgress = () => {
       setActiveProgress(getSectionProgress(activeSection));
       ticking = false;
     };
 
+    const updateVisibility = () => {
+      const currentScrollY = window.scrollY;
+      const scrollDelta = currentScrollY - lastScrollY;
+
+      if (currentScrollY <= 80) {
+        setIsVisible(true);
+      } else if (scrollDelta > 6) {
+        setIsVisible(false);
+      } else if (scrollDelta < -6) {
+        setIsVisible(true);
+      }
+
+      lastScrollY = currentScrollY;
+    };
+
     const onScroll = () => {
+      updateVisibility();
       if (!ticking) {
         window.requestAnimationFrame(updateProgress);
         ticking = true;
@@ -99,7 +117,11 @@ export const SectionDotNav = () => {
 
   return (
     <nav
-      className="fixed bottom-3 sm:bottom-4 left-1/2 -translate-x-1/2 z-40 px-3"
+      className={`fixed bottom-3 sm:bottom-4 left-1/2 -translate-x-1/2 z-40 px-3 pb-[max(env(safe-area-inset-bottom),0.15rem)] transition-all duration-250 ease-out ${
+        isVisible
+          ? "translate-y-0 opacity-100 pointer-events-auto"
+          : "translate-y-16 opacity-0 pointer-events-none"
+      }`}
       aria-label="Sectienavigatie"
     >
       <ul className="glass-card flex items-center gap-1 sm:gap-2 px-2 py-2 rounded-full">
