@@ -5,6 +5,34 @@ import projects from "../../data/provider/projects/projectsData.json"; // Import
 export const Project = () => {
   const carouselRefs = useRef({});
   const [scrollProgress, setScrollProgress] = useState({});
+  const [activeVideoUrl, setActiveVideoUrl] = useState(null);
+
+  const closeVideoModal = () => setActiveVideoUrl(null);
+
+  const getYouTubeEmbedUrl = (url) => {
+    if (!url) return "";
+
+    try {
+      const parsed = new URL(url);
+      const host = parsed.hostname.replace("www.", "");
+
+      if (host === "youtu.be") {
+        const videoId = parsed.pathname.slice(1);
+        return `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
+      }
+
+      if (host === "youtube.com" || host === "m.youtube.com") {
+        const videoId = parsed.searchParams.get("v");
+        if (videoId) {
+          return `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
+        }
+      }
+    } catch {
+      return "";
+    }
+
+    return "";
+  };
 
   // Helper function to handle portfolio download
   const handleDownloadPortfolio = () => {
@@ -99,6 +127,25 @@ export const Project = () => {
   useEffect(() => {
     visibleYears.forEach((year) => updateScrollProgress(year));
   }, [activeYear]);
+
+  useEffect(() => {
+    if (!activeVideoUrl) return;
+
+    const onKeyDown = (event) => {
+      if (event.key === "Escape") {
+        closeVideoModal();
+      }
+    };
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", onKeyDown);
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener("keydown", onKeyDown);
+    };
+  }, [activeVideoUrl]);
 
   return (
     <section
@@ -229,12 +276,19 @@ export const Project = () => {
                             (additionalAction, idx) => (
                               <button
                                 key={idx}
-                                onClick={() =>
+                                onClick={() => {
+                                  if (additionalAction.type === "video") {
+                                    setActiveVideoUrl(
+                                      getYouTubeEmbedUrl(additionalAction.href),
+                                    );
+                                    return;
+                                  }
+
                                   handleDownloadDocument(
                                     additionalAction.href,
                                     additionalAction.filename,
-                                  )
-                                }
+                                  );
+                                }}
                                 className="text-purple-400 hover:text-pink-400 transition-colors font-semibold text-left"
                               >
                                 {additionalAction.label}
@@ -274,6 +328,48 @@ export const Project = () => {
             ))}
           </div>
         </div>
+
+        {activeVideoUrl && (
+          <div
+            className="fixed inset-x-0 bottom-0 top-16 z-50 flex items-center justify-center bg-black/65 backdrop-blur-md px-4"
+            onClick={closeVideoModal}
+            role="dialog"
+            aria-modal="true"
+            aria-label="Projectvideo"
+          >
+            <div
+              className="w-full max-w-4xl rounded-2xl border border-white/20 bg-slate-900/90 shadow-2xl overflow-hidden"
+              onClick={(event) => event.stopPropagation()}
+            >
+              <div className="flex items-start justify-between gap-4 px-4 py-3 border-b border-white/10">
+                <div>
+                  <h4 className="text-base sm:text-lg font-semibold text-gray-100">
+                    TMS video
+                  </h4>
+                </div>
+                <button
+                  type="button"
+                  onClick={closeVideoModal}
+                  className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/20 bg-white/5 text-gray-200 hover:bg-white/20 hover:text-white focus:outline-none focus:ring-2 focus:ring-pink-400/70 transition-colors"
+                  aria-label="Sluit video"
+                >
+                  <span className="text-xl leading-none" aria-hidden="true">
+                    ×
+                  </span>
+                </button>
+              </div>
+              <div className="p-3 sm:p-4">
+                <iframe
+                  className="w-full aspect-video rounded-xl"
+                  src={activeVideoUrl}
+                  title="TMS projectvideo"
+                  allow="autoplay; encrypted-media; picture-in-picture; web-share"
+                  allowFullScreen
+                />
+              </div>
+            </div>
+          </div>
+        )}
       </RevealOnScroll>
     </section>
   );

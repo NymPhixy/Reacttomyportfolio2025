@@ -51,10 +51,9 @@
     },
     "additionalActions": [
       {
-        "type": "download",
+        "type": "video",
         "label": "Video bekijken 🎥",
-        "href": "/assets/Projecten/leerjaar1/p2/Eindopdracht_CVA_Ruben_Janssen_469974.mp4",
-        "filename": "Eindopdracht_CVA.mp4"
+        "href": "https://youtu.be/rlQc5IiRPRU"
       }
     ]
   },
@@ -178,10 +177,9 @@
     },
     "additionalActions": [
       {
-        "type": "download",
+        "type": "video",
         "label": "Video bekijken 🎥",
-        "href": "/assets/Projecten/jaar2/p1/video.mp4",
-        "filename": "OXR_Video.mp4"
+        "href": "https://youtu.be/2nJBOTNHAHc"
       }
     ]
   },
@@ -200,7 +198,14 @@
       "label": "Designdocument downloaden 📥",
       "href": "/assets/Projecten/leerjaar2/p1/RubenJanssen_TMS_469974.pdf",
       "filename": "TMS_Ruben_Janssen.pdf"
-    }
+    },
+    "additionalActions": [
+      {
+        "type": "video",
+        "label": "Video bekijken 🎥",
+        "href": "https://youtu.be/pCQF2NKU-VQ"
+      }
+    ]
   },
   {
     "year": "Leerjaar 1",
