@@ -1,11 +1,10 @@
 import React, { useEffect, useState, Suspense } from "react";
 import "./App.css";
 import "./index.css";
-import { Navbar } from "./components/section/Navbar";
-import { MobileMenu } from "./components/section/MobileMenu";
-import { SocialSideMenu } from "./components/section/SocialSideMenu";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { Home } from "./components/section/Home";
+import { SectionDotNav } from "./components/section/SectionDotNav";
+import { FooterSocials } from "./components/section/FooterSocials";
 
 // Lazy load sections for better code splitting
 const About = React.lazy(() =>
@@ -26,7 +25,6 @@ const SectionFallback = () => (
 );
 
 function App() {
-  const [isMenuOpen, setMenuOpen] = useState(false);
   const [showDeferredSections, setShowDeferredSections] = useState(false);
 
   useEffect(() => {
@@ -42,9 +40,7 @@ function App() {
       <div className="relative min-h-screen text-gray-100">
         {/* Content */}
         <div className="relative z-10">
-          <Navbar menuOpen={isMenuOpen} setMenuOpen={setMenuOpen} />
-          <MobileMenu menuOpen={isMenuOpen} setMenuOpen={setMenuOpen} />
-          <SocialSideMenu />
+          <SectionDotNav />
           <Home />
           {showDeferredSections && (
             <>
@@ -57,6 +53,7 @@ function App() {
               <Suspense fallback={<SectionFallback />}>
                 <Contact />
               </Suspense>
+              <FooterSocials />
             </>
           )}
         </div>
