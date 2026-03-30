@@ -13,6 +13,7 @@ export const SectionDotNav = () => {
   const [activeProgress, setActiveProgress] = useState(0);
   const [isVisible, setIsVisible] = useState(true);
   const labelRef = useRef(null);
+  const dotRefs = useRef({});
 
   const getSectionProgress = (sectionId) => {
     const section = document.getElementById(sectionId);
@@ -129,6 +130,25 @@ export const SectionDotNav = () => {
     );
   }, [activeSection]);
 
+  useEffect(() => {
+    const activeDot = dotRefs.current[activeSection];
+    if (!activeDot) {
+      return;
+    }
+
+    activeDot.animate(
+      [
+        { transform: "scale(0.92)", filter: "brightness(1.05)" },
+        { transform: "scale(1.06)", filter: "brightness(1.2)" },
+        { transform: "scale(1)", filter: "brightness(1)" },
+      ],
+      {
+        duration: 220,
+        easing: "ease-out",
+      },
+    );
+  }, [activeSection]);
+
   const ringRadius = 20;
   const ringCircumference = 2 * Math.PI * ringRadius;
   const ringOffset = ringCircumference * (1 - activeProgress);
@@ -170,6 +190,9 @@ export const SectionDotNav = () => {
           return (
             <li key={link.name}>
               <a
+                ref={(el) => {
+                  dotRefs.current[link.id] = el;
+                }}
                 href={link.href}
                 aria-current={isActive ? "page" : undefined}
                 aria-label={link.name}
