@@ -3,6 +3,7 @@ import "./App.css";
 import "./index.css";
 import { Navbar } from "./components/section/Navbar";
 import { MobileMenu } from "./components/section/MobileMenu";
+import { SocialSideMenu } from "./components/section/SocialSideMenu";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { Home } from "./components/section/Home";
 
@@ -109,6 +110,7 @@ function App() {
         <div className="relative z-10">
           <Navbar menuOpen={isMenuOpen} setMenuOpen={setMenuOpen} />
           <MobileMenu menuOpen={isMenuOpen} setMenuOpen={setMenuOpen} />
+          <SocialSideMenu />
           <Home />
           {showDeferredSections && (
             <>
