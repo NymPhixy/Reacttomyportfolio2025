@@ -155,7 +155,7 @@ export const SectionDotNav = () => {
           ref={labelRef}
           type="button"
           onClick={focusActiveSection}
-          className="glass-card inline-flex items-center rounded-full border border-pink-300/45 bg-pink-500/12 px-3 py-1 text-xs font-medium tracking-wide text-pink-100 transition-colors hover:border-pink-200/70 hover:bg-pink-500/20 focus:outline-none focus:ring-2 focus:ring-pink-400/80"
+          className="glass-card inline-flex select-none items-center rounded-full border border-pink-300/45 bg-pink-500/12 px-3 py-1 text-xs font-medium tracking-wide text-pink-100 transition-all duration-150 hover:border-pink-200/70 hover:bg-pink-500/20 active:scale-[0.96] active:border-pink-200 active:bg-pink-400/25 active:text-pink-50 focus:outline-none focus:ring-2 focus:ring-pink-400/80"
           aria-label={`Ga naar begin van sectie ${activeLink.name}`}
           title={`Ga naar ${activeLink.name}`}
         >
@@ -174,7 +174,7 @@ export const SectionDotNav = () => {
                 aria-current={isActive ? "page" : undefined}
                 aria-label={link.name}
                 title={link.name}
-                className={`group relative flex h-11 w-11 sm:h-10 sm:w-10 items-center justify-center rounded-full border text-gray-100 transition-all focus:outline-none focus:ring-2 focus:ring-pink-400/80 ${
+                className={`group relative flex h-11 w-11 sm:h-10 sm:w-10 select-none items-center justify-center rounded-full border text-gray-100 transition-all duration-150 active:scale-95 active:brightness-110 focus:outline-none focus:ring-2 focus:ring-pink-400/80 ${
                   isActive
                     ? "border-pink-300/80 bg-pink-500/20 text-pink-200 shadow-[0_0_0_1px_rgba(244,114,182,0.25)]"
                     : "border-white/20 bg-white/5 hover:-translate-y-0.5 hover:border-pink-400/60 hover:text-pink-300 hover:bg-white/10"
