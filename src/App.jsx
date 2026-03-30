@@ -96,7 +96,7 @@ function App() {
               <div className="p-3 sm:p-4">
                 <iframe
                   className="w-full aspect-video rounded-xl"
-                  src="https://www.youtube.com/embed/3NmPrEI0JmE?autoplay=1&rel=0"
+                  src="https://www.youtube.com/embed/Y76GZ1qnth0?autoplay=1&rel=0"
                   title="Introductievideo"
                   allow="autoplay; encrypted-media; picture-in-picture; web-share"
                   allowFullScreen
