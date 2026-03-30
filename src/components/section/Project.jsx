@@ -306,31 +306,6 @@ export const Project = () => {
                     </div>
                   ))}
                 </div>
-
-                <div className="mt-3 px-1">
-                  <div className="flex items-center justify-between mb-2">
-                    <p className="text-xs sm:text-sm text-gray-300/90">
-                      Swipe om door projecten te bladeren
-                    </p>
-                    <span className="text-xs text-pink-300/80">
-                      {Math.round((scrollProgress[year] || 0) * 100)}%
-                    </span>
-                  </div>
-                  <button
-                    type="button"
-                    onClick={(event) => handleProgressBarClick(year, event)}
-                    className="group relative w-full h-2.5 rounded-full bg-white/15 border border-white/20 overflow-hidden"
-                    aria-label={`Scroll voortgang voor ${year}`}
-                  >
-                    <span
-                      className="absolute left-0 top-0 h-full bg-gradient-to-r from-purple-400 via-fuchsia-400 to-pink-400 transition-[width] duration-200"
-                      style={{
-                        width: `${Math.max((scrollProgress[year] || 0) * 100, 8)}%`,
-                      }}
-                    />
-                    <span className="absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-white/15 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                  </button>
-                </div>
               </div>
             ))}
           </div>

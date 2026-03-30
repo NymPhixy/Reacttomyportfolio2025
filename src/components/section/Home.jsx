@@ -58,6 +58,21 @@ export const Home = () => {
                   Download CV
                 </a>
               </div>
+
+              <div className="mt-8">
+                <p className="text-sm sm:text-base text-gray-200 mb-3">
+                  Wie ben ik? Bekijk de korte introductievideo:
+                </p>
+                <div className="rounded-2xl overflow-hidden border border-white/20 shadow-xl">
+                  <iframe
+                    className="w-full aspect-video"
+                    src="https://www.youtube.com/embed/Y76GZ1qnth0?rel=0"
+                    title="Introductievideo van Ruben"
+                    allow="autoplay; encrypted-media; picture-in-picture; web-share"
+                    allowFullScreen
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>
