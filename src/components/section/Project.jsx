@@ -6,8 +6,12 @@ export const Project = () => {
   const carouselRefs = useRef({});
   const [scrollProgress, setScrollProgress] = useState({});
   const [activeVideoUrl, setActiveVideoUrl] = useState(null);
+  const [activeVideoTitle, setActiveVideoTitle] = useState("Projectvideo");
 
-  const closeVideoModal = () => setActiveVideoUrl(null);
+  const closeVideoModal = () => {
+    setActiveVideoUrl(null);
+    setActiveVideoTitle("Projectvideo");
+  };
 
   const getYouTubeEmbedUrl = (url) => {
     if (!url) return "";
@@ -278,6 +282,9 @@ export const Project = () => {
                                 key={idx}
                                 onClick={() => {
                                   if (additionalAction.type === "video") {
+                                    setActiveVideoTitle(
+                                      `${project.title} video`,
+                                    );
                                     setActiveVideoUrl(
                                       getYouTubeEmbedUrl(additionalAction.href),
                                     );
@@ -344,7 +351,7 @@ export const Project = () => {
               <div className="flex items-start justify-between gap-4 px-4 py-3 border-b border-white/10">
                 <div>
                   <h4 className="text-base sm:text-lg font-semibold text-gray-100">
-                    TMS video
+                    {activeVideoTitle}
                   </h4>
                 </div>
                 <button
@@ -362,7 +369,7 @@ export const Project = () => {
                 <iframe
                   className="w-full aspect-video rounded-xl"
                   src={activeVideoUrl}
-                  title="TMS projectvideo"
+                  title={activeVideoTitle}
                   allow="autoplay; encrypted-media; picture-in-picture; web-share"
                   allowFullScreen
                 />
