@@ -1,6 +1,33 @@
 import { useEffect, useRef, useState } from "react";
 import { FaHome, FaBriefcase, FaUser, FaPhone } from "react-icons/fa";
 
+const OBSERVER_ROOT_MARGIN = "-40% 0px -40% 0px";
+const OBSERVER_THRESHOLD = [0.2, 0.45, 0.7];
+const SCROLL_SHOW_AT_TOP = 80;
+const SCROLL_DELTA_TRIGGER = 6;
+const RING_RADIUS = 20;
+
+const labelAnimationFrames = [
+  { opacity: 0.5, transform: "translateY(4px) scale(0.98)" },
+  { opacity: 1, transform: "translateY(0) scale(1)" },
+];
+
+const labelAnimationOptions = {
+  duration: 180,
+  easing: "ease-out",
+};
+
+const dotPulseFrames = [
+  { transform: "scale(0.92)", filter: "brightness(1.05)" },
+  { transform: "scale(1.06)", filter: "brightness(1.2)" },
+  { transform: "scale(1)", filter: "brightness(1)" },
+];
+
+const dotPulseOptions = {
+  duration: 220,
+  easing: "ease-out",
+};
+
 const sectionLinks = [
   { id: "home", name: "Home", href: "#home", icon: FaHome },
   { id: "Projects", name: "Projecten", href: "#Projects", icon: FaBriefcase },
@@ -48,8 +75,8 @@ export const SectionDotNav = () => {
       },
       {
         root: null,
-        rootMargin: "-40% 0px -40% 0px",
-        threshold: [0.2, 0.45, 0.7],
+        rootMargin: OBSERVER_ROOT_MARGIN,
+        threshold: OBSERVER_THRESHOLD,
       },
     );
 
@@ -84,11 +111,11 @@ export const SectionDotNav = () => {
       const currentScrollY = window.scrollY;
       const scrollDelta = currentScrollY - lastScrollY;
 
-      if (currentScrollY <= 80) {
+      if (currentScrollY <= SCROLL_SHOW_AT_TOP) {
         setIsVisible(true);
-      } else if (scrollDelta > 6) {
+      } else if (scrollDelta > SCROLL_DELTA_TRIGGER) {
         setIsVisible(false);
-      } else if (scrollDelta < -6) {
+      } else if (scrollDelta < -SCROLL_DELTA_TRIGGER) {
         setIsVisible(true);
       }
 
@@ -118,16 +145,7 @@ export const SectionDotNav = () => {
       return;
     }
 
-    labelRef.current.animate(
-      [
-        { opacity: 0.5, transform: "translateY(4px) scale(0.98)" },
-        { opacity: 1, transform: "translateY(0) scale(1)" },
-      ],
-      {
-        duration: 180,
-        easing: "ease-out",
-      },
-    );
+    labelRef.current.animate(labelAnimationFrames, labelAnimationOptions);
   }, [activeSection]);
 
   useEffect(() => {
@@ -136,21 +154,10 @@ export const SectionDotNav = () => {
       return;
     }
 
-    activeDot.animate(
-      [
-        { transform: "scale(0.92)", filter: "brightness(1.05)" },
-        { transform: "scale(1.06)", filter: "brightness(1.2)" },
-        { transform: "scale(1)", filter: "brightness(1)" },
-      ],
-      {
-        duration: 220,
-        easing: "ease-out",
-      },
-    );
+    activeDot.animate(dotPulseFrames, dotPulseOptions);
   }, [activeSection]);
 
-  const ringRadius = 20;
-  const ringCircumference = 2 * Math.PI * ringRadius;
+  const ringCircumference = 2 * Math.PI * RING_RADIUS;
   const ringOffset = ringCircumference * (1 - activeProgress);
   const activeLink =
     sectionLinks.find((link) => link.id === activeSection) ?? sectionLinks[0];
@@ -212,7 +219,7 @@ export const SectionDotNav = () => {
                     <circle
                       cx="22"
                       cy="22"
-                      r={ringRadius}
+                      r={RING_RADIUS}
                       fill="none"
                       stroke="rgba(244,114,182,0.28)"
                       strokeWidth="2"
@@ -220,7 +227,7 @@ export const SectionDotNav = () => {
                     <circle
                       cx="22"
                       cy="22"
-                      r={ringRadius}
+                      r={RING_RADIUS}
                       fill="none"
                       stroke="rgba(244,114,182,0.95)"
                       strokeWidth="2"
