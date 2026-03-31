@@ -7,6 +7,7 @@ import pofMainImage from "../../assets/Projecten/Leerjaar 1/p1/pofmain.jpg";
 import usoMainImage from "../../assets/Projecten/Leerjaar 1/p2/usomain.jpg";
 import cvaMainImage from "../../assets/Projecten/Leerjaar 1/p2/cvafotomain.jpg";
 import pstMainImage from "../../assets/Projecten/Leerjaar 1/p2/pstmain.jpg";
+import inoMainImage from "../../assets/Projecten/Leerjaar 1/P3/inomain.png";
 
 // Filter to get only featured projects (you can mark them in JSON)
 // For now, let's get the best projects from each category
@@ -82,10 +83,16 @@ export const FeaturedProjects = ({ onOpenCaseStudy }) => {
                     ? usoMainImage
                     : project.title.includes("CVA")
                       ? cvaMainImage
-                      : project.title.includes("PST") ||
-                          project.title.includes("SAGANET")
-                        ? pstMainImage
-                        : project.img.src;
+                      : project.title.includes("MKC MOTO") ||
+                          project.title.includes(
+                            "Interactive Gear Selection",
+                          ) ||
+                          project.title.includes("INO - Interactief Ontwerp")
+                        ? inoMainImage
+                        : project.title.includes("PST") ||
+                            project.title.includes("SAGANET")
+                          ? pstMainImage
+                          : project.img.src;
               return (
                 <div
                   key={`featured-${index}`}

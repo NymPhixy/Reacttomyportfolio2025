@@ -40,6 +40,9 @@ import pstFoto2 from "../../assets/Projecten/Leerjaar 1/p2/PST2.jpg";
 import pstFoto3 from "../../assets/Projecten/Leerjaar 1/p2/PST3.jpg";
 import pstFoto4 from "../../assets/Projecten/Leerjaar 1/p2/pst4.png";
 import pstDesignDocument from "../../assets/Projecten/Leerjaar 1/p2/PST_design_document_Ruben_Janssen_469974.pdf";
+import inoMainImage from "../../assets/Projecten/Leerjaar 1/P3/inomain.png";
+import inoFoto2Image from "../../assets/Projecten/Leerjaar 1/P3/ino2.jpg";
+import inoFoto3Image from "../../assets/Projecten/Leerjaar 1/P3/ino3.jpg";
 
 const disciplineItems = [
   {
@@ -141,6 +144,17 @@ const isPstProject = (project) => {
   return (
     project.title.toLowerCase().includes("pst") ||
     project.title.toLowerCase().includes("saganet")
+  );
+};
+
+const isInoMkcProject = (project) => {
+  if (!project?.title) return false;
+  const title = project.title.toLowerCase();
+  return (
+    title.includes("mkc moto") ||
+    title.includes("scrollstory") ||
+    title.includes("ino - interactief ontwerp") ||
+    title.includes("ino - interactie ontwerp")
   );
 };
 
@@ -246,10 +260,20 @@ export const ProjectCaseStudyModal = ({ project, onClose }) => {
   const showUsoLayout = isUsoProject(project);
   const showCvaLayout = isCvaProject(project);
   const showPstLayout = isPstProject(project);
+  const showInoLayout = isInoMkcProject(project);
   const pstVideoUrl =
     project.additionalActions?.find((item) => item.type === "video")?.href ||
     "https://youtu.be/Jr5GPxfLm9g";
   const pstEmbedUrl = toYouTubeEmbedUrl(pstVideoUrl);
+  const inoPrototypeLink =
+    project.additionalActions?.find((item) => item.type === "prototype")
+      ?.href || "#";
+  const inoCodeLink =
+    project.additionalActions?.find((item) => item.type === "code")?.href ||
+    "#";
+  const inoDemoLink =
+    project.additionalActions?.find((item) => item.type === "demo")?.href ||
+    "#";
 
   return (
     <div
@@ -275,11 +299,13 @@ export const ProjectCaseStudyModal = ({ project, onClose }) => {
               <h2 className="text-3xl sm:text-4xl font-bold text-white leading-tight">
                 {showDioLayout
                   ? "Driven by Design"
-                  : showUsoLayout
-                    ? "USO - Usability Ontwerp"
-                    : showPstLayout
-                      ? "PST – SAGANET Storytelling Campaign"
-                      : project.title}
+                  : showInoLayout
+                    ? "INO - Interactief Ontwerp"
+                    : showUsoLayout
+                      ? "USO - Usability Ontwerp"
+                      : showPstLayout
+                        ? "PST – SAGANET Storytelling Campaign"
+                        : project.title}
               </h2>
             </div>
             <button
@@ -296,6 +322,7 @@ export const ProjectCaseStudyModal = ({ project, onClose }) => {
             !showPofLayout &&
             !showUsoLayout &&
             !showCvaLayout &&
+            !showInoLayout &&
             !showPstLayout && (
               <div className="space-y-6">
                 <p className="text-gray-300">
@@ -1013,6 +1040,354 @@ export const ProjectCaseStudyModal = ({ project, onClose }) => {
                     />
                   </div>
                 </div>
+              </section>
+            </div>
+          )}
+
+          {showInoLayout && (
+            <div className="space-y-8 sm:space-y-10">
+              {/* 1. HERO SECTION */}
+              <div className="relative h-64 sm:h-80 rounded-xl overflow-hidden border border-white/10">
+                <img
+                  src={inoMainImage}
+                  alt={project.img?.alt || "MKC MOTO visual"}
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
+                  <div>
+                    <h3 className="text-2xl font-bold text-white mb-2">
+                      Interactive gear selection experience voor beginnende
+                      motorrijders
+                    </h3>
+                    <p className="text-gray-200 text-sm sm:text-base">
+                      Een scrollytelling web experience die gebruikers stap voor
+                      stap helpt bij het kiezen van de juiste motorkleding.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex flex-wrap gap-2">
+                {[
+                  "UX Design",
+                  "Interaction Design",
+                  "Front-end",
+                  "Scrollytelling",
+                  "Prototyping",
+                ].map((tag) => (
+                  <span
+                    key={tag}
+                    className="px-3 py-1.5 rounded-full text-xs font-semibold border border-blue-400/40 bg-blue-500/15 text-blue-100"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+
+              {/* 2. PROJECT OVERVIEW */}
+              <section className="glass-card rounded-xl p-5 border border-white/10">
+                <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                  <FiTarget className="text-blue-300" /> Projectoverzicht
+                </h3>
+                <div className="space-y-3 text-gray-300">
+                  <p>
+                    <strong>Context:</strong> MKC MOTO, motorkledingwinkel waar
+                    ik werk.
+                  </p>
+                  <p>
+                    <strong>Doelgroep:</strong> Beginnende motorrijders die
+                    starten met rijlessen.
+                  </p>
+                  <p>
+                    <strong>Probleem:</strong> Beginners raken overweldigd door
+                    keuzes in kleding, certificeringen en prijzen.
+                  </p>
+                  <p>
+                    <strong>Doel:</strong> Een interactieve ervaring ontwikkelen
+                    die keuzes vereenvoudigt en vertrouwen vergroot.
+                  </p>
+                </div>
+              </section>
+
+              {/* 3. MIJN ROL */}
+              <section className="glass-card rounded-xl p-5 border border-white/10">
+                <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                  <FiUser className="text-cyan-300" /> Mijn rol
+                </h3>
+                <ul className="space-y-2 text-gray-300">
+                  <li>- UX design</li>
+                  <li>- Conceptontwikkeling</li>
+                  <li>- Visual design</li>
+                  <li>- Prototyping in Figma</li>
+                  <li>- Front-end development (HTML, CSS, JavaScript)</li>
+                  <li>- Animatielogica op basis van scroll-interactie</li>
+                </ul>
+              </section>
+
+              {/* 4. RESEARCH & INSIGHTS */}
+              <section className="glass-card rounded-xl p-5 border border-white/10">
+                <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                  <FiSearch className="text-cyan-300" /> Research & inzichten
+                </h3>
+                <ul className="space-y-2 text-gray-300 mb-4">
+                  <li>
+                    - Deskresearch naar motorkleding, certificeringen en
+                    veiligheidsstandaarden
+                  </li>
+                  <li>- Persona ontwikkeld: Jesse (beginnend motorrijder)</li>
+                  <li>
+                    - Empathy map gebruikt om vragen, onzekerheden en gedrag te
+                    visualiseren
+                  </li>
+                </ul>
+                <div className="p-4 rounded-lg border border-cyan-400/30 bg-cyan-500/10">
+                  <p className="text-cyan-200 font-semibold mb-1">
+                    Belangrijk inzicht
+                  </p>
+                  <p className="text-gray-300">
+                    Gebruikers hebben behoefte aan duidelijke, visuele
+                    stap-voor-stap begeleiding in plaats van een overload aan
+                    technische informatie.
+                  </p>
+                </div>
+              </section>
+
+              {/* 5. PROBLEEMDEFINITIE */}
+              <section className="glass-card rounded-xl p-5 border border-white/10">
+                <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                  <FiClipboard className="text-orange-300" /> Probleemdefinitie
+                </h3>
+                <p className="text-gray-300 mb-3">
+                  Beginnende motorrijders begrijpen niet goed welke kleding ze
+                  echt nodig hebben en voelen zich onzeker bij het maken van
+                  keuzes.
+                </p>
+                <div className="p-3 rounded-lg border border-orange-400/30 bg-orange-500/10">
+                  <p className="text-orange-200 font-semibold">HMW-vraag</p>
+                  <p className="text-gray-300 italic">
+                    Hoe kunnen we beginnende motorrijders helpen om op een
+                    eenvoudige en aantrekkelijke manier de juiste motorkleding
+                    te kiezen?
+                  </p>
+                </div>
+              </section>
+
+              {/* 6. CONCEPT */}
+              <section className="glass-card rounded-xl p-5 border border-white/10">
+                <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                  <FiCompass className="text-amber-300" /> Concept: MKC Kleding
+                  Picker
+                </h3>
+                <ul className="space-y-2 text-gray-300">
+                  <li>
+                    - Interactief verhaal waarin de gebruiker een rijder helpt
+                    aankleden
+                  </li>
+                  <li>- Beslissingen worden stap voor stap aangeboden</li>
+                  <li>
+                    - Balans tussen veiligheid, comfort en begrijpelijke uitleg
+                  </li>
+                </ul>
+              </section>
+
+              {/* 7. INTERACTION DESIGN */}
+              <section className="glass-card rounded-xl p-5 border border-white/10">
+                <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                  <FiLayers className="text-pink-300" /> Interaction design
+                </h3>
+                <ul className="space-y-2 text-gray-300">
+                  <li>- Scroll = voortgang door het verhaal</li>
+                  <li>- Motor beweegt mee met de scrollpositie</li>
+                  <li>- De gebruiker ervaart visueel dat hij vooruitgaat</li>
+                  <li>- Keuzes beïnvloeden de beleving en context</li>
+                </ul>
+                <p className="text-gray-300 mt-4">
+                  De interactie is bewust eenvoudig, aantrekkelijk en intuïtief
+                  gehouden, zodat nieuwe rijders zonder drempel kunnen meedoen.
+                </p>
+              </section>
+
+              {/* 8. VISUAL & STORY DESIGN */}
+              <section className="glass-card rounded-xl p-5 border border-white/10">
+                <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                  <FiLayout className="text-indigo-300" /> Visual & story design
+                </h3>
+                <ul className="space-y-2 text-gray-300">
+                  <li>
+                    - Scènes ontworpen in Figma voor een duidelijke verhaallijn
+                  </li>
+                  <li>- Personages: rijder, medewerker en klant</li>
+                  <li>
+                    - Dialoogstructuur ingezet om keuzes begrijpelijk te maken
+                  </li>
+                  <li>
+                    - Emoji's gebruikt voor toegankelijkheid, toon en snelle
+                    herkenning
+                  </li>
+                </ul>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-5">
+                  <div className="rounded-lg overflow-hidden border border-white/10">
+                    <img
+                      src={inoFoto2Image}
+                      alt="INO scene visual 1"
+                      className="w-full h-48 object-cover"
+                    />
+                  </div>
+                  <div className="rounded-lg overflow-hidden border border-white/10">
+                    <img
+                      src={inoFoto3Image}
+                      alt="INO scene visual 2"
+                      className="w-full h-48 object-cover"
+                    />
+                  </div>
+                </div>
+              </section>
+
+              {/* 9. PROTOTYPE & DEVELOPMENT */}
+              <section className="glass-card rounded-xl p-5 border border-white/10 space-y-4">
+                <h3 className="text-xl font-bold text-white flex items-center gap-2">
+                  <FiBox className="text-green-300" /> Prototype & development
+                </h3>
+                <p className="text-gray-300">
+                  Scroll werd in dit project geen navigatie, maar de primaire
+                  interactielaag van de ervaring.
+                </p>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+                  <div className="rounded-lg border border-white/10 bg-black/30 p-3">
+                    <p className="text-sm font-semibold text-blue-200 mb-2">
+                      HTML
+                    </p>
+                    <pre className="text-xs text-gray-300 overflow-x-auto">
+                      {`<section class="scene intro"></section>
+<section class="scene keuze"></section>
+<section class="scene advies"></section>`}
+                    </pre>
+                  </div>
+                  <div className="rounded-lg border border-white/10 bg-black/30 p-3">
+                    <p className="text-sm font-semibold text-pink-200 mb-2">
+                      CSS
+                    </p>
+                    <pre className="text-xs text-gray-300 overflow-x-auto">
+                      {`.motor { position: fixed; left: 10%; }
+.scene { min-height: 100vh; }
+.layer { transition: transform .3s; }`}
+                    </pre>
+                  </div>
+                  <div className="rounded-lg border border-white/10 bg-black/30 p-3">
+                    <p className="text-sm font-semibold text-cyan-200 mb-2">
+                      JavaScript
+                    </p>
+                    <pre className="text-xs text-gray-300 overflow-x-auto">
+                      {`window.addEventListener("scroll", () => {
+  const p = window.scrollY / maxScroll;
+  bike.style.transform = 
+    \`translateX(\${p * 70}vw)\`;
+});`}
+                    </pre>
+                  </div>
+                </div>
+              </section>
+
+              {/* 10. USER EXPERIENCE */}
+              <section className="glass-card rounded-xl p-5 border border-white/10">
+                <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                  <FiCheckCircle className="text-green-300" /> User experience
+                </h3>
+                <ul className="space-y-2 text-gray-300">
+                  <li>- Gebruiker neemt actief deel aan het proces</li>
+                  <li>- Keuzes maken tussen comfort en veiligheid</li>
+                  <li>
+                    - Leren door interactie, niet door lange uitlegblokken
+                  </li>
+                  <li>- Informatie blijft behapbaar en niet overweldigend</li>
+                </ul>
+              </section>
+
+              {/* 11. VALIDATIE */}
+              <section className="glass-card rounded-xl p-5 border border-white/10">
+                <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                  <FiUsers className="text-emerald-300" /> Validatie
+                </h3>
+                <ul className="space-y-2 text-gray-300">
+                  <li>- Feedback opgehaald bij MKC-collega's</li>
+                  <li>- Teksten aangescherpt voor duidelijkere uitleg</li>
+                  <li>- Interactieflow verbeterd op basis van opmerkingen</li>
+                </ul>
+              </section>
+
+              {/* 12. REFLECTIE */}
+              <section className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="glass-card rounded-xl p-5 border border-white/10">
+                  <h3 className="text-lg font-bold text-white mb-3 flex items-center gap-2">
+                    <FiAward className="text-emerald-300" /> Sterktes
+                  </h3>
+                  <ul className="space-y-2 text-gray-300 text-sm">
+                    <li>✓ Sterk concept en duidelijke richting</li>
+                    <li>✓ Werkend interactief prototype</li>
+                    <li>✓ Goede UX-denkwijze</li>
+                    <li>✓ Sterke combinatie van design en code</li>
+                  </ul>
+                </div>
+                <div className="glass-card rounded-xl p-5 border border-white/10">
+                  <h3 className="text-lg font-bold text-white mb-3 flex items-center gap-2">
+                    <FiClock className="text-amber-300" /> Verbeterpunten
+                  </h3>
+                  <ul className="space-y-2 text-gray-300 text-sm">
+                    <li>→ Meer visuele afwerking en polish</li>
+                    <li>→ Meer iteraties in vroege fase</li>
+                    <li>→ Strakkere planning en tijdsmanagement</li>
+                  </ul>
+                </div>
+              </section>
+
+              {/* 13. FINAL TAKEAWAY */}
+              <section className="glass-card rounded-xl p-5 border border-white/10">
+                <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                  <FiBookOpen className="text-purple-300" /> Eindconclusie
+                </h3>
+                <p className="text-gray-300 leading-relaxed">
+                  Dit project laat zien dat ik UX design, storytelling en
+                  front-end development kan combineren tot een interactieve
+                  ervaring die gebruikers daadwerkelijk helpt bij een complexe
+                  keuze.
+                </p>
+              </section>
+
+              {/* 14. VIEW PROJECT */}
+              <section className="glass-card rounded-xl p-5 border border-white/10">
+                <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                  <FiPlay className="text-red-300" /> Bekijk project
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+                  <a
+                    href={inoPrototypeLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center px-4 py-2.5 rounded-lg bg-blue-600/80 hover:bg-blue-500 text-white font-semibold transition-colors"
+                  >
+                    Prototype link
+                  </a>
+                  <a
+                    href={inoCodeLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center px-4 py-2.5 rounded-lg bg-purple-600/80 hover:bg-purple-500 text-white font-semibold transition-colors"
+                  >
+                    Code preview
+                  </a>
+                  <a
+                    href={inoDemoLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center px-4 py-2.5 rounded-lg bg-pink-600/80 hover:bg-pink-500 text-white font-semibold transition-colors"
+                  >
+                    Interactie demo (gif/video)
+                  </a>
+                </div>
+                <p className="text-gray-400 text-sm mt-3">
+                  Voeg je definitieve links toe in projectsData.json onder
+                  additionalActions voor dit project.
+                </p>
               </section>
             </div>
           )}
