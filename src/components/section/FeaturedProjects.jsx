@@ -8,6 +8,10 @@ import usoMainImage from "../../assets/Projecten/Leerjaar 1/p2/usomain.jpg";
 import cvaMainImage from "../../assets/Projecten/Leerjaar 1/p2/cvafotomain.jpg";
 import pstMainImage from "../../assets/Projecten/Leerjaar 1/p2/pstmain.jpg";
 import inoMainImage from "../../assets/Projecten/Leerjaar 1/P3/inomain.png";
+import piaMainImage from "../../assets/Projecten/Leerjaar 1/P3/piamain.jpg";
+import iniMainImage from "../../assets/Projecten/Leerjaar 1/p4/inimain.jpg";
+import pedMainImage from "../../assets/Projecten/Leerjaar 1/p4/pedmain.jpg";
+import oweMainImage from "../../assets/Projecten/Leerjaar 1/p4/owemain.jpg";
 
 // Filter to get only featured projects (you can mark them in JSON)
 // For now, let's get the best projects from each category
@@ -16,7 +20,7 @@ const getFeaturedProjects = () => {
     projects.find((p) => p.title === "DIO - Driven by Design"),
     projects.find((p) => p.title === "USO - Usability Ontwerp"), // Strong UX project
     projects.find((p) => p.title === "MWE - Mediawijsheid"), // Good frontend showcase
-    projects.find((p) => p.title === "OXR - Experience Design in VR/AR"), // Innovative concept
+    projects.find((p) => p.title === "INI - Interactieve Interface"), // Innovative concept
   ].filter(Boolean); // Remove undefined
 
   return featured.length >= 3 ? featured.slice(0, 3) : projects.slice(0, 3);
@@ -89,10 +93,23 @@ export const FeaturedProjects = ({ onOpenCaseStudy }) => {
                           ) ||
                           project.title.includes("INO - Interactief Ontwerp")
                         ? inoMainImage
-                        : project.title.includes("PST") ||
-                            project.title.includes("SAGANET")
-                          ? pstMainImage
-                          : project.img.src;
+                        : project.title.includes("See What You") ||
+                            project.title.includes("Hear What You") ||
+                            project.title.includes(
+                              "INI - Interactieve Interface",
+                            )
+                          ? iniMainImage
+                          : project.title.includes("PED") ||
+                              project.title.includes("Hanze Glasses")
+                            ? pedMainImage
+                            : project.title.toLowerCase().includes("owe")
+                              ? oweMainImage
+                              : project.title.toLowerCase().includes("pia")
+                                ? piaMainImage
+                                : project.title.includes("PST") ||
+                                    project.title.includes("SAGANET")
+                                  ? pstMainImage
+                                  : project.img.src;
               return (
                 <div
                   key={`featured-${index}`}

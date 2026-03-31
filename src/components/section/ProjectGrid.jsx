@@ -7,6 +7,10 @@ import usoMainImage from "../../assets/Projecten/Leerjaar 1/p2/usomain.jpg";
 import cvaMainImage from "../../assets/Projecten/Leerjaar 1/p2/cvafotomain.jpg";
 import pstMainImage from "../../assets/Projecten/Leerjaar 1/p2/pstmain.jpg";
 import inoMainImage from "../../assets/Projecten/Leerjaar 1/P3/inomain.png";
+import piaMainImage from "../../assets/Projecten/Leerjaar 1/P3/piamain.jpg";
+import iniMainImage from "../../assets/Projecten/Leerjaar 1/p4/inimain.jpg";
+import pedMainImage from "../../assets/Projecten/Leerjaar 1/p4/pedmain.jpg";
+import oweMainImage from "../../assets/Projecten/Leerjaar 1/p4/owemain.jpg";
 
 export const ProjectGrid = ({
   projects,
@@ -67,10 +71,21 @@ export const ProjectGrid = ({
                     project.title.includes("Interactive Gear Selection") ||
                     project.title.includes("INO - Interactief Ontwerp")
                   ? inoMainImage
-                  : project.title.toLowerCase().includes("pst") ||
-                      project.title.toLowerCase().includes("saganet")
-                    ? pstMainImage
-                    : project.img.src;
+                  : project.title.includes("See What You") ||
+                      project.title.includes("Hear What You") ||
+                      project.title.includes("INI - Interactieve Interface")
+                    ? iniMainImage
+                    : project.title.includes("PED") ||
+                        project.title.includes("Hanze Glasses")
+                      ? pedMainImage
+                      : project.title.toLowerCase().includes("owe")
+                        ? oweMainImage
+                        : project.title.toLowerCase().includes("pia")
+                          ? piaMainImage
+                          : project.title.toLowerCase().includes("pst") ||
+                              project.title.toLowerCase().includes("saganet")
+                            ? pstMainImage
+                            : project.img.src;
 
         return (
           <RevealOnScroll key={`project-${index}`} delay={index * 50}>

@@ -43,6 +43,20 @@ import pstDesignDocument from "../../assets/Projecten/Leerjaar 1/p2/PST_design_d
 import inoMainImage from "../../assets/Projecten/Leerjaar 1/P3/inomain.png";
 import inoFoto2Image from "../../assets/Projecten/Leerjaar 1/P3/ino2.jpg";
 import inoFoto3Image from "../../assets/Projecten/Leerjaar 1/P3/ino3.jpg";
+import piaMainImage from "../../assets/Projecten/Leerjaar 1/P3/piamain.jpg";
+import piaFoto2Image from "../../assets/Projecten/Leerjaar 1/P3/pia2.jpg";
+import piaFoto3Image from "../../assets/Projecten/Leerjaar 1/P3/pia3.jpg";
+import piaDesignDocument from "../../assets/Projecten/Leerjaar 1/P3/ontwikkelportfolio_RubenJanssen_469974.pdf";
+import iniMainImage from "../../assets/Projecten/Leerjaar 1/p4/inimain.jpg";
+import iniFoto2Image from "../../assets/Projecten/Leerjaar 1/p4/ini2.jpg";
+import iniFoto3Image from "../../assets/Projecten/Leerjaar 1/p4/ini3.jpg";
+import oweMainImage from "../../assets/Projecten/Leerjaar 1/p4/owemain.jpg";
+import oweFoto1Image from "../../assets/Projecten/Leerjaar 1/p4/owe1.jpg";
+import oweFoto3Image from "../../assets/Projecten/Leerjaar 1/p4/owe3.jpg";
+import oweDesignDocument from "../../assets/Projecten/Leerjaar 1/p4/OWE_Ruben_Janssen_469974.pdf";
+import pedMainImage from "../../assets/Projecten/Leerjaar 1/p4/pedmain.jpg";
+import pedFoto2Image from "../../assets/Projecten/Leerjaar 1/p4/ped2.jpg";
+import pedFoto3Image from "../../assets/Projecten/Leerjaar 1/p4/ped3.jpg";
 
 const disciplineItems = [
   {
@@ -158,6 +172,39 @@ const isInoMkcProject = (project) => {
   );
 };
 
+const isPiaProject = (project) => {
+  if (!project?.title) return false;
+  return project.title.toLowerCase().includes("pia");
+};
+
+const isOweProject = (project) => {
+  if (!project?.title) return false;
+  const title = project.title.toLowerCase();
+  return title.includes("owe") || title.includes("orientatie op het werkveld");
+};
+
+const isPedProject = (project) => {
+  if (!project?.title) return false;
+  const title = project.title.toLowerCase();
+  return (
+    title.includes("ped") ||
+    title.includes("hanze glasses") ||
+    title.includes("future of learning") ||
+    title.includes("toekomst van leren")
+  );
+};
+
+const isSensoryInstallationProject = (project) => {
+  if (!project?.title) return false;
+  const title = project.title.toLowerCase();
+  return (
+    title.includes("see what you don't see") ||
+    title.includes("hear what you don't hear") ||
+    title.includes("oxr") ||
+    title.includes("ini - interactieve interface")
+  );
+};
+
 const pofTags = [
   "UX Design",
   "Onderzoek",
@@ -261,6 +308,10 @@ export const ProjectCaseStudyModal = ({ project, onClose }) => {
   const showCvaLayout = isCvaProject(project);
   const showPstLayout = isPstProject(project);
   const showInoLayout = isInoMkcProject(project);
+  const showPiaLayout = isPiaProject(project);
+  const showOweLayout = isOweProject(project);
+  const showPedLayout = isPedProject(project);
+  const showSensoryLayout = isSensoryInstallationProject(project);
   const pstVideoUrl =
     project.additionalActions?.find((item) => item.type === "video")?.href ||
     "https://youtu.be/Jr5GPxfLm9g";
@@ -299,13 +350,21 @@ export const ProjectCaseStudyModal = ({ project, onClose }) => {
               <h2 className="text-3xl sm:text-4xl font-bold text-white leading-tight">
                 {showDioLayout
                   ? "Driven by Design"
-                  : showInoLayout
-                    ? "INO - Interactief Ontwerp"
-                    : showUsoLayout
-                      ? "USO - Usability Ontwerp"
-                      : showPstLayout
-                        ? "PST – SAGANET Storytelling Campaign"
-                        : project.title}
+                  : showOweLayout
+                    ? "OWE - Mijn Portfolio-Website"
+                    : showPedLayout
+                      ? "Hanze Glasses - De Toekomst van Leren"
+                      : showSensoryLayout
+                        ? "See What You Don't See, Hear What You Don't Hear"
+                        : showPiaLayout
+                          ? "Hanzey - Digital Mental Support Platform"
+                          : showInoLayout
+                            ? "INO - Interactief Ontwerp"
+                            : showUsoLayout
+                              ? "USO - Usability Ontwerp"
+                              : showPstLayout
+                                ? "PST – SAGANET Storytelling Campaign"
+                                : project.title}
               </h2>
             </div>
             <button
@@ -323,6 +382,10 @@ export const ProjectCaseStudyModal = ({ project, onClose }) => {
             !showUsoLayout &&
             !showCvaLayout &&
             !showInoLayout &&
+            !showSensoryLayout &&
+            !showPiaLayout &&
+            !showOweLayout &&
+            !showPedLayout &&
             !showPstLayout && (
               <div className="space-y-6">
                 <p className="text-gray-300">
@@ -602,8 +665,8 @@ export const ProjectCaseStudyModal = ({ project, onClose }) => {
 
               <section className="glass-card rounded-xl p-5 border border-white/10">
                 <h3 className="text-xl font-bold text-white mb-3 flex items-center gap-2">
-                  <FiSearch className="text-cyan-300" /> Onderzoeksfase
-                  (Begrijpen en Observeren)
+                  <FiMessageSquare className="text-pink-300" />
+                  Ontwerpuitdaging
                 </h3>
                 <div className="rounded-lg overflow-hidden border border-white/10 mb-4">
                   <img
@@ -1388,6 +1451,926 @@ export const ProjectCaseStudyModal = ({ project, onClose }) => {
                   Voeg je definitieve links toe in projectsData.json onder
                   additionalActions voor dit project.
                 </p>
+              </section>
+            </div>
+          )}
+
+          {showPiaLayout && (
+            <div className="space-y-8 sm:space-y-10">
+              {/* 1. HERO SECTION */}
+              <div className="relative h-64 sm:h-80 rounded-xl overflow-hidden border border-white/10">
+                <img
+                  src={piaMainImage}
+                  alt="PIA calling card"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
+                  <div>
+                    <p className="text-sm text-purple-300 mb-2">Case Study</p>
+                    <h3 className="text-2xl font-bold text-white">
+                      Designing accessible mental health support for students
+                    </h3>
+                    <p className="text-gray-200 text-sm sm:text-base mt-2">
+                      Een digitaal platform met AI-chatbot en interactieve
+                      roadmap om studenten op een veilige en toegankelijke
+                      manier te begeleiden.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex flex-wrap gap-2">
+                {[
+                  "UX Design",
+                  "Service Design",
+                  "Concept Development",
+                  "Team Project",
+                  "Interaction Design",
+                ].map((tag) => (
+                  <span
+                    key={tag}
+                    className="px-3 py-1.5 rounded-full text-xs font-semibold border border-cyan-400/40 bg-cyan-500/15 text-cyan-100"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+
+              {/* 2. PROJECT OVERVIEW */}
+              <section className="glass-card rounded-xl p-5 border border-white/10">
+                <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                  <FiTarget className="text-blue-300" /> Projectoverzicht
+                </h3>
+                <div className="space-y-3 text-gray-300">
+                  <p>
+                    <strong>Context:</strong> Hanze-studenten die mentale druk,
+                    stress en eenzaamheid ervaren.
+                  </p>
+                  <p>
+                    <strong>Probleem:</strong> Studenten ervaren drempels om
+                    hulp te zoeken.
+                  </p>
+                  <p>
+                    <strong>Inzicht:</strong> Het probleem zit niet alleen in
+                    wachttijden, maar in het hele proces van hulp zoeken.
+                  </p>
+                </div>
+              </section>
+
+              {/* 3. SOLUTION */}
+              <section className="glass-card rounded-xl p-5 border border-white/10">
+                <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                  <FiCheckCircle className="text-emerald-300" /> Oplossing
+                </h3>
+                <ul className="space-y-2 text-gray-300">
+                  <li>- AI chatbot Hanzey voor laagdrempelige ondersteuning</li>
+                  <li>- Interactieve roadmap voor heldere vervolgstappen</li>
+                  <li>- Focus op veiligheid, vertrouwen en anonimiteit</li>
+                  <li>- Communicatie zonder oordeel, passend bij studenten</li>
+                </ul>
+              </section>
+
+              {/* 4. MY ROLE */}
+              <section className="glass-card rounded-xl p-5 border border-white/10">
+                <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                  <FiUser className="text-cyan-300" /> Mijn rol
+                </h3>
+                <ul className="space-y-2 text-gray-300">
+                  <li>- Projectstructuur opgezet en bewaakt in ClickUp</li>
+                  <li>- Bijdrage aan conceptontwikkeling</li>
+                  <li>- Ondersteuning bij UX-beslissingen</li>
+                  <li>- Ideeën vertaald naar visuele richting</li>
+                </ul>
+              </section>
+
+              {/* 5. RESEARCH & INSIGHTS */}
+              <section className="glass-card rounded-xl p-5 border border-white/10">
+                <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                  <FiSearch className="text-cyan-300" /> Research & inzichten
+                </h3>
+                <ul className="space-y-2 text-gray-300 mb-4">
+                  <li>- Deskresearch naar mentale gezondheid en eenzaamheid</li>
+                  <li>- Persona-ontwikkeling op basis van studentgedrag</li>
+                  <li>- Analyse van drempels in het hulpzoekproces</li>
+                </ul>
+                <div className="p-4 rounded-lg border border-cyan-400/30 bg-cyan-500/10">
+                  <p className="text-cyan-200 font-semibold mb-1">
+                    Kerninzicht
+                  </p>
+                  <p className="text-gray-300">
+                    Studenten hebben behoefte aan snelle, veilige en
+                    oordeelvrije ondersteuning met een duidelijke ingang.
+                  </p>
+                </div>
+              </section>
+
+              {/* 6. PROBLEM DEFINITION */}
+              <section className="glass-card rounded-xl p-5 border border-white/10">
+                <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                  <FiClipboard className="text-orange-300" /> Probleemdefinitie
+                </h3>
+                <p className="text-gray-300 mb-3">
+                  Studenten twijfelen om hulp te zoeken door complexiteit,
+                  stigma en het ontbreken van toegankelijke startpunten.
+                </p>
+                <div className="p-3 rounded-lg border border-orange-400/30 bg-orange-500/10">
+                  <p className="text-orange-200 font-semibold">HMW-vraag</p>
+                  <p className="text-gray-300 italic">
+                    How might we make mental support more accessible and less
+                    intimidating for students?
+                  </p>
+                </div>
+              </section>
+
+              {/* 7. IDEATION */}
+              <section className="glass-card rounded-xl p-5 border border-white/10">
+                <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                  <FiMessageSquare className="text-pink-300" /> Ideation
+                </h3>
+                <ul className="space-y-2 text-gray-300">
+                  <li>- Crazy 8 sessie voor snelle conceptverkenning</li>
+                  <li>
+                    - Ideeën: chatbot, roadmap, hologram-achtige assistent
+                  </li>
+                  <li>- Selectie op haalbaarheid en impact</li>
+                </ul>
+              </section>
+
+              {/* 8. CONCEPT DEVELOPMENT */}
+              <section className="glass-card rounded-xl p-5 border border-white/10">
+                <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                  <FiCompass className="text-amber-300" /> Conceptontwikkeling
+                </h3>
+                <div className="space-y-3 text-gray-300">
+                  <p>
+                    <strong>Chatbot:</strong> Biedt emotionele steun en eerste
+                    begeleiding.
+                  </p>
+                  <p>
+                    <strong>Roadmap:</strong> Geeft structuur en overzicht in
+                    vervolgstappen richting hulp.
+                  </p>
+                  <p>
+                    <strong>Waarom de combinatie werkt:</strong> Emotionele
+                    veiligheid en praktische richting versterken elkaar.
+                  </p>
+                </div>
+              </section>
+
+              {/* 9. DESIGN PROCESS */}
+              <section className="glass-card rounded-xl p-5 border border-white/10">
+                <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                  <FiLayout className="text-indigo-300" /> Designproces
+                </h3>
+                <ul className="space-y-2 text-gray-300">
+                  <li>- Moodboards voor toon, rust en vertrouwen</li>
+                  <li>- Lo-fi naar hi-fi ontwerpen voor interface en flow</li>
+                  <li>
+                    - UX-keuzes gericht op eenvoud, duidelijkheid en vertrouwen
+                  </li>
+                </ul>
+              </section>
+
+              {/* 10. TEAMWORK & PROCESS */}
+              <section className="glass-card rounded-xl p-5 border border-white/10">
+                <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                  <FiUsers className="text-emerald-300" /> Teamwork & proces
+                </h3>
+                <ul className="space-y-2 text-gray-300">
+                  <li>- Scrum-werkwijze met duidelijke sprintmomenten</li>
+                  <li>- ClickUp-structuur voor planning en taakverdeling</li>
+                  <li>- Communicatie via vaste tools en ritme</li>
+                  <li>
+                    - Gedeelde verantwoordelijkheid in concept en uitvoering
+                  </li>
+                </ul>
+              </section>
+
+              {/* 11. TESTING & ITERATION */}
+              <section className="glass-card rounded-xl p-5 border border-white/10">
+                <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                  <FiCheckCircle className="text-green-300" /> Testen & itereren
+                </h3>
+                <ul className="space-y-2 text-gray-300">
+                  <li>- Feedbacksessies met gebruikers</li>
+                  <li>- Tone of voice aangepast voor meer veiligheid</li>
+                  <li>- Interface versimpeld voor betere duidelijkheid</li>
+                </ul>
+              </section>
+
+              {/* 12. FINAL RESULT */}
+              <section className="glass-card rounded-xl p-5 border border-white/10">
+                <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                  <FiBox className="text-cyan-300" /> Eindresultaat
+                </h3>
+                <ul className="space-y-2 text-gray-300">
+                  <li>- Werkend concept van chatbot + roadmap</li>
+                  <li>- Heldere interactieflow van vraag naar vervolgstap</li>
+                  <li>- Toegankelijke en kalme gebruikerservaring</li>
+                </ul>
+              </section>
+
+              {/* 13. REFLECTION */}
+              <section className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="glass-card rounded-xl p-5 border border-white/10">
+                  <h3 className="text-lg font-bold text-white mb-3 flex items-center gap-2">
+                    <FiAward className="text-emerald-300" /> Sterktes
+                  </h3>
+                  <ul className="space-y-2 text-gray-300 text-sm">
+                    <li>✓ Sterk concept met maatschappelijke relevantie</li>
+                    <li>✓ Gestructureerde samenwerking in teamcontext</li>
+                    <li>✓ Goede UX-denkwijze in keuzes en flow</li>
+                  </ul>
+                </div>
+                <div className="glass-card rounded-xl p-5 border border-white/10">
+                  <h3 className="text-lg font-bold text-white mb-3 flex items-center gap-2">
+                    <FiClock className="text-amber-300" /> Verbeterpunten
+                  </h3>
+                  <ul className="space-y-2 text-gray-300 text-sm">
+                    <li>→ Meer persoonlijke bijdrage in visueel design</li>
+                    <li>→ Meer iteraties in de uitwerkingsfase</li>
+                    <li>→ Strakker tijdmanagement</li>
+                  </ul>
+                </div>
+              </section>
+
+              {/* 14. FINAL TAKEAWAY */}
+              <section className="glass-card rounded-xl p-5 border border-white/10">
+                <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                  <FiBookOpen className="text-purple-300" /> Final takeaway
+                </h3>
+                <p className="text-gray-300 leading-relaxed">
+                  This project strengthened my ability to design meaningful
+                  digital experiences in a team setting.
+                </p>
+              </section>
+
+              {/* 15. VISUALS */}
+              <section className="glass-card rounded-xl p-5 border border-white/10">
+                <h3 className="text-xl font-bold text-white mb-3">Visuals</h3>
+                <p className="text-gray-300 mb-4">
+                  Chatbot UI, roadmap-schermen en procesbeelden van de
+                  teamaanpak.
+                </p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="rounded-lg overflow-hidden border border-white/10">
+                    <img
+                      src={piaFoto2Image}
+                      alt="Hanzey chatbot of roadmap visual"
+                      className="w-full h-52 object-cover"
+                    />
+                  </div>
+                  <div className="rounded-lg overflow-hidden border border-white/10">
+                    <img
+                      src={piaFoto3Image}
+                      alt="Hanzey proces of teamvisual"
+                      className="w-full h-52 object-cover"
+                    />
+                  </div>
+                </div>
+              </section>
+
+              {/* 16. DOWNLOAD */}
+              <section className="glass-card rounded-xl p-5 border border-white/10">
+                <h3 className="text-xl font-bold text-white mb-3 flex items-center gap-2">
+                  <FiDownload className="text-cyan-300" /> Design document
+                </h3>
+                <p className="text-gray-300 mb-4">
+                  Download het ontwerpdocument van PIA/Hanzey.
+                </p>
+                <a
+                  href={piaDesignDocument}
+                  download="ontwikkelportfolio_RubenJanssen_469974.pdf"
+                  className="inline-flex items-center gap-2 px-4 py-2.5 bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white font-semibold rounded-lg transition-all duration-300"
+                >
+                  <FiDownload />
+                  Download design document
+                </a>
+              </section>
+            </div>
+          )}
+
+          {showPedLayout && (
+            <div className="space-y-8 sm:space-y-10">
+              <div className="relative h-64 sm:h-80 rounded-xl overflow-hidden border border-white/10">
+                <img
+                  src={pedMainImage}
+                  alt="Hanze Glasses conceptvisual"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
+                  <div>
+                    <h3 className="text-2xl font-bold text-white mb-2">
+                      Ontwerpen van een naadloze leerervaring met draagbare
+                      technologie
+                    </h3>
+                    <p className="text-gray-200 text-sm sm:text-base">
+                      Een concept voor AR-brillen die de smartphone vervangen in
+                      het onderwijs.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex flex-wrap gap-2">
+                {[
+                  "Experience Design",
+                  "Future Design",
+                  "Interaction Design",
+                  "Concept Design",
+                ].map((tag) => (
+                  <span
+                    key={tag}
+                    className="px-3 py-1.5 rounded-full text-xs font-semibold border border-cyan-400/40 bg-cyan-500/15 text-cyan-100"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+
+              <section className="glass-card rounded-xl p-5 border border-white/10">
+                <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                  <FiTarget className="text-blue-300" /> Projectoverzicht
+                </h3>
+                <div className="space-y-3 text-gray-300">
+                  <p>
+                    <strong>Context:</strong> School of the Future, waar
+                    leeromgevingen steeds digitaler en meer verbonden worden.
+                  </p>
+                  <p>
+                    <strong>Doel:</strong> De leerervaring verbeteren door
+                    frictie tussen student, informatie en schoolsystemen te
+                    verminderen.
+                  </p>
+                  <p>
+                    <strong>Focus:</strong> Technologie + usability in een
+                    naadloze onderwijsflow.
+                  </p>
+                </div>
+              </section>
+
+              <section className="glass-card rounded-xl p-5 border border-white/10">
+                <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                  <FiClipboard className="text-orange-300" /> Probleem
+                </h3>
+                <p className="text-gray-300 mb-3">
+                  Studenten leunen sterk op smartphones, wat zorgt voor
+                  afleiding en gefragmenteerde leermomenten.
+                </p>
+                <p className="text-gray-300">
+                  Onderwijs mist nog steeds een naadloze integratie van
+                  technologie die focus ondersteunt in plaats van onderbreekt.
+                </p>
+              </section>
+
+              <section className="glass-card rounded-xl p-5 border border-white/10">
+                <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                  <FiMessageSquare className="text-pink-300" /> Design Challenge
+                </h3>
+                <p className="text-gray-300 italic">
+                  Hoe kunnen we een toekomstige leerervaring ontwerpen die
+                  naadloos, persoonlijk en afleidingsvrij is?
+                </p>
+              </section>
+
+              <section className="glass-card rounded-xl p-5 border border-white/10">
+                <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                  <FiCompass className="text-amber-300" /> Concept
+                </h3>
+                <ul className="space-y-2 text-gray-300">
+                  <li>- AR-brillen vervangen de smartphone als leerdevice</li>
+                  <li>- Informatie is altijd contextueel beschikbaar</li>
+                  <li>
+                    - Ondersteunt een doorlopende leerflow gedurende de dag
+                  </li>
+                  <li>- Personaliseert content en begeleiding per student</li>
+                </ul>
+              </section>
+
+              <section className="glass-card rounded-xl p-5 border border-white/10">
+                <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                  <FiCheckCircle className="text-green-300" />{" "}
+                  Gebruikerservaring
+                </h3>
+                <ul className="space-y-2 text-gray-300">
+                  <li>
+                    - Studenten lopen de school binnen met direct overzicht
+                  </li>
+                  <li>- Realtime informatie verschijnt op het juiste moment</li>
+                  <li>
+                    - Navigatie, planning en communicatie zijn geintegreerd
+                  </li>
+                  <li>- Minder stress en meer overzicht gedurende de dag</li>
+                </ul>
+              </section>
+
+              <section className="glass-card rounded-xl p-5 border border-white/10">
+                <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                  <FiSearch className="text-cyan-300" /> Onderzoek
+                </h3>
+                <ul className="space-y-2 text-gray-300">
+                  <li>- Hanze learning vision als strategische basis</li>
+                  <li>
+                    - Persona-ontwikkeling voor toekomstgerichte studenten
+                  </li>
+                  <li>
+                    - Belangrijkste behoeften: structuur, duidelijkheid en
+                    minder stress
+                  </li>
+                </ul>
+              </section>
+
+              <section className="glass-card rounded-xl p-5 border border-white/10">
+                <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                  <FiMessageSquare className="text-pink-300" /> Ideevorming
+                </h3>
+                <ul className="space-y-2 text-gray-300">
+                  <li>- Brainstormsessies met brede ideegeneratie</li>
+                  <li>- Conceptverkenning vanuit meerdere perspectieven</li>
+                  <li>
+                    - Future scenario's uitgewerkt om relevantie en usability te
+                    toetsen
+                  </li>
+                </ul>
+              </section>
+
+              <section className="glass-card rounded-xl p-5 border border-white/10">
+                <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                  <FiBox className="text-emerald-300" /> Prototyping
+                </h3>
+                <p className="text-gray-300 mb-4">
+                  De prototypefase richtte zich op conceptvisuals, systeemdenken
+                  en interactieflows die laten zien hoe de bril werkt binnen een
+                  realistische schooldag.
+                </p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="rounded-lg overflow-hidden border border-white/10">
+                    <img
+                      src={pedFoto2Image}
+                      alt="Hanze Glasses conceptvisual en systeemoverzicht"
+                      className="w-full h-52 object-cover"
+                    />
+                  </div>
+                  <div className="rounded-lg overflow-hidden border border-white/10">
+                    <img
+                      src={pedFoto3Image}
+                      alt="Hanze Glasses interactieflow"
+                      className="w-full h-52 object-cover"
+                    />
+                  </div>
+                </div>
+              </section>
+
+              <section className="glass-card rounded-xl p-5 border border-white/10">
+                <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                  <FiUsers className="text-emerald-300" /> Teamsamenwerking
+                </h3>
+                <div className="space-y-3 text-gray-300">
+                  <p>
+                    We misten in het begin structuur. Rollen waren niet helder
+                    verdeeld, wat zorgde voor onduidelijkheid en vertraging.
+                  </p>
+                  <p>
+                    Dat had direct impact op de projectflow en onderlinge
+                    afstemming.
+                  </p>
+                  <p>
+                    Later hebben we dit omgedraaid door beter te communiceren,
+                    verwachtingen te alignen en te werken vanuit een gedeelde
+                    visie.
+                  </p>
+                </div>
+              </section>
+
+              <section className="glass-card rounded-xl p-5 border border-white/10">
+                <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                  <FiLayers className="text-cyan-300" /> Eindconcept
+                </h3>
+                <p className="text-gray-300 leading-relaxed">
+                  Hanze Glasses is een wearable concept dat contextuele
+                  lesinformatie, navigatie en communicatie direct in het
+                  zichtveld van de student brengt. Dit is relevant omdat het
+                  gefragmenteerd smartphonegedrag omzet naar een gefocuste,
+                  rustige leerervaring en daarmee een nieuwe richting voor
+                  onderwijs opent.
+                </p>
+              </section>
+
+              <section className="glass-card rounded-xl p-5 border border-white/10">
+                <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                  <FiUser className="text-cyan-300" /> Mijn rol
+                </h3>
+                <ul className="space-y-2 text-gray-300">
+                  <li>- Conceptdenken en richting bepalen</li>
+                  <li>- UX-beslissingen in flow en interactie</li>
+                  <li>- Actieve bijdrage aan ideeontwikkeling</li>
+                </ul>
+              </section>
+
+              <section className="glass-card rounded-xl p-5 border border-white/10">
+                <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                  <FiClock className="text-amber-300" /> Reflectie
+                </h3>
+                <ul className="space-y-2 text-gray-300">
+                  <li>- Teamfouten maakten zichtbaar waar proces stukloopt</li>
+                  <li>
+                    - Structuur en rolhelderheid zijn essentieel voor
+                    kwaliteitswerk
+                  </li>
+                  <li>
+                    - Volgende keer: eerder afstemmen, sneller communiceren,
+                    samen besluiten
+                  </li>
+                </ul>
+              </section>
+
+              <section className="glass-card rounded-xl p-5 border border-white/10">
+                <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                  <FiBookOpen className="text-purple-300" /> Kernles
+                </h3>
+                <p className="text-gray-300 leading-relaxed italic">
+                  Goed design gaat niet alleen over ideeen, maar over
+                  samenwerking en uitvoering.
+                </p>
+              </section>
+
+              <section className="glass-card rounded-xl p-5 border border-white/10">
+                <h3 className="text-xl font-bold text-white mb-3 flex items-center gap-2">
+                  <FiDownload className="text-cyan-300" /> Design document
+                </h3>
+                <p className="text-gray-300 mb-4">
+                  Download het volledige PED-design document van dit project.
+                </p>
+                <a
+                  href={project.action?.href}
+                  download={project.action?.filename || "PED_Ruben_Janssen.pdf"}
+                  className="inline-flex items-center gap-2 px-4 py-2.5 bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white font-semibold rounded-lg transition-all duration-300"
+                >
+                  <FiDownload />
+                  {project.action?.label || "Design document downloaden"}
+                </a>
+              </section>
+            </div>
+          )}
+
+          {showOweLayout && (
+            <div className="space-y-8 sm:space-y-10">
+              <div className="relative h-64 sm:h-80 rounded-xl overflow-hidden border border-white/10">
+                <img
+                  src={oweMainImage}
+                  alt="OWE portfolio hoofdvisual"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
+                  <div>
+                    <h3 className="text-2xl font-bold text-white mb-2">
+                      Van concept naar werkende portfolio-ervaring
+                    </h3>
+                    <p className="text-gray-200 text-sm sm:text-base">
+                      Binnen OWE ontwikkelde ik mijn portfolio-website als
+                      fundament voor mijn professionele presentatie.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex flex-wrap gap-2">
+                {["UX/UI", "Web Design", "React", "Tailwind", "Front-end"].map(
+                  (tag) => (
+                    <span
+                      key={tag}
+                      className="px-3 py-1.5 rounded-full text-xs font-semibold border border-purple-400/40 bg-purple-500/15 text-purple-100"
+                    >
+                      {tag}
+                    </span>
+                  ),
+                )}
+              </div>
+
+              <section className="glass-card rounded-xl p-5 border border-white/10">
+                <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                  <FiTarget className="text-blue-300" /> Projectoverzicht
+                </h3>
+                <div className="space-y-3 text-gray-300">
+                  <p>
+                    <strong>Doel:</strong> Een heldere, visueel sterke en
+                    gebruiksvriendelijke portfolio-website bouwen waarin mijn
+                    projecten centraal staan.
+                  </p>
+                  <p>
+                    <strong>Aanpak:</strong> UX-denken gecombineerd met
+                    front-end development in React en Tailwind.
+                  </p>
+                  <p>
+                    <strong>Resultaat:</strong> Een schaalbare basis die ik
+                    doorlopend kan uitbreiden met nieuwe case studies.
+                  </p>
+                </div>
+              </section>
+
+              <section className="glass-card rounded-xl p-5 border border-white/10">
+                <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                  <FiBox className="text-cyan-300" /> Visuals
+                </h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="rounded-lg overflow-hidden border border-white/10">
+                    <img
+                      src={oweFoto1Image}
+                      alt="OWE visual 1"
+                      className="w-full h-52 object-cover"
+                    />
+                  </div>
+                  <div className="rounded-lg overflow-hidden border border-white/10">
+                    <img
+                      src={oweFoto3Image}
+                      alt="OWE visual 2"
+                      className="w-full h-52 object-cover"
+                    />
+                  </div>
+                </div>
+              </section>
+
+              <section className="glass-card rounded-xl p-5 border border-white/10">
+                <h3 className="text-xl font-bold text-white mb-3 flex items-center gap-2">
+                  <FiDownload className="text-cyan-300" /> Design document
+                </h3>
+                <p className="text-gray-300 mb-4">
+                  Download het volledige OWE-design document.
+                </p>
+                <a
+                  href={oweDesignDocument}
+                  download="OWE_Ruben_Janssen_469974.pdf"
+                  className="inline-flex items-center gap-2 px-4 py-2.5 bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white font-semibold rounded-lg transition-all duration-300"
+                >
+                  <FiDownload />
+                  OWE document downloaden
+                </a>
+              </section>
+            </div>
+          )}
+
+          {showSensoryLayout && (
+            <div className="space-y-8 sm:space-y-10">
+              {/* 1. HERO SECTION */}
+              <div className="relative h-64 sm:h-80 rounded-xl overflow-hidden border border-white/10">
+                <img
+                  src={iniMainImage}
+                  alt={project.img?.alt || "Multisensory installation visual"}
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
+                  <div>
+                    <h3 className="text-2xl font-bold text-white mb-2">
+                      Designing an inclusive multisensory experience
+                    </h3>
+                    <p className="text-gray-200 text-sm sm:text-base">
+                      An interactive installation translating sound into light
+                      and color into feeling.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex flex-wrap gap-2">
+                {[
+                  "Experience Design",
+                  "Interaction Design",
+                  "Physical Computing",
+                  "Inclusive Design",
+                ].map((tag) => (
+                  <span
+                    key={tag}
+                    className="px-3 py-1.5 rounded-full text-xs font-semibold border border-amber-400/40 bg-amber-500/15 text-amber-100"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+
+              {/* 2. PROJECT OVERVIEW */}
+              <section className="glass-card rounded-xl p-5 border border-white/10">
+                <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                  <FiTarget className="text-blue-300" /> Project overview
+                </h3>
+                <div className="space-y-3 text-gray-300">
+                  <p>
+                    <strong>Context:</strong> Interactive installation project
+                    focused on immersive experience design.
+                  </p>
+                  <p>
+                    <strong>Goal:</strong> Build an experience, not just an
+                    interface.
+                  </p>
+                  <p>
+                    <strong>Focus:</strong> Inclusivity for blind and deaf
+                    users.
+                  </p>
+                </div>
+              </section>
+
+              {/* 3. PROBLEM */}
+              <section className="glass-card rounded-xl p-5 border border-white/10">
+                <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                  <FiClipboard className="text-orange-300" /> Problem
+                </h3>
+                <p className="text-gray-300 mb-3">
+                  Most installations rely on vision or sound, which excludes
+                  people with sensory impairments.
+                </p>
+                <div className="p-3 rounded-lg border border-orange-400/30 bg-orange-500/10">
+                  <p className="text-orange-200 font-semibold">Key insight</p>
+                  <p className="text-gray-300">
+                    There is no shared sensory experience.
+                  </p>
+                </div>
+              </section>
+
+              {/* 4. CONCEPT */}
+              <section className="glass-card rounded-xl p-5 border border-white/10">
+                <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                  <FiCompass className="text-amber-300" /> Concept
+                </h3>
+                <ul className="space-y-2 text-gray-300">
+                  <li>- Inspired by synesthesia</li>
+                  <li>- Sound becomes light</li>
+                  <li>- Color becomes vibration</li>
+                  <li>- Multiple senses combined into one narrative</li>
+                </ul>
+              </section>
+
+              {/* 5. DESIGN CHALLENGE */}
+              <section className="glass-card rounded-xl p-5 border border-white/10">
+                <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                  <FiMessageSquare className="text-pink-300" /> Design challenge
+                </h3>
+                <p className="text-gray-300 italic">
+                  How might we design a sensory installation where blind and
+                  deaf users can experience color and sound in an equal and
+                  meaningful way?
+                </p>
+              </section>
+
+              {/* 6. EXPERIENCE FLOW */}
+              <section className="glass-card rounded-xl p-5 border border-white/10">
+                <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                  <FiLayers className="text-cyan-300" /> Experience flow
+                </h3>
+                <ul className="space-y-2 text-gray-300">
+                  <li>- Entering a dark room</li>
+                  <li>- Guided by light, sound and vibration</li>
+                  <li>- Choosing to move or stay</li>
+                  <li>- Interaction with the talking wall</li>
+                </ul>
+              </section>
+
+              {/* 7. INTERACTION DESIGN */}
+              <section className="glass-card rounded-xl p-5 border border-white/10">
+                <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                  <FiLayout className="text-indigo-300" /> Interaction design
+                </h3>
+                <ul className="space-y-2 text-gray-300">
+                  <li>- Braille navigation</li>
+                  <li>- Audio stories</li>
+                  <li>- Light signals</li>
+                  <li>- Haptic feedback</li>
+                </ul>
+              </section>
+
+              {/* 8. PROTOTYPING */}
+              <section className="glass-card rounded-xl p-5 border border-white/10">
+                <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                  <FiBox className="text-emerald-300" /> Prototyping
+                </h3>
+                <ul className="space-y-2 text-gray-300">
+                  <li>- Physical model (kijkdoos)</li>
+                  <li>- Arduino setup</li>
+                  <li>- LED + microphone experiments</li>
+                </ul>
+              </section>
+
+              {/* 9. TECHNICAL CHALLENGES */}
+              <section className="glass-card rounded-xl p-5 border border-white/10">
+                <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                  <FiClock className="text-amber-300" /> Technical challenges
+                </h3>
+                <ul className="space-y-2 text-gray-300 mb-4">
+                  <li>- Voice recognition did not work reliably</li>
+                  <li>- Sound detection was unstable in testing</li>
+                </ul>
+                <div className="p-4 rounded-lg border border-amber-400/30 bg-amber-500/10">
+                  <p className="text-amber-200 font-semibold mb-1">
+                    Design maturity
+                  </p>
+                  <p className="text-gray-300">
+                    We prioritized concept clarity over broken interaction and
+                    used storytelling to communicate the experience vision.
+                  </p>
+                </div>
+              </section>
+
+              {/* 10. FINAL EXPERIENCE */}
+              <section className="glass-card rounded-xl p-5 border border-white/10">
+                <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                  <FiCheckCircle className="text-green-300" /> Final experience
+                </h3>
+                <ul className="space-y-2 text-gray-300">
+                  <li>- Emotional impact through multisensory translation</li>
+                  <li>- Shared experience instead of separated user groups</li>
+                  <li>- Empathy creation through embodied interaction</li>
+                </ul>
+              </section>
+
+              {/* 11. MY ROLE */}
+              <section className="glass-card rounded-xl p-5 border border-white/10">
+                <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                  <FiUser className="text-cyan-300" /> My role
+                </h3>
+                <ul className="space-y-2 text-gray-300">
+                  <li>- Technical development (Arduino)</li>
+                  <li>- Concept thinking (sensory translation)</li>
+                  <li>- Interaction design decisions</li>
+                </ul>
+              </section>
+
+              {/* 12. REFLECTION */}
+              <section className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="glass-card rounded-xl p-5 border border-white/10">
+                  <h3 className="text-lg font-bold text-white mb-3 flex items-center gap-2">
+                    <FiAward className="text-emerald-300" /> Strengths
+                  </h3>
+                  <ul className="space-y-2 text-gray-300 text-sm">
+                    <li>✓ Strong concept and clear experience vision</li>
+                    <li>✓ Empathy-driven design approach</li>
+                    <li>✓ Inclusive interaction perspective</li>
+                  </ul>
+                </div>
+                <div className="glass-card rounded-xl p-5 border border-white/10">
+                  <h3 className="text-lg font-bold text-white mb-3 flex items-center gap-2">
+                    <FiClock className="text-amber-300" /> Improvements
+                  </h3>
+                  <ul className="space-y-2 text-gray-300 text-sm">
+                    <li>→ Earlier technical testing</li>
+                    <li>→ Simpler technical scope</li>
+                    <li>→ Better prioritization</li>
+                  </ul>
+                </div>
+              </section>
+
+              {/* 13. FINAL TAKEAWAY */}
+              <section className="glass-card rounded-xl p-5 border border-white/10">
+                <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                  <FiBookOpen className="text-purple-300" /> Final takeaway
+                </h3>
+                <p className="text-gray-300 leading-relaxed">
+                  I learned that meaningful interaction design is not just about
+                  technology, but about creating experiences people can feel.
+                </p>
+              </section>
+
+              {/* 14. VISUALS */}
+              <section className="glass-card rounded-xl p-5 border border-white/10">
+                <h3 className="text-xl font-bold text-white mb-3">Visuals</h3>
+                <p className="text-gray-300 mb-4">
+                  Installation renders, prototype photos, Arduino setup,
+                  sketches, and experience flow artifacts.
+                </p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="rounded-lg overflow-hidden border border-white/10">
+                    <img
+                      src={iniFoto2Image}
+                      alt="INI installatie visual 1"
+                      className="w-full h-52 object-cover"
+                    />
+                  </div>
+                  <div className="rounded-lg overflow-hidden border border-white/10">
+                    <img
+                      src={iniFoto3Image}
+                      alt="INI installatie visual 2"
+                      className="w-full h-52 object-cover"
+                    />
+                  </div>
+                </div>
+              </section>
+
+              {/* 15. DOWNLOAD PORTFOLIO */}
+              <section className="glass-card rounded-xl p-5 border border-white/10">
+                <h3 className="text-xl font-bold text-white mb-3 flex items-center gap-2">
+                  <FiDownload className="text-cyan-300" /> Portfolio download
+                </h3>
+                <p className="text-gray-300 mb-4">
+                  Download het volledige INI portfolio-document van dit project.
+                </p>
+                <a
+                  href={project.action?.href}
+                  download={
+                    project.action?.filename ||
+                    "INI_Ruben_Janssen_469974_v2.pdf"
+                  }
+                  className="inline-flex items-center gap-2 px-4 py-2.5 bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white font-semibold rounded-lg transition-all duration-300"
+                >
+                  <FiDownload />
+                  {project.action?.label || "Portfolio downloaden"}
+                </a>
               </section>
             </div>
           )}

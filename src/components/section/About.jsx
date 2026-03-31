@@ -26,21 +26,36 @@ export const About = () => {
           {/* Personal Statement */}
           <div className="glass-card rounded-2xl p-8 sm:p-10 border border-white/10 hover:border-pink-400/30 transition-all duration-300 mt-8 sm:mt-12">
             <p className="text-lg sm:text-xl text-gray-100 leading-relaxed font-light">
-              Hoi! Ik ben Ruben, een UX Designer en Front-end Developer die
-              gepassioneerd is over het creëren van digitale ervaringen die
-              echte problemen oplossen. Ik combineer gebruikersonderzoek, visual
-              design denken en moderne ontwikkelingspraktijken om producten te
-              bouwen die
-              <span className="text-pink-400 font-semibold">
-                {" "}
-                mooi, intuïtief en functioneel
-              </span>{" "}
-              zijn.
+              Hoi, ik ben Ruben, een UX/UI-designer met een focus op het
+              ontwerpen van betekenisvolle en user-centered digitale ervaringen.
+              Mijn route was niet vanzelfsprekend: door dyslexie liep ik in mijn
+              vroege schooljaren tegen leeruitdagingen aan en werd ik regelmatig
+              onderschat. Juist dat heeft mij veerkracht, analytisch
+              denkvermogen en een sterke drive gegeven om mezelf te bewijzen.
             </p>
             <p className="mt-6 text-gray-300">
-              Mijn aanpak is collaboratief, ik geloof dat de beste oplossingen
-              voortkomen uit diep begrip van gebruikers, iteratie op basis van
-              feedback, en teams samenbrengen rond een gedeelde visie.
+              Wat mij het meest motiveert, is het oplossen van echte problemen
+              voor echte gebruikers. Goed design gaat voor mij niet alleen over
+              esthetiek, maar over oplossingen die daadwerkelijk werken en het
+              dagelijks leven makkelijker maken. Tijdens mijn studie werkte ik
+              aan projecten variërend van het verbeteren van e-commerce
+              usability tot het ontwikkelen van interactieve storytelling
+              ervaringen.
+            </p>
+            <p className="mt-6 text-gray-300">
+              Daarnaast heb ik mezelf moderne technologieën zoals React en
+              Tailwind aangeleerd om ideeën zelfstandig tot leven te brengen. Ik
+              zie mezelf als een designer die creativiteit combineert met
+              logisch denken en altijd streeft naar ontwerpen die zowel visueel
+              aantrekkelijk als functioneel sterk zijn. Mijn doel is om door te
+              groeien tot UX-designer die niet alleen interfaces ontwerpt, maar
+              ook bijdraagt aan strategie, onderzoek en impactvolle oplossingen
+              die
+              <span className="text-pink-400 font-semibold">
+                {" "}
+                echt verschil maken
+              </span>{" "}
+              zijn.
             </p>
           </div>
 
