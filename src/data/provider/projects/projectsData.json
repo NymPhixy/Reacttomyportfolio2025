@@ -264,5 +264,28 @@
       "href": "/assets/Projecten/leerjaar1/p3/Design_portfolioINO_Ruben_Janssen_469974.pdf",
       "filename": "Design_Verslag_Ruben_Janssen.pdf"
     }
+  },
+  {
+    "year": "Leerjaar 2",
+    "period": "Periode 1",
+    "title": "DIO - Driven by Design",
+    "img": {
+      "src": "https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop",
+      "alt": "Driven by Design case study visual"
+    },
+    "description": "Persoonlijke visuele identiteit waarin motorsport, branding en digitale designvaardigheden samenkomen.",
+    "tech": [
+      "Branding",
+      "UX/UI",
+      "Visual Design",
+      "Prototyping",
+      "HTML",
+      "CSS"
+    ],
+    "action": {
+      "type": "case-study",
+      "label": "Bekijk Case Study",
+      "href": "#"
+    }
   }
 ]

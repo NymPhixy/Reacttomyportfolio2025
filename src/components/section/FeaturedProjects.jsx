@@ -2,11 +2,13 @@
 import { RevealOnScroll } from "./RevealOnScroll";
 import { useState } from "react";
 import projects from "../../data/provider/projects/projectsData.json";
+import dioFinalImage from "../../assets/Projecten/Leerjaar 1/p1/diofinal.jpg";
 
 // Filter to get only featured projects (you can mark them in JSON)
 // For now, let's get the best projects from each category
 const getFeaturedProjects = () => {
   const featured = [
+    projects.find((p) => p.title === "DIO - Driven by Design"),
     projects.find((p) => p.title === "USO - Usability Ontwerp"), // Strong UX project
     projects.find((p) => p.title === "MWE - Mediawijsheid"), // Good frontend showcase
     projects.find((p) => p.title === "OXR - Experience Design in VR/AR"), // Innovative concept
@@ -15,7 +17,7 @@ const getFeaturedProjects = () => {
   return featured.length >= 3 ? featured.slice(0, 3) : projects.slice(0, 3);
 };
 
-export const FeaturedProjects = () => {
+export const FeaturedProjects = ({ onOpenCaseStudy }) => {
   const featured = getFeaturedProjects();
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
@@ -58,6 +60,9 @@ export const FeaturedProjects = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {featured.map((project, index) => {
               const categories = getProjectCategories(project.tech);
+              const previewImage = project.title.includes("DIO")
+                ? dioFinalImage
+                : project.img.src;
               return (
                 <div
                   key={`featured-${index}`}
@@ -70,7 +75,7 @@ export const FeaturedProjects = () => {
                     {/* Image Container */}
                     <div className="relative h-56 sm:h-64 overflow-hidden bg-gradient-to-br from-purple-500/10 to-pink-500/10">
                       <img
-                        src={project.img.src}
+                        src={previewImage}
                         alt={project.img.alt}
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
                       />
@@ -103,7 +108,11 @@ export const FeaturedProjects = () => {
                       </p>
 
                       {/* CTA Button */}
-                      <button className="w-full mt-4 py-2 px-4 bg-gradient-to-r from-purple-600/80 to-pink-600/80 hover:from-purple-500 hover:to-pink-500 text-white font-semibold rounded-lg transition-all duration-300 flex items-center justify-center gap-2 group/btn">
+                      <button
+                        type="button"
+                        onClick={() => onOpenCaseStudy?.(project)}
+                        className="w-full mt-4 py-2 px-4 bg-gradient-to-r from-purple-600/80 to-pink-600/80 hover:from-purple-500 hover:to-pink-500 text-white font-semibold rounded-lg transition-all duration-300 flex items-center justify-center gap-2 group/btn"
+                      >
                         Bekijk Case Study
                         <span className="group-hover/btn:translate-x-1 transition-transform duration-300">
                           →

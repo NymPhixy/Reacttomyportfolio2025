@@ -4,6 +4,7 @@ import "./index.css";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { Home } from "./components/section/Home";
 import { FeaturedProjects } from "./components/section/FeaturedProjects";
+import { ProjectCaseStudyModal } from "./components/section/ProjectCaseStudyModal";
 import { SectionDotNav } from "./components/section/SectionDotNav";
 import { FooterSocials } from "./components/section/FooterSocials";
 
@@ -27,6 +28,7 @@ const SectionFallback = () => (
 
 function App() {
   const [showDeferredSections, setShowDeferredSections] = useState(false);
+  const [selectedCaseStudy, setSelectedCaseStudy] = useState(null);
 
   useEffect(() => {
     const timeoutId = window.setTimeout(
@@ -43,14 +45,14 @@ function App() {
         <div className="relative z-10">
           <SectionDotNav />
           <Home />
-          <FeaturedProjects />
+          <FeaturedProjects onOpenCaseStudy={setSelectedCaseStudy} />
           {showDeferredSections && (
             <>
               <Suspense fallback={<SectionFallback />}>
                 <About />
               </Suspense>
               <Suspense fallback={<SectionFallback />}>
-                <Project />
+                <Project onOpenCaseStudy={setSelectedCaseStudy} />
               </Suspense>
               <Suspense fallback={<SectionFallback />}>
                 <Contact />
@@ -59,6 +61,10 @@ function App() {
             </>
           )}
         </div>
+        <ProjectCaseStudyModal
+          project={selectedCaseStudy}
+          onClose={() => setSelectedCaseStudy(null)}
+        />
       </div>
     </ErrorBoundary>
   );

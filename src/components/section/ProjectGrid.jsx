@@ -1,8 +1,13 @@
 // Enhanced Project Grid Component - ProjectGrid.jsx (NEW COMPONENT)
 import { useEffect, useState } from "react";
 import { RevealOnScroll } from "./RevealOnScroll";
+import dioFinalImage from "../../assets/Projecten/Leerjaar 1/p1/diofinal.jpg";
 
-export const ProjectGrid = ({ projects, filteredProjects }) => {
+export const ProjectGrid = ({
+  projects,
+  filteredProjects,
+  onOpenCaseStudy,
+}) => {
   const [displayedProjects, setDisplayedProjects] = useState(filteredProjects);
 
   useEffect(() => {
@@ -41,6 +46,9 @@ export const ProjectGrid = ({ projects, filteredProjects }) => {
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
       {displayedProjects.map((project, index) => {
         const categories = getProjectCategories(project.tech);
+        const previewImage = project.title.includes("DIO")
+          ? dioFinalImage
+          : project.img.src;
 
         return (
           <RevealOnScroll key={`project-${index}`} delay={index * 50}>
@@ -49,7 +57,7 @@ export const ProjectGrid = ({ projects, filteredProjects }) => {
                 {/* Image Container */}
                 <div className="relative h-48 sm:h-56 overflow-hidden bg-gradient-to-br from-purple-500/10 to-pink-500/10">
                   <img
-                    src={project.img.src}
+                    src={previewImage}
                     alt={project.img.alt}
                     loading="lazy"
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
@@ -105,8 +113,12 @@ export const ProjectGrid = ({ projects, filteredProjects }) => {
                   </div>
 
                   {/* CTA Button */}
-                  <button className="w-full mt-4 py-2.5 px-4 bg-gradient-to-r from-purple-600/80 to-pink-600/80 hover:from-purple-500 hover:to-pink-500 text-white font-semibold rounded-lg transition-all duration-300 flex items-center justify-center gap-2 group/btn text-sm">
-                    Bekijk Project
+                  <button
+                    type="button"
+                    onClick={() => onOpenCaseStudy?.(project)}
+                    className="w-full mt-4 py-2.5 px-4 bg-gradient-to-r from-purple-600/80 to-pink-600/80 hover:from-purple-500 hover:to-pink-500 text-white font-semibold rounded-lg transition-all duration-300 flex items-center justify-center gap-2 group/btn text-sm"
+                  >
+                    Bekijk Case Study
                     <span className="group-hover/btn:translate-x-1 transition-transform duration-300">
                       →
                     </span>

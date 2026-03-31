@@ -5,7 +5,7 @@ import { ProjectGrid } from "./ProjectGrid";
 import { RevealOnScroll } from "./RevealOnScroll";
 import projects from "../../data/provider/projects/projectsData.json";
 
-export const Project = () => {
+export const Project = ({ onOpenCaseStudy }) => {
   const [filteredProjects, setFilteredProjects] = useState(projects);
 
   const handleFilter = useCallback((filtered) => {
@@ -37,6 +37,7 @@ export const Project = () => {
           <ProjectGrid
             projects={projects}
             filteredProjects={filteredProjects}
+            onOpenCaseStudy={onOpenCaseStudy}
           />
 
           {/* No Results State */}
