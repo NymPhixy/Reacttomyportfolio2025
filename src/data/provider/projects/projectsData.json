@@ -58,12 +58,26 @@
       "alt": "PST SAGANET Storytelling Campaign"
     },
     "description": "Audiovisual storytelling campaign ontworpen om game developers aan te trekken door middel van overtuigende narratieven, concept-development en professionele video-productie.",
-    "tech": ["Storytelling", "Visual Design", "Social Media", "Concepting", "Video Editing", "Design Thinking"],
+    "tech": [
+      "Storytelling",
+      "Visual Design",
+      "Social Media",
+      "Concepting",
+      "Video Editing",
+      "Design Thinking"
+    ],
     "action": {
       "type": "case-study",
       "label": "Bekijk Case Study",
       "href": "#"
-    }
+    },
+    "additionalActions": [
+      {
+        "type": "video",
+        "label": "Video prototype bekijken 🎥",
+        "href": "https://youtu.be/Jr5GPxfLm9g"
+      }
+    ]
   },
   {
     "year": "Leerjaar 1",

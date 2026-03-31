@@ -62,7 +62,8 @@ export const ProjectGrid = ({
               ? usoMainImage
               : project.title.includes("CVA")
                 ? cvaMainImage
-                : project.title.toLowerCase().includes("pst") || project.title.toLowerCase().includes("saganet")
+                : project.title.toLowerCase().includes("pst") ||
+                    project.title.toLowerCase().includes("saganet")
                   ? pstMainImage
                   : project.img.src;
 

@@ -12,6 +12,7 @@ import {
   FiLayers,
   FiLayout,
   FiMessageSquare,
+  FiPlay,
   FiSearch,
   FiTarget,
   FiUser,
@@ -137,7 +138,10 @@ const isCvaProject = (project) => {
 
 const isPstProject = (project) => {
   if (!project?.title) return false;
-  return project.title.toLowerCase().includes("pst") || project.title.toLowerCase().includes("saganet");
+  return (
+    project.title.toLowerCase().includes("pst") ||
+    project.title.toLowerCase().includes("saganet")
+  );
 };
 
 const pofTags = [
@@ -185,12 +189,29 @@ const pofTimeline = [
   "Testen",
 ];
 
+const toYouTubeEmbedUrl = (url) => {
+  if (!url) return "";
+  const shortMatch = url.match(/youtu\.be\/([^?&/]+)/i);
+  if (shortMatch?.[1]) {
+    return `https://www.youtube.com/embed/${shortMatch[1]}`;
+  }
+
+  const longMatch = url.match(/[?&]v=([^?&/]+)/i);
+  if (longMatch?.[1]) {
+    return `https://www.youtube.com/embed/${longMatch[1]}`;
+  }
+
+  return url;
+};
+
 export const ProjectCaseStudyModal = ({ project, onClose }) => {
   const [isVisible, setIsVisible] = useState(false);
+  const [isPstVideoPopupOpen, setIsPstVideoPopupOpen] = useState(false);
 
   useEffect(() => {
     if (!project) return;
     setIsVisible(true);
+    setIsPstVideoPopupOpen(false);
   }, [project]);
 
   useEffect(() => {
@@ -225,6 +246,10 @@ export const ProjectCaseStudyModal = ({ project, onClose }) => {
   const showUsoLayout = isUsoProject(project);
   const showCvaLayout = isCvaProject(project);
   const showPstLayout = isPstProject(project);
+  const pstVideoUrl =
+    project.additionalActions?.find((item) => item.type === "video")?.href ||
+    "https://youtu.be/Jr5GPxfLm9g";
+  const pstEmbedUrl = toYouTubeEmbedUrl(pstVideoUrl);
 
   return (
     <div
@@ -1002,210 +1027,378 @@ export const ProjectCaseStudyModal = ({ project, onClose }) => {
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
-                  <div>
-                    <p className="text-sm text-purple-300 mb-2">Case Study</p>
-                    <h3 className="text-2xl font-bold text-white">
-                      SAGANET – Storytelling Campaign
-                    </h3>
+                  <div className="w-full flex items-end justify-between gap-4">
+                    <div>
+                      <p className="text-sm text-purple-300 mb-2">Case Study</p>
+                      <h3 className="text-2xl font-bold text-white">
+                        SAGANET - Storytelling Campagne
+                      </h3>
+                    </div>
+                    <button
+                      type="button"
+                      onClick={() => setIsPstVideoPopupOpen(true)}
+                      className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-red-600/90 hover:bg-red-500 text-white font-semibold transition-colors"
+                    >
+                      <FiPlay />
+                      Bekijk video prototype
+                    </button>
                   </div>
                 </div>
               </div>
 
               {/* Project Tags */}
               <div className="flex flex-wrap gap-2">
-                {["Storytelling", "Visual Design", "Social Media", "Concepting", "Video Editing", "Design Thinking"].map(tag => (
-                  <span key={tag} className="px-3 py-1.5 rounded-full text-xs font-semibold border border-purple-400/40 bg-purple-500/15 text-purple-100">
+                {[
+                  "Storytelling",
+                  "Visual Design",
+                  "Social Media",
+                  "Concepting",
+                  "Video Editing",
+                  "Design Thinking",
+                ].map((tag) => (
+                  <span
+                    key={tag}
+                    className="px-3 py-1.5 rounded-full text-xs font-semibold border border-purple-400/40 bg-purple-500/15 text-purple-100"
+                  >
                     {tag}
                   </span>
                 ))}
               </div>
 
-              {/* 2. PROJECT OVERVIEW */}
+              {/* 2. PROJECT OVERZICHT */}
               <section className="glass-card rounded-xl p-5 border border-white/10">
                 <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                  <FiTarget className="text-blue-300" /> Project Overview
+                  <FiTarget className="text-blue-300" /> Projectoverzicht
                 </h3>
                 <div className="space-y-3 text-gray-300">
-                  <p><strong>Client:</strong> SAGANET – Platform for game developers</p>
-                  <p><strong>Challenge:</strong> Attract more game developers to the platform and strengthen the community</p>
-                  <p><strong>Main Problem:</strong> Many potential members do not clearly understand the value of SAGANET</p>
-                  <p><strong>Goal:</strong> Create engaging visual content that explains platform value and motivates people to join</p>
-                  <p><strong>Approach:</strong> Audiovisual storytelling campaign combining short-form video and social media content</p>
+                  <p>
+                    <strong>Opdrachtgever:</strong> SAGANET - platform voor game
+                    developers
+                  </p>
+                  <p>
+                    <strong>Uitdaging:</strong> Meer game developers aantrekken
+                    op het platform en de community versterken
+                  </p>
+                  <p>
+                    <strong>Hoofdprobleem:</strong> Veel potentiële leden
+                    begrijpen de waarde van SAGANET nog niet duidelijk genoeg
+                  </p>
+                  <p>
+                    <strong>Doel:</strong> Aantrekkelijke visuele content maken
+                    die de platformwaarde uitlegt en mensen motiveert om aan te
+                    sluiten
+                  </p>
+                  <p>
+                    <strong>Aanpak:</strong> Audiovisuele storytelling-campagne
+                    met short-form video en social content
+                  </p>
                 </div>
               </section>
 
-              {/* 3. MY ROLE */}
+              {/* 3. MIJN BIJDRAGE */}
               <section className="glass-card rounded-xl p-5 border border-white/10">
                 <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                  <FiUser className="text-cyan-300" /> My Contribution
+                  <FiUser className="text-cyan-300" /> Mijn bijdrage
                 </h3>
                 <ul className="space-y-2 text-gray-300">
-                  <li>• Visual design and concept visualisation</li>
-                  <li>• Rebranding of social media content strategy</li>
-                  <li>• Helping structure and script the campaign video</li>
-                  <li>• Video editing and assembly (together with teammate)</li>
-                  <li>• Translating abstract ideas into visual outputs</li>
-                  <li>• Social media asset design (LinkedIn, Instagram, TikTok)</li>
+                  <li>• Visueel ontwerp en conceptvisualisatie</li>
+                  <li>• Rebranding van de social media contentstrategie</li>
+                  <li>
+                    • Meewerken aan structuur en script van de campagnevideo
+                  </li>
+                  <li>
+                    • Videomontage en samenstelling (samen met teamgenoot)
+                  </li>
+                  <li>• Abstracte ideeën vertalen naar concrete visuals</li>
+                  <li>
+                    • Ontwerp van social assets (LinkedIn, Instagram, TikTok)
+                  </li>
                 </ul>
               </section>
 
-              {/* 4. DESIGN APPROACH */}
+              {/* 4. DESIGNAANPAK */}
               <section className="glass-card rounded-xl p-5 border border-white/10">
                 <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                  <FiLayers className="text-pink-300" /> Design Approach
+                  <FiLayers className="text-pink-300" /> Designaanpak
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                   <div className="p-3 bg-purple-500/10 border border-purple-500/20 rounded-lg">
-                    <p className="text-purple-300 font-semibold">Storytelling</p>
-                    <p className="text-sm text-gray-400">Structuring a clear narrative that resonates with developers</p>
+                    <p className="text-purple-300 font-semibold">
+                      Storytelling
+                    </p>
+                    <p className="text-sm text-gray-400">
+                      Een duidelijk narratief opbouwen dat aansluit bij
+                      developers
+                    </p>
                   </div>
                   <div className="p-3 bg-blue-500/10 border border-blue-500/20 rounded-lg">
                     <p className="text-blue-300 font-semibold">Visual Design</p>
-                    <p className="text-sm text-gray-400">Social posts, layouts, mockups, consistent branding</p>
+                    <p className="text-sm text-gray-400">
+                      Social posts, layouts, mockups en consistente branding
+                    </p>
                   </div>
                   <div className="p-3 bg-pink-500/10 border border-pink-500/20 rounded-lg">
-                    <p className="text-pink-300 font-semibold">Content Design</p>
-                    <p className="text-sm text-gray-400">Translating info into engaging short-form media</p>
+                    <p className="text-pink-300 font-semibold">
+                      Content Design
+                    </p>
+                    <p className="text-sm text-gray-400">
+                      Informatie vertalen naar aantrekkelijke short-form media
+                    </p>
                   </div>
                   <div className="p-3 bg-cyan-500/10 border border-cyan-500/20 rounded-lg">
-                    <p className="text-cyan-300 font-semibold">Design Thinking</p>
-                    <p className="text-sm text-gray-400">Empathy, brainstorms, testing, iteration</p>
+                    <p className="text-cyan-300 font-semibold">
+                      Design Thinking
+                    </p>
+                    <p className="text-sm text-gray-400">
+                      Empathie, brainstorms, testen en itereren
+                    </p>
                   </div>
                 </div>
               </section>
 
-              {/* 5. RESEARCH PHASE */}
+              {/* 5. ONDERZOEKSFASE */}
               <section className="glass-card rounded-xl p-5 border border-white/10">
                 <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                  <FiSearch className="text-cyan-300" /> Research Phase
+                  <FiSearch className="text-cyan-300" /> Onderzoeksfase
                 </h3>
                 <div className="space-y-4">
                   <p className="text-gray-300">
-                    We conducted deep research to understand our target audience:
+                    We hebben verdiepend onderzoek gedaan om onze doelgroep goed
+                    te begrijpen:
                   </p>
                   <ul className="space-y-2 text-gray-300">
-                    <li>• <strong>Empathy mapping</strong> – Understanding developer needs and pain points</li>
-                    <li>• <strong>Desk research</strong> – Analyzing game industry trends and developer communities</li>
-                    <li>• <strong>Exploratory conversations</strong> – Direct interviews with game developers</li>
-                    <li>• <strong>Professional insights</strong> – Insights from experienced game industry professionals</li>
+                    <li>
+                      • <strong>Empathy mapping</strong> - Behoeften en
+                      pijnpunten van developers in kaart brengen
+                    </li>
+                    <li>
+                      • <strong>Deskresearch</strong> - Trends in de
+                      game-industrie en communities analyseren
+                    </li>
+                    <li>
+                      • <strong>Verkennende gesprekken</strong> - Directe
+                      interviews met game developers
+                    </li>
+                    <li>
+                      • <strong>Professionele inzichten</strong> - Input van
+                      ervaren professionals uit de game-industrie
+                    </li>
                   </ul>
                   <div className="mt-4 p-4 rounded-lg border border-cyan-400/30 bg-cyan-500/10">
-                    <p className="text-cyan-200 font-semibold mb-1">Key Insight</p>
-                    <p className="text-gray-300">Beginning game developers need clarity, relevance and visible value before joining a community like SAGANET.</p>
+                    <p className="text-cyan-200 font-semibold mb-1">
+                      Belangrijk inzicht
+                    </p>
+                    <p className="text-gray-300">
+                      Beginnende game developers hebben duidelijkheid,
+                      relevantie en zichtbare waarde nodig voordat ze zich
+                      aansluiten bij een community als SAGANET.
+                    </p>
                   </div>
                 </div>
               </section>
 
-              {/* 6. PROBLEM DEFINITION */}
+              {/* 6. PROBLEEMDEFINITIE */}
               <section className="glass-card rounded-xl p-5 border border-white/10">
                 <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                  <FiClipboard className="text-orange-300" /> Problem Definition
+                  <FiClipboard className="text-orange-300" /> Probleemdefinitie
                 </h3>
                 <div className="space-y-4">
-                  <p className="text-gray-300"><strong>The Challenge:</strong></p>
+                  <p className="text-gray-300">
+                    <strong>De uitdaging:</strong>
+                  </p>
                   <ul className="space-y-2 text-gray-300 ml-4">
-                    <li>• Too few new members joining SAGANET</li>
-                    <li>• Platform's purpose and benefits not clear enough</li>
-                    <li>• Target audience needs stronger communication and more focused messaging</li>
+                    <li>
+                      • Te weinig nieuwe leden sluiten zich aan bij SAGANET
+                    </li>
+                    <li>
+                      • Doel en voordelen van het platform zijn niet duidelijk
+                      genoeg
+                    </li>
+                    <li>
+                      • De doelgroep heeft sterkere communicatie en scherpere
+                      kernboodschap nodig
+                    </li>
                   </ul>
                   <div className="mt-4 p-3 rounded-lg border border-orange-400/30 bg-orange-500/10">
-                    <p className="text-orange-200 font-semibold">HMW Question</p>
-                    <p className="text-gray-300 italic">How can we motivate game developers with some knowledge of serious games to join SAGANET and feel encouraged to develop serious games?</p>
+                    <p className="text-orange-200 font-semibold">HMW-vraag</p>
+                    <p className="text-gray-300 italic">
+                      Hoe kunnen we game developers met enige kennis van serious
+                      games motiveren om lid te worden van SAGANET en hen
+                      stimuleren om serious games te ontwikkelen?
+                    </p>
                   </div>
                 </div>
               </section>
 
-              {/* 7. IDEATION & BRAINSTORM */}
+              {/* 7. IDEEVORMING & BRAINSTORM */}
               <section className="glass-card rounded-xl p-5 border border-white/10">
                 <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                  <FiMessageSquare className="text-pink-300" /> Ideation & Brainstorm
+                  <FiMessageSquare className="text-pink-300" /> Ideevorming &
+                  brainstorm
                 </h3>
                 <p className="text-gray-300 mb-4">
-                  We explored different content directions through extensive brainstorming and mindmapping sessions. The team used concept exploration techniques to translate diverse ideas into cohesive campaigns.
+                  We hebben verschillende contentrichtingen verkend via
+                  brainstorm- en mindmapsessies. Het team gebruikte
+                  conceptverkenning om uiteenlopende ideeën te vertalen naar
+                  samenhangende campagnes.
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   <div className="p-3 bg-pink-500/10 border border-pink-500/20 rounded-lg">
-                    <p className="text-pink-300 font-semibold text-sm">Brainstorm Board</p>
-                    <p className="text-xs text-gray-400">Multiple campaign directions explored</p>
+                    <p className="text-pink-300 font-semibold text-sm">
+                      Brainstorm Board
+                    </p>
+                    <p className="text-xs text-gray-400">
+                      Meerdere campagnerichtingen verkend
+                    </p>
                   </div>
                   <div className="p-3 bg-purple-500/10 border border-purple-500/20 rounded-lg">
-                    <p className="text-purple-300 font-semibold text-sm">Mindmapping</p>
-                    <p className="text-xs text-gray-400">Concept mapping and structure</p>
+                    <p className="text-purple-300 font-semibold text-sm">
+                      Mindmapping
+                    </p>
+                    <p className="text-xs text-gray-400">
+                      Conceptmapping en structuur
+                    </p>
                   </div>
                   <div className="p-3 bg-blue-500/10 border border-blue-500/20 rounded-lg">
-                    <p className="text-blue-300 font-semibold text-sm">Concept Exploration</p>
-                    <p className="text-xs text-gray-400">Testing different visual approaches</p>
+                    <p className="text-blue-300 font-semibold text-sm">
+                      Conceptverkenning
+                    </p>
+                    <p className="text-xs text-gray-400">
+                      Verschillende visuele richtingen testen
+                    </p>
                   </div>
                   <div className="p-3 bg-cyan-500/10 border border-cyan-500/20 rounded-lg">
-                    <p className="text-cyan-300 font-semibold text-sm">Iteration</p>
-                    <p className="text-xs text-gray-400">Refining ideas through feedback</p>
+                    <p className="text-cyan-300 font-semibold text-sm">
+                      Iteratie
+                    </p>
+                    <p className="text-xs text-gray-400">
+                      Ideeën aanscherpen met feedback
+                    </p>
                   </div>
                 </div>
               </section>
 
-              {/* 8. CONCEPT DEVELOPMENT */}
+              {/* 8. CONCEPTONTWIKKELING */}
               <section className="glass-card rounded-xl p-5 border border-white/10">
                 <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                  <FiCompass className="text-amber-300" /> Concept Development
+                  <FiCompass className="text-amber-300" /> Conceptontwikkeling
                 </h3>
                 <div className="space-y-3 text-gray-300">
-                  <p><strong>Final Concept Strategy:</strong></p>
+                  <p>
+                    <strong>Definitieve conceptstrategie:</strong>
+                  </p>
                   <ul className="space-y-2 ml-4">
-                    <li>• <strong>Short-form video-first approach</strong> – Designed for mobile platforms</li>
-                    <li>• <strong>Social media focus</strong> – TikTok, Instagram Reels, YouTube Shorts optimized</li>
-                    <li>• <strong>Content split</strong> – One campaign split into three shorter videos for different platforms</li>
-                    <li>• <strong>Clear CTA progression</strong> – Leading viewers toward joining SAGANET</li>
-                    <li>• <strong>Focused core message</strong> – "Serious Games. Serious Developers. Serious Community."</li>
+                    <li>
+                      • <strong>Short-form video-first aanpak</strong> -
+                      Ontworpen voor mobiele platformen
+                    </li>
+                    <li>
+                      • <strong>Social media focus</strong> - Geoptimaliseerd
+                      voor TikTok, Instagram Reels en YouTube Shorts
+                    </li>
+                    <li>
+                      • <strong>Content-splitsing</strong> - Een campagne
+                      opgedeeld in drie kortere video's per platform
+                    </li>
+                    <li>
+                      • <strong>Duidelijke CTA-opbouw</strong> - Kijkers stap
+                      voor stap richting deelname aan SAGANET sturen
+                    </li>
+                    <li>
+                      • <strong>Scherpe kernboodschap</strong> - "Serious Games.
+                      Serious Developers. Serious Community."
+                    </li>
                   </ul>
                 </div>
               </section>
 
-              {/* 9. STORYBOARD & CONTENT STRUCTURE */}
+              {/* 9. STORYBOARD & CONTENTSTRUCTUUR */}
               <section className="glass-card rounded-xl p-5 border border-white/10">
                 <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                  <FiGrid className="text-green-300" /> Storyboard & Content Structure
+                  <FiGrid className="text-green-300" /> Storyboard &
+                  contentstructuur
                 </h3>
                 <div className="space-y-3 text-gray-300 text-sm mb-4">
-                  <p className="font-semibold text-white">Video Structure:</p>
+                  <p className="font-semibold text-white">Videostructuur:</p>
                   <ol className="ml-4 space-y-2">
-                    <li>1. <strong>Opening Hook</strong> – Attention-grabbing statement about serious games</li>
-                    <li>2. <strong>Target Audience Intro</strong> – "Are you a developer? Have you heard of serious games?"</li>
-                    <li>3. <strong>Serious Games Explanation</strong> – What they are and why they matter</li>
-                    <li>4. <strong>SAGANET Introduction</strong> – Meet the community</li>
-                    <li>5. <strong>Network & Community Value</strong> – What members get access to</li>
-                    <li>6. <strong>Awards & Opportunities</strong> – Tangible benefits and recognition</li>
-                    <li>7. <strong>Closing CTA</strong> – "Join the community today"</li>
+                    <li>
+                      1. <strong>Opening hook</strong> - Aandachtstrekkende
+                      opening over serious games
+                    </li>
+                    <li>
+                      2. <strong>Doelgroepintro</strong> - "Ben jij developer?
+                      Ken je serious games al?"
+                    </li>
+                    <li>
+                      3. <strong>Uitleg serious games</strong> - Wat het is en
+                      waarom het relevant is
+                    </li>
+                    <li>
+                      4. <strong>Introductie SAGANET</strong> - Kennismaken met
+                      de community
+                    </li>
+                    <li>
+                      5. <strong>Netwerk & communitywaarde</strong> - Wat leden
+                      concreet krijgen
+                    </li>
+                    <li>
+                      6. <strong>Awards & kansen</strong> - Tastbare voordelen
+                      en erkenning
+                    </li>
+                    <li>
+                      7. <strong>Afsluitende CTA</strong> - "Sluit je vandaag
+                      nog aan bij de community"
+                    </li>
                   </ol>
                 </div>
                 <div className="rounded-lg overflow-hidden border border-white/10 bg-black/20 p-3">
-                  <p className="text-xs text-gray-400">Storyboard frames available in design document</p>
+                  <p className="text-xs text-gray-400">
+                    Storyboard-frames zijn opgenomen in het design document
+                  </p>
                 </div>
               </section>
 
               {/* 10. VISUAL DESIGN & REBRANDING */}
               <section className="glass-card rounded-xl p-5 border border-white/10">
                 <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                  <FiLayout className="text-indigo-300" /> Visual Design & Rebranding
+                  <FiLayout className="text-indigo-300" /> Visual Design &
+                  Rebranding
                 </h3>
                 <div className="space-y-4">
                   <p className="text-gray-300">
-                    We redesigned SAGANET's social media presence for stronger brand recognition:
+                    We hebben de social media uitstraling van SAGANET opnieuw
+                    ontworpen voor sterkere merkherkenning:
                   </p>
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                     <div className="p-3 bg-indigo-500/10 border border-indigo-500/20 rounded-lg">
-                      <p className="text-indigo-300 font-semibold text-sm">LinkedIn & Instagram</p>
-                      <p className="text-xs text-gray-400">Professional campaign assets</p>
+                      <p className="text-indigo-300 font-semibold text-sm">
+                        LinkedIn & Instagram
+                      </p>
+                      <p className="text-xs text-gray-400">
+                        Professionele campagne-assets
+                      </p>
                     </div>
                     <div className="p-3 bg-pink-500/10 border border-pink-500/20 rounded-lg">
-                      <p className="text-pink-300 font-semibold text-sm">TikTok & Shorts</p>
-                      <p className="text-xs text-gray-400">Mobile-first video content</p>
+                      <p className="text-pink-300 font-semibold text-sm">
+                        TikTok & Shorts
+                      </p>
+                      <p className="text-xs text-gray-400">
+                        Mobile-first videocontent
+                      </p>
                     </div>
                     <div className="p-3 bg-purple-500/10 border border-purple-500/20 rounded-lg">
-                      <p className="text-purple-300 font-semibold text-sm">Web Mockups</p>
-                      <p className="text-xs text-gray-400">Desktop & mobile designs</p>
+                      <p className="text-purple-300 font-semibold text-sm">
+                        Web Mockups
+                      </p>
+                      <p className="text-xs text-gray-400">
+                        Desktop- en mobiele ontwerpen
+                      </p>
                     </div>
                   </div>
-                  <p className="text-gray-300 text-sm mt-3">Result: Consistent, modern campaign style with stronger SAGANET brand recognition.</p>
+                  <p className="text-gray-300 text-sm mt-3">
+                    Resultaat: Een consistente, moderne campagnestijl met
+                    sterkere SAGANET-merkherkenning.
+                  </p>
                 </div>
               </section>
 
@@ -1213,100 +1406,161 @@ export const ProjectCaseStudyModal = ({ project, onClose }) => {
               <section className="space-y-4">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="rounded-lg overflow-hidden border border-white/10">
-                    <img src={pstFoto2} alt="Campaign Visual 1" className="w-full h-48 object-cover" />
+                    <img
+                      src={pstFoto2}
+                      alt="Campaign Visual 1"
+                      className="w-full h-48 object-cover"
+                    />
                   </div>
                   <div className="rounded-lg overflow-hidden border border-white/10">
-                    <img src={pstFoto3} alt="Campaign Visual 2" className="w-full h-48 object-cover" />
+                    <img
+                      src={pstFoto3}
+                      alt="Campaign Visual 2"
+                      className="w-full h-48 object-cover"
+                    />
                   </div>
                 </div>
               </section>
 
-              {/* 11. VIDEO EDITING */}
+              {/* 11. VIDEOMONTAGE */}
               <section className="glass-card rounded-xl p-5 border border-white/10">
                 <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                  <FiBox className="text-green-300" /> Video Editing & Production
+                  <FiBox className="text-green-300" /> Videomontage & productie
                 </h3>
                 <div className="space-y-3 text-gray-300">
-                  <p><strong>Editing Process:</strong></p>
+                  <p>
+                    <strong>Montageproces:</strong>
+                  </p>
                   <ul className="space-y-2 ml-4 text-sm">
-                    <li>• Assembled footage from interviews, stock videos, and storyboard animations</li>
-                    <li>• Collaborated with teammate on final video assembly</li>
-                    <li>• Applied transitions, pacing optimization, and visual hierarchy</li>
-                    <li>• Integrated animations and motion graphics for engagement</li>
-                    <li>• Optimized for different platforms (TikTok, Instagram, YouTube)</li>
+                    <li>
+                      • Beeldmateriaal samengevoegd uit interviews, stockvideo
+                      en storyboard-animaties
+                    </li>
+                    <li>• Samengewerkt met teamgenoot aan de eindmontage</li>
+                    <li>
+                      • Transities, tempo-optimalisatie en visuele hiërarchie
+                      toegepast
+                    </li>
+                    <li>
+                      • Animaties en motion graphics toegevoegd voor meer
+                      engagement
+                    </li>
+                    <li>
+                      • Geoptimaliseerd voor verschillende platforms (TikTok,
+                      Instagram, YouTube)
+                    </li>
                   </ul>
                   <div className="mt-3 p-3 rounded-lg border border-yellow-400/30 bg-yellow-500/10">
-                    <p className="text-yellow-200 font-semibold text-sm mb-1">Learning Experience</p>
-                    <p className="text-gray-300 text-sm">We encountered challenges with stock video selection and narrative structure clarity. This taught important lessons about planning, storyboarding depth, and early iteration cycles.</p>
+                    <p className="text-yellow-200 font-semibold text-sm mb-1">
+                      Leerervaring
+                    </p>
+                    <p className="text-gray-300 text-sm">
+                      We liepen tegen uitdagingen aan bij stockvideo-selectie en
+                      de helderheid van de verhaallijn. Dit leerde ons hoe
+                      belangrijk planning, diepgang in storyboards en vroege
+                      iteraties zijn.
+                    </p>
                   </div>
                 </div>
               </section>
 
               {/* Video/Mockup Section */}
               <section className="rounded-lg overflow-hidden border border-white/10">
-                <img src={pstFoto4} alt="Campaign Design" className="w-full h-auto object-cover" />
+                <img
+                  src={pstFoto4}
+                  alt="Campaign Design"
+                  className="w-full h-auto object-cover"
+                />
               </section>
 
-              {/* 12. TESTING & FEEDBACK */}
+              {/* 12. TESTEN & FEEDBACK */}
               <section className="glass-card rounded-xl p-5 border border-white/10">
                 <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                  <FiCheckCircle className="text-green-300" /> Testing & Feedback
+                  <FiCheckCircle className="text-green-300" /> Testen & Feedback
                 </h3>
                 <div className="space-y-3 text-gray-300">
-                  <p><strong>User Testing:</strong></p>
+                  <p>
+                    <strong>Gebruikerstesten:</strong>
+                  </p>
                   <ul className="space-y-1 ml-4 text-sm">
-                    <li>• Tested with target audience (beginner to intermediate developers)</li>
-                    <li>• Showed short-form videos first, then full campaign</li>
-                    <li>• Gathered reactions to messaging clarity and visual appeal</li>
-                    <li>• Tested platform preferences (Instagram and TikTok performed best)</li>
+                    <li>
+                      • Getest met de doelgroep (beginnend tot gemiddeld niveau)
+                    </li>
+                    <li>
+                      • Eerst short-form video getoond, daarna de volledige
+                      campagne
+                    </li>
+                    <li>
+                      • Reacties verzameld op boodschaphelderheid en visuele
+                      aantrekkingskracht
+                    </li>
+                    <li>
+                      • Platformvoorkeuren getest (Instagram en TikTok scoorden
+                      het best)
+                    </li>
                   </ul>
                   <div className="mt-3 p-3 rounded-lg border border-green-400/30 bg-green-500/10">
-                    <p className="text-green-200 font-semibold text-sm mb-1">Key Learning</p>
-                    <p className="text-gray-300 text-sm">Short, visually strong content resonated well. However, the message needed tighter focus – overloaded information reduced engagement.</p>
+                    <p className="text-green-200 font-semibold text-sm mb-1">
+                      Belangrijke les
+                    </p>
+                    <p className="text-gray-300 text-sm">
+                      Korte, visueel sterke content werkte goed. De boodschap
+                      moest echter scherper: te veel informatie verlaagde de
+                      betrokkenheid.
+                    </p>
                   </div>
                 </div>
               </section>
 
-              {/* 13. REFLECTION */}
+              {/* 13. REFLECTIE */}
               <section className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="glass-card rounded-xl p-5 border border-white/10">
                   <h3 className="text-lg font-bold text-white mb-3 flex items-center gap-2">
-                    <FiAward className="text-emerald-300" /> Strengths
+                    <FiAward className="text-emerald-300" /> Sterktes
                   </h3>
                   <ul className="space-y-2 text-gray-300 text-sm">
-                    <li>✓ Strong visual execution and polish</li>
-                    <li>✓ Clear branding work across platforms</li>
-                    <li>✓ Meaningful video editing contribution</li>
-                    <li>✓ Successfully translated abstract concepts into visuals</li>
+                    <li>✓ Sterke visuele uitwerking en afwerking</li>
+                    <li>✓ Duidelijke branding over meerdere platformen</li>
+                    <li>✓ Waardevolle bijdrage in videomontage</li>
+                    <li>
+                      ✓ Abstracte concepten succesvol vertaald naar visuals
+                    </li>
                   </ul>
                 </div>
                 <div className="glass-card rounded-xl p-5 border border-white/10">
                   <h3 className="text-lg font-bold text-white mb-3 flex items-center gap-2">
-                    <FiClock className="text-amber-300" /> Growth Areas
+                    <FiClock className="text-amber-300" /> Groeipunten
                   </h3>
                   <ul className="space-y-2 text-gray-300 text-sm">
-                    <li>→ Earlier participation in concept phase</li>
-                    <li>→ Clearer team communication and alignment</li>
-                    <li>→ Better planning with iteration checkpoints</li>
-                    <li>→ Sharper narrative focus in final deliverable</li>
+                    <li>→ Eerder aanhaken in de conceptfase</li>
+                    <li>→ Helderdere teamcommunicatie en afstemming</li>
+                    <li>→ Betere planning met iteratie-checkpoints</li>
+                    <li>→ Scherpere verhaallijn in de eindoplevering</li>
                   </ul>
                 </div>
               </section>
 
-              {/* 14. FINAL TAKEAWAYS */}
+              {/* 14. CONCLUSIE */}
               <section className="glass-card rounded-xl p-5 border border-white/10">
                 <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                  <FiBookOpen className="text-purple-300" /> Final Takeaways
+                  <FiBookOpen className="text-purple-300" /> Conclusie
                 </h3>
                 <p className="text-gray-300 leading-relaxed">
-                  This project significantly strengthened my skills in visual storytelling, campaign strategy, and content design. Most importantly, it taught me that <strong>strong visuals alone are never enough</strong> – a compelling concept needs a clear, focused message that directly resonates with the target audience. The balance between creative ambition and narrative clarity is crucial to campaign success.
+                  Dit project heeft mijn vaardigheden in visual storytelling,
+                  campagnestrategie en contentdesign sterk ontwikkeld. De
+                  belangrijkste les was dat{" "}
+                  <strong>sterke visuals alleen niet genoeg zijn</strong>: een
+                  goed concept heeft een heldere, gefocuste boodschap nodig die
+                  direct aansluit op de doelgroep. De balans tussen creatieve
+                  ambitie en narratieve helderheid is cruciaal voor
+                  campagneresultaat.
                 </p>
               </section>
 
-              {/* 15. DOWNLOAD & VIEW SECTION */}
+              {/* 15. DOWNLOADSECTIE */}
               <section className="glass-card rounded-xl p-5 border border-white/10">
                 <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                  <FiDownload className="text-cyan-300" /> Project Materials
+                  <FiDownload className="text-cyan-300" /> Projectmaterialen
                 </h3>
                 <div className="space-y-3">
                   <a
@@ -1315,13 +1569,48 @@ export const ProjectCaseStudyModal = ({ project, onClose }) => {
                     className="inline-flex items-center gap-2 px-4 py-2.5 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white font-semibold rounded-lg transition-all duration-300 w-full justify-center"
                   >
                     <FiDownload />
-                    Download Full Design Document
+                    Download volledig design document
                   </a>
                   <p className="text-gray-400 text-sm text-center">
-                    Complete project documentation including research, concepts, storyboards, and visual assets
+                    Volledige projectdocumentatie inclusief onderzoek,
+                    concepten, storyboards en visuele assets
                   </p>
                 </div>
               </section>
+            </div>
+          )}
+
+          {showPstLayout && isPstVideoPopupOpen && (
+            <div className="fixed inset-0 z-[130] flex items-center justify-center p-4">
+              <div
+                className="absolute inset-0 bg-black/80"
+                onClick={() => setIsPstVideoPopupOpen(false)}
+              />
+              <div className="relative w-full max-w-3xl rounded-2xl border border-white/20 bg-black p-4 sm:p-5">
+                <div className="flex items-center justify-between mb-3">
+                  <h4 className="text-white font-semibold">
+                    PST video prototype
+                  </h4>
+                  <button
+                    type="button"
+                    onClick={() => setIsPstVideoPopupOpen(false)}
+                    className="p-2 rounded-lg border border-white/20 text-gray-200 hover:text-white"
+                    aria-label="Sluit video popup"
+                  >
+                    <FiX />
+                  </button>
+                </div>
+                <div className="aspect-video w-full rounded-lg overflow-hidden border border-white/10">
+                  <iframe
+                    src={pstEmbedUrl}
+                    title="PST video prototype"
+                    className="w-full h-full"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allowFullScreen
+                  />
+                </div>
+              </div>
             </div>
           )}
         </div>

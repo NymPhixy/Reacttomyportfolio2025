@@ -82,7 +82,8 @@ export const FeaturedProjects = ({ onOpenCaseStudy }) => {
                     ? usoMainImage
                     : project.title.includes("CVA")
                       ? cvaMainImage
-                      : project.title.includes("PST") || project.title.includes("SAGANET")
+                      : project.title.includes("PST") ||
+                          project.title.includes("SAGANET")
                         ? pstMainImage
                         : project.img.src;
               return (
