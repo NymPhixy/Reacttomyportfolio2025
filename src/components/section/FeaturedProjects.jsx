@@ -23,7 +23,7 @@ const getFeaturedProjects = () => {
   const featured = [
     projects.find((p) => p.title === "DIO - Driven by Design"),
     projects.find((p) => p.title === "USO - Usability Ontwerp"), // Strong UX project
-    projects.find((p) => p.title === "MWE - Mediawijsheid"), // Good frontend showcase
+    projects.find((p) => p.title === "PST – SAGANET Storytelling Campagne"), // Video/storytelling showcase
     projects.find((p) => p.title === "INI - Interactieve Interface"), // Innovative concept
   ].filter(Boolean); // Remove undefined
 
