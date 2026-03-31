@@ -28,14 +28,14 @@ export const Home = () => {
             {/* Tekst rechts van de afbeelding */}
             <div className="text-white">
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 sm:mb-6 bg-gradient-to-r text-transparent from-purple-400 to-pink-400 bg-clip-text">
-                Hi, I'm Ruben
+                Hoi, ik ben Ruben
               </h1>
               <p className="text-sm sm:text-base md:text-lg text-gray-100 mb-6 sm:mb-8 leading-relaxed">
-                I'm a second-year Communication & Multimedia Design student at
-                the Hanze University of Applied Sciences in Groningen. I work at
-                the intersection of concept development, user experience and
-                front-end development, with a focus on translating ideas into
-                intuitive and interactive digital products.
+                Ik ben een tweedejaarsstudent Communication & Multimedia Design
+                aan de Hanzehogeschool in Groningen. Ik werk op het snijvlak van
+                conceptontwikkeling, user experience en front-end development,
+                met een focus op het vertalen van ideeen naar intuitieve en
+                interactieve digitale producten.
               </p>
               <div className="button-group justify-center sm:justify-start">
                 <a
@@ -48,14 +48,14 @@ export const Home = () => {
                   href="#Contact"
                   className="bg-pink-500 hover:bg-pink-600 text-white py-3 px-6 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-pink-500/50"
                 >
-                  Contact Me
+                  Neem contact op
                 </a>
                 <a
                   href={cvFile}
                   download
                   className="bg-white/20 hover:bg-white/30 border border-white/40 text-white py-3 px-6 rounded-lg font-semibold transition-all duration-300 shadow-lg"
                 >
-                  Download CV
+                  CV downloaden
                 </a>
               </div>
 

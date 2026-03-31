@@ -29,7 +29,7 @@ const dotPulseOptions = {
 };
 
 const sectionLinks = [
-  { id: "home", name: "Home", href: "#home", icon: FaHome },
+  { id: "home", name: "Start", href: "#home", icon: FaHome },
   { id: "Projects", name: "Projecten", href: "#Projects", icon: FaBriefcase },
   { id: "about", name: "Over mij", href: "#about", icon: FaUser },
   { id: "Contact", name: "Contact", href: "#Contact", icon: FaPhone },

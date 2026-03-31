@@ -9,47 +9,47 @@
     "Adobe XD"
   ],
   "main": [
-{
-  "title": "About me",
-  "description": "I'm a creative developer with a focus on front-end development and user experience. I enjoy building interactive and user-friendly digital products that combine strong design with functional code.\n\nMy work is centered around translating ideas into working prototypes using modern technologies like React, while applying UX principles such as research, testing and iteration.\n\nMy goal is to create digital experiences that not only look good, but also truly connect with users and solve real problems."
-}
+    {
+      "title": "Over mij",
+      "description": "Ik ben een creatieve developer met een focus op front-end development en user experience. Ik vind het leuk om interactieve en gebruiksvriendelijke digitale producten te bouwen die sterk design combineren met functionele code.\n\nMijn werk draait om het vertalen van ideeen naar werkende prototypes met moderne technologieen zoals React, waarbij ik UX-principes toepas zoals onderzoek, testen en iteratie.\n\nMijn doel is om digitale ervaringen te maken die er niet alleen goed uitzien, maar ook echt aansluiten op gebruikers en echte problemen oplossen."
+    }
   ],
   "backendSkills": ["Node.js", "Express", "MongoDB", "Firebase", "SQL"],
   "education": [
     {
-      "degree": "🎨BA Communication Multimedia and design",
-      "period": "2024-Present"
+      "degree": "🎨 BA Communication & Multimedia Design",
+      "period": "2024-heden"
     },
     {
-      "degree": "🎓 MBO 4 Sport management",
+      "degree": "🎓 MBO 4 Sportmanagement",
       "extra": "⚽KNVB TC3",
       "period": "2022-2023"
     },
     {
-      "degree": "🎓 MBO 3 Sport and Movement",
-      "extra": "⚽Juniors and Pupils",
+      "degree": "🎓 MBO 3 Sport en Bewegen",
+      "extra": "⚽Junioren en Pupillen",
       "period": "2019-2022"
     },
     {
-      "degree": "🎓 MBO 2 Sport and Recreation",
-      "extra": "🏊‍♂️ Lifeguard",
+      "degree": "🎓 MBO 2 Sport en Recreatie",
+      "extra": "🏊‍♂️ Reddingszwemmer",
       "period": "2017-2019"
     }
   ],
   "work": [
     {
       "company": "🏍️ MKC MOTO",
-      "role": "Sales-Specialist",
-      "period": "2024-Present"
+      "role": "Verkoopspecialist",
+      "period": "2024-heden"
     },
     {
       "company": "Jumbo Supermarkets",
-      "role": "Shelf-Stacker",
+      "role": "Vakkenvuller",
       "period": "2016-2020"
     },
     {
       "company": "🍽️ Paviljoen Appelbergen",
-      "role": "Waiter",
+      "role": "Bediening",
       "period": "2016-2024"
     }
   ]

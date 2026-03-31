@@ -45,7 +45,7 @@ export const About = () => {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
               <div className="glass-card p-6 rounded-xl hover:-translate-y-1 transition-all">
-                <h3 className="text-xl font-bold mb-4">🎓 Education </h3>
+                <h3 className="text-xl font-bold mb-4">🎓 Opleiding </h3>
                 <ul>
                   {education.map((edu, idx) => (
                     <li key={idx}>
@@ -61,7 +61,7 @@ export const About = () => {
                 </ul>
               </div>
               <div className="glass-card p-6 rounded-xl hover:-translate-y-1 transition-all">
-                <h3 className="text-xl font-bold mb-4">💼 Work experiences </h3>
+                <h3 className="text-xl font-bold mb-4">💼 Werkervaring </h3>
                 <ul>
                   {work.map((job, idx) => (
                     <li key={idx}>

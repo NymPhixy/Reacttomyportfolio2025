@@ -283,7 +283,7 @@ export const Project = () => {
                                 onClick={() => {
                                   if (additionalAction.type === "video") {
                                     setActiveVideoTitle(
-                                      `${project.title} video`,
+                                      `Video van ${project.title}`,
                                     );
                                     setActiveVideoUrl(
                                       getYouTubeEmbedUrl(additionalAction.href),

@@ -12,19 +12,19 @@ export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
       <button
         onClick={() => setMenuOpen(false)}
         className="absolute top-4 right-6 text-3xl text-white focus:outline-none cursor-pointer"
-        aria-label="Close menu"
+        aria-label="Menu sluiten"
       >
         &times;
       </button>
       <a
-        href="#Home"
+        href="#home"
         onClick={() => setMenuOpen(false)}
         className={`text-2xl font-semibold text-white my-4 transform transition-transform duration-300 ${
           menuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
         }
         `}
       >
-        Home
+        Start
       </a>
       <a
         href="#about"

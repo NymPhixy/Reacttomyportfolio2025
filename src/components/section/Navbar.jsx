@@ -10,7 +10,7 @@ export const Navbar = ({ menuOpen, setMenuOpen }) => {
       <div className="max-w-5xl mx-auto px-4 flex justify-between items-center">
         <div className="flex justify-between items-center h-16">
           <a
-            href="#Home"
+            href="#home"
             className="font-mono text-xl font-bold  bg-gradient-to-r text-transparent from-purple-700 to-pink-400 bg-clip-text leading-right"
           >
             RGB
@@ -32,7 +32,7 @@ export const Navbar = ({ menuOpen, setMenuOpen }) => {
               href="#"
               className="hover:text-white transition-colors font-bold text-pink-300"
             >
-              Home
+              Start
             </a>
             <a
               href="#about"

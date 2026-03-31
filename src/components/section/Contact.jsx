@@ -19,10 +19,10 @@ export const Contact = () => {
     emailjs
       .sendForm(SERVICE_ID, TEMPLATE_ID, e.target, PUBLIC_KEY)
       .then(() => {
-        alert("Message Sent, I will get back to you shortly");
+        alert("Bericht verzonden, ik neem snel contact met je op.");
       })
       .catch(() => {
-        alert("An error occurred, Please try again");
+        alert("Er is een fout opgetreden, probeer het opnieuw.");
       });
     setFormData({ name: "", email: "", message: "" });
   };
@@ -35,7 +35,7 @@ export const Contact = () => {
       <RevealOnScroll>
         <div className="w-full px-4 sm:px-8 max-w-2xl">
           <h2 className="text-4xl sm:text-5xl font-bold mb-8 bg-gradient-to-r text-transparent from-purple-400 to-pink-400 bg-clip-text">
-            Get In Touch
+            Neem contact op
           </h2>
           <form className="space-y-6" onSubmit={handleSubmit}>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full">
@@ -48,7 +48,7 @@ export const Contact = () => {
                   required
                   value={formData.name}
                   className="w-full glass-card border rounded-lg px-4 py-3 text-white placeholder:text-gray-300 transition focus:outline-none focus:border-pink-500"
-                  placeholder="Your Name"
+                  placeholder="Jouw naam"
                   onChange={(e) =>
                     setFormData({ ...formData, name: e.target.value })
                   }
@@ -80,7 +80,7 @@ export const Contact = () => {
                 value={formData.message}
                 rows={6}
                 className="w-full glass-card border rounded-lg px-4 py-3 text-white placeholder:text-gray-300 transition focus:outline-none focus:border-pink-500 resize-none"
-                placeholder="Your Message..."
+                placeholder="Jouw bericht..."
                 onChange={(e) =>
                   setFormData({ ...formData, message: e.target.value })
                 }
@@ -91,7 +91,7 @@ export const Contact = () => {
               type="submit"
               className="w-full bg-gradient-to-r from-purple-600 to-pink-500 hover:from-purple-700 hover:to-pink-600 text-white py-3 px-6 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-pink-500/50"
             >
-              Send Message
+              Verstuur bericht
             </button>
           </form>
         </div>

@@ -47,7 +47,7 @@ export const FooterSocials = () => {
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
           <div className="space-y-1 relative z-10">
             <p className="text-xs uppercase tracking-[0.18em] text-pink-200/90">
-              Let&apos;s connect
+              Laten we verbinden
             </p>
             <p className="text-sm sm:text-base text-gray-200">
               Volg mij op mijn platformen

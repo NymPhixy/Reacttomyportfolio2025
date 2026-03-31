@@ -4,7 +4,7 @@
     "period": "Periode 1",
     "title": "OWE - Orientatie op het werkveld",
     "img": {
-      "src": "/assets/laptopmockupportoflio.jpg",
+      "src": "https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop",
       "alt": "OWE - Orientatie op het werkveld"
     },
     "description": "Orientatie op het werkveld - Introductie tot mijn designreis",
@@ -21,8 +21,8 @@
     "period": "Periode 2",
     "title": "USO - Usability Ontwerp",
     "img": {
-      "src": "/assets/mockupuso.jpg",
-      "alt": "USO Design Document"
+      "src": "https://images.pexels.com/photos/6964297/pexels-photo-6964297.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop",
+      "alt": "USO-ontwerpdocument"
     },
     "description": "Usability-gericht ontwerp voor optimalisatie van gebruikerservaring",
     "tech": ["Figma", "UX/UI", "Design"],
@@ -38,11 +38,11 @@
     "period": "Periode 2",
     "title": "CVA - Creative Vaardigheden",
     "img": {
-      "src": "/assets/mockupuso.png",
-      "alt": "CVA Assignment"
+      "src": "https://images.pexels.com/photos/3807517/pexels-photo-3807517.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop",
+      "alt": "CVA-opdracht"
     },
     "description": "Communicatie en Visuele Esthetica opdracht voor P2",
-    "tech": ["Design", "Communication"],
+    "tech": ["Design", "Communicatie"],
     "action": {
       "type": "download",
       "label": "Designdocument downloaden 📥",
@@ -62,8 +62,8 @@
     "period": "Periode 3",
     "title": "INO - Interactie Ontwerp",
     "img": {
-      "src": "/assets/mockupino.jpg",
-      "alt": "INO Design Portfolio"
+      "src": "https://images.pexels.com/photos/5632399/pexels-photo-5632399.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop",
+      "alt": "INO-ontwerpportfolio"
     },
     "description": "Interactie ontwerp portfolio met creatieve probleemoplossing",
     "tech": ["Figma", "Design", "Interactie"],
@@ -79,11 +79,11 @@
     "period": "Periode 3",
     "title": "INO - Interactie Ontwerp (Ontwerp Portfolio)",
     "img": {
-      "src": "/assets/laptopmockupportoflio.png",
-      "alt": "Development Portfolio"
+      "src": "https://images.pexels.com/photos/7974/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop",
+      "alt": "Ontwikkelportfolio"
     },
-    "description": "Ontwerp en ontwikkelings portfolio dat mijn leerproces documenteert",
-    "tech": ["Design", "Development"],
+    "description": "Ontwerp- en ontwikkelportfolio dat mijn leerproces documenteert",
+    "tech": ["Design", "Ontwikkeling"],
     "action": {
       "type": "download",
       "label": "Designdocument downloaden 📥",
@@ -96,10 +96,10 @@
     "period": "Periode 4",
     "title": "INI - Interactieve Interface",
     "img": {
-      "src": "/assets/DSC_0640.jpg",
+      "src": "https://images.pexels.com/photos/1707267/pexels-photo-1707267.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop",
       "alt": "INI Project"
     },
-    "description": "Interactieve interface project met geavanceerd design denken",
+    "description": "Interactief interfaceproject met geavanceerd designdenken",
     "tech": ["Design", "Interactie"],
     "action": {
       "type": "download",
@@ -111,12 +111,12 @@
   {
     "year": "Leerjaar 1",
     "period": "Periode 4",
-    "title": "OWE - Optimale Web Experience",
+    "title": "OWE - Orientatie op het werkveld",
     "img": {
-      "src": "/assets/laptopmockupportoflio.jpg",
-      "alt": "OWE Project"
+      "src": "https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop",
+      "alt": "OWE - Orientatie op het werkveld"
     },
-    "description": "Optimale Web Experience project met focus op gebruiker-gericht design",
+    "description": "Orientatie op het werkveld - Introductie tot mijn designreis",
     "tech": ["Web Design", "UX/UI"],
     "action": {
       "type": "download",
@@ -130,11 +130,11 @@
     "period": "Periode 4",
     "title": "PED - Project Experience Design",
     "img": {
-      "src": "/assets/DSC_0640.jpg",
+      "src": "https://images.pexels.com/photos/4195325/pexels-photo-4195325.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop",
       "alt": "PED Project"
     },
-    "description": "Project Experience Design portfolio voor professionele ontwikkeling",
-    "tech": ["Professional Development"],
+    "description": "Project Experience Design-portfolio voor professionele ontwikkeling",
+    "tech": ["Professionele ontwikkeling"],
     "action": {
       "type": "download",
       "label": "Designdocument downloaden 📥",
@@ -147,10 +147,10 @@
     "period": "Periode 1",
     "title": "MWE - Mediawijsheid",
     "img": {
-      "src": "/assets/mockupuso.jpg",
+      "src": "https://images.pexels.com/photos/1092671/pexels-photo-1092671.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop",
       "alt": "MWE Project"
     },
-    "description": "Mediawijsheid project voor responsieve en toegankelijke design",
+    "description": "Mediawijsheidsproject voor responsief en toegankelijk design",
     "tech": ["Mobile Design", "Responsive", "Web"],
     "action": {
       "type": "download",
@@ -164,10 +164,10 @@
     "period": "Periode 1",
     "title": "OXR - Experience Design in VR/AR",
     "img": {
-      "src": "/assets/mockupino.jpg",
+      "src": "https://images.pexels.com/photos/3826517/pexels-photo-3826517.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop",
       "alt": "OXR Project"
     },
-    "description": "Experience Design in VR/AR project: gebruikersinzichten met design innovatie",
+    "description": "Experience Design in VR/AR-project: gebruikersinzichten met designinnovatie",
     "tech": ["UX Research", "Design", "VR/AR"],
     "action": {
       "type": "download",
@@ -188,11 +188,11 @@
     "period": "Periode 1",
     "title": "TMS - Transmediale Storytelling",
     "img": {
-      "src": "/assets/laptopmockupportoflio.jpg",
+      "src": "https://images.pexels.com/photos/1629317/pexels-photo-1629317.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop",
       "alt": "TMS Project"
     },
-    "description": "Transmediale Storytelling project: digitale oplossingen integreren",
-    "tech": ["Strategy", "Storytelling", "Technology"],
+    "description": "Transmediale Storytelling-project: digitale oplossingen integreren",
+    "tech": ["Strategie", "Storytelling", "Technologie"],
     "action": {
       "type": "download",
       "label": "Designdocument downloaden 📥",
@@ -215,7 +215,7 @@
       "src": "/assets/mockupuso.png",
       "alt": "ShoppingUI Mockup"
     },
-    "description": "A simple shopping UI made using HTML/CSS and Javascript with USO research document",
+    "description": "Een eenvoudige shopping-UI, gemaakt met HTML/CSS en JavaScript, inclusief USO-onderzoeksdocument.",
     "tech": ["HTML", "Javascript", "CSS", "UX/UI"],
     "action": {
       "type": "download",
@@ -227,12 +227,12 @@
   {
     "year": "Leerjaar 1",
     "period": "Periode 4",
-    "title": "My Portfolio website",
+    "title": "Mijn portfolio-website",
     "img": {
       "src": "/assets/laptopmockupportoflio.png",
-      "alt": "Portfolio Website Mockup"
+      "alt": "Portfolio-website mockup"
     },
-    "description": "A simple and elegant portfolio website showcasing my skills, projects, and achievements, built with React and Vite.",
+    "description": "Een eenvoudige en elegante portfolio-website waarin ik mijn vaardigheden, projecten en resultaten toon, gebouwd met React en Vite.",
     "tech": [
       "Node.JS",
       "React",
@@ -256,7 +256,7 @@
       "src": "/assets/mockupino.png",
       "alt": "MKC MOTO Scrollstory Mockup"
     },
-    "description": "A simpel scrollstory that makes motorcycle leaners easier the buy the right clothing at MKC",
+    "description": "Een simpele scrollstory die motorrijders helpt om makkelijker de juiste kleding bij MKC te kiezen.",
     "tech": ["Figma", "Javascript", "CSS", "HTML", "Design"],
     "action": {
       "type": "download",
