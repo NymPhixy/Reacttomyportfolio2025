@@ -12,6 +12,10 @@ import piaMainImage from "../../assets/Projecten/Leerjaar 1/P3/piamain.jpg";
 import iniMainImage from "../../assets/Projecten/Leerjaar 1/p4/inimain.jpg";
 import pedMainImage from "../../assets/Projecten/Leerjaar 1/p4/pedmain.jpg";
 import oweMainImage from "../../assets/Projecten/Leerjaar 1/p4/owemain.jpg";
+import {
+  getCategoryLabel,
+  getProjectCategoryKeys,
+} from "../../utils/projectCategories";
 
 // Filter to get only featured projects (you can mark them in JSON)
 // For now, let's get the best projects from each category
@@ -31,33 +35,11 @@ export const FeaturedProjects = ({ onOpenCaseStudy }) => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
   const categoryColors = {
-    UX: "text-blue-400 bg-blue-500/10 border-blue-500/30",
-    Frontend: "text-purple-400 bg-purple-500/10 border-purple-500/30",
-    Concept: "text-pink-400 bg-pink-500/10 border-pink-500/30",
-    Design: "text-cyan-400 bg-cyan-500/10 border-cyan-500/30",
-    Multimedia: "text-amber-400 bg-amber-500/10 border-amber-500/30",
-  };
-
-  const getProjectCategories = (tech) => {
-    if (!tech) return ["Design"];
-    const categories = [];
-    if (tech.some((t) => ["Figma", "UX/UI"].includes(t))) categories.push("UX");
-    if (tech.some((t) => ["React", "Frontend", "Web"].includes(t)))
-      categories.push("Frontend");
-    if (
-      tech.some((t) =>
-        [
-          "Concept",
-          "Concepting",
-          "Ideation",
-          "Strategy",
-          "Research",
-          "Design",
-        ].includes(t),
-      )
-    )
-      categories.push("Concept");
-    return categories.length > 0 ? categories : ["Design"];
+    "ux-onderzoek": "text-blue-400 bg-blue-500/10 border-blue-500/30",
+    "visual-design": "text-cyan-400 bg-cyan-500/10 border-cyan-500/30",
+    development: "text-purple-400 bg-purple-500/10 border-purple-500/30",
+    "video-storytelling": "text-rose-400 bg-rose-500/10 border-rose-500/30",
+    "strategie-concept": "text-amber-400 bg-amber-500/10 border-amber-500/30",
   };
 
   return (
@@ -78,7 +60,10 @@ export const FeaturedProjects = ({ onOpenCaseStudy }) => {
           {/* Featured Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {featured.map((project, index) => {
-              const categories = getProjectCategories(project.tech);
+              const categories = getProjectCategoryKeys(project.tech).slice(
+                0,
+                3,
+              );
               const previewImage = project.title.includes("DIO")
                 ? dioFinalImage
                 : project.title.includes("POF")
@@ -142,9 +127,9 @@ export const FeaturedProjects = ({ onOpenCaseStudy }) => {
                         {categories.map((cat) => (
                           <span
                             key={cat}
-                            className={`px-3 py-1 rounded-full text-xs font-semibold border ${categoryColors[cat] || categoryColors.Design}`}
+                            className={`px-3 py-1 rounded-full text-xs font-semibold border ${categoryColors[cat] || categoryColors["visual-design"]}`}
                           >
-                            {cat}
+                            {getCategoryLabel(cat)}
                           </span>
                         ))}
                       </div>
@@ -168,7 +153,7 @@ export const FeaturedProjects = ({ onOpenCaseStudy }) => {
                       >
                         {project.action?.type === "video"
                           ? "Video bekijken"
-                          : "Bekijk Case Study"}
+                          : "Bekijk casestudy"}
                         <span className="group-hover/btn:translate-x-1 transition-transform duration-300">
                           →
                         </span>

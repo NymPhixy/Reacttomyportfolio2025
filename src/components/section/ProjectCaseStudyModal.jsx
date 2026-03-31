@@ -331,7 +331,7 @@ export const ProjectCaseStudyModal = ({ project, onClose }) => {
       className={`fixed inset-0 z-[120] transition-opacity duration-200 ${isVisible ? "opacity-100" : "opacity-0"}`}
       role="dialog"
       aria-modal="true"
-      aria-label="Project case study"
+      aria-label="Project casestudy"
     >
       <div
         className="absolute inset-0 bg-black/70 backdrop-blur-sm"
@@ -345,7 +345,7 @@ export const ProjectCaseStudyModal = ({ project, onClose }) => {
           <div className="flex items-start justify-between gap-4 mb-8">
             <div>
               <p className="text-sm uppercase tracking-[0.16em] text-pink-300 mb-2">
-                Case Study
+                Casestudy
               </p>
               <h2 className="text-3xl sm:text-4xl font-bold text-white leading-tight">
                 {showDioLayout
@@ -363,7 +363,7 @@ export const ProjectCaseStudyModal = ({ project, onClose }) => {
                             : showUsoLayout
                               ? "USO - Usability Ontwerp"
                               : showPstLayout
-                                ? "PST – SAGANET Storytelling Campaign"
+                                ? "PST – SAGANET Storytelling Campagne"
                                 : project.title}
               </h2>
             </div>
@@ -371,7 +371,7 @@ export const ProjectCaseStudyModal = ({ project, onClose }) => {
               type="button"
               onClick={closeModal}
               className="p-2 rounded-lg border border-white/20 text-gray-200 hover:text-white hover:border-pink-400/50 transition-colors"
-              aria-label="Close case study"
+              aria-label="Sluit casestudy"
             >
               <FiX className="text-xl" />
             </button>
@@ -406,8 +406,8 @@ export const ProjectCaseStudyModal = ({ project, onClose }) => {
               <section className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
                 <div className="space-y-5">
                   <p className="text-gray-200 text-lg leading-relaxed">
-                    A personal visual identity project combining branding,
-                    storytelling and digital design.
+                    Een persoonlijk visuele-identiteitsproject waarin branding,
+                    storytelling en digitaal ontwerp samenkomen.
                   </p>
                   <div className="flex flex-wrap gap-2.5">
                     {detailTags.map((tag) => (
@@ -431,7 +431,7 @@ export const ProjectCaseStudyModal = ({ project, onClose }) => {
 
               <section className="glass-card rounded-xl p-5 border border-white/10">
                 <h3 className="text-xl font-bold text-white mb-3">
-                  Design Document
+                  Design document
                 </h3>
                 <p className="text-gray-300 mb-4">
                   Download het volledige showcase designdocument van dit
@@ -443,14 +443,14 @@ export const ProjectCaseStudyModal = ({ project, onClose }) => {
                   className="inline-flex items-center gap-2 px-4 py-2.5 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white font-semibold rounded-lg transition-all duration-300"
                 >
                   <FiDownload />
-                  Download Design Document
+                  Design document downloaden
                 </a>
               </section>
 
               <section className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 <div className="glass-card rounded-xl p-5 border border-white/10">
                   <h3 className="text-xl font-bold text-white mb-3 flex items-center gap-2">
-                    <FiTarget className="text-pink-400" /> Project Overview
+                    <FiTarget className="text-pink-400" /> Projectoverzicht
                   </h3>
                   <p className="text-gray-300 leading-relaxed">
                     Doel van dit project was het creëren van een persoonlijke
@@ -465,7 +465,7 @@ export const ProjectCaseStudyModal = ({ project, onClose }) => {
                   <ul className="space-y-2 text-gray-300">
                     <li>- Monogram</li>
                     <li>- Avatar</li>
-                    <li>- Cover design</li>
+                    <li>- Coverontwerp</li>
                     <li>- HTML/CSS website</li>
                   </ul>
                 </div>
@@ -473,7 +473,7 @@ export const ProjectCaseStudyModal = ({ project, onClose }) => {
 
               <section>
                 <h3 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
-                  <FiBookOpen className="text-purple-300" /> Design Approach
+                  <FiBookOpen className="text-purple-300" /> Designaanpak
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
                   {disciplineItems.map((item) => {
@@ -497,7 +497,7 @@ export const ProjectCaseStudyModal = ({ project, onClose }) => {
               </section>
 
               <section>
-                <h3 className="text-2xl font-bold text-white mb-4">Process</h3>
+                <h3 className="text-2xl font-bold text-white mb-4">Proces</h3>
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
                   {processPhases.map((phase) => (
                     <article
@@ -526,7 +526,7 @@ export const ProjectCaseStudyModal = ({ project, onClose }) => {
 
               <section className="glass-card rounded-xl p-5 border border-white/10">
                 <h3 className="text-2xl font-bold text-white mb-4">
-                  Key Design Choices
+                  Belangrijkste ontwerpkeuzes
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-gray-300">
                   <p>
@@ -543,7 +543,7 @@ export const ProjectCaseStudyModal = ({ project, onClose }) => {
               <section className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="glass-card rounded-xl p-5 border border-white/10">
                   <h3 className="text-xl font-bold text-white mb-3 flex items-center gap-2">
-                    <FiCheckCircle className="text-emerald-300" /> Result
+                    <FiCheckCircle className="text-emerald-300" /> Resultaat
                   </h3>
                   <ul className="space-y-2 text-gray-300">
                     <li>
@@ -557,7 +557,7 @@ export const ProjectCaseStudyModal = ({ project, onClose }) => {
                 </div>
                 <div className="glass-card rounded-xl p-5 border border-white/10">
                   <h3 className="text-xl font-bold text-white mb-3 flex items-center gap-2">
-                    <FiClock className="text-amber-300" /> Reflection
+                    <FiClock className="text-amber-300" /> Reflectie
                   </h3>
                   <ul className="space-y-2 text-gray-300">
                     <li>
@@ -574,11 +574,11 @@ export const ProjectCaseStudyModal = ({ project, onClose }) => {
 
               <section className="glass-card rounded-xl p-5 border border-white/10">
                 <h3 className="text-xl font-bold text-white mb-3">
-                  Future Improvements
+                  Verbeterpunten voor volgende keer
                 </h3>
                 <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 text-gray-300">
                   <li>- Meer iteraties in vroege en middenfase.</li>
-                  <li>- Meer feedback loops met peers en begeleiders.</li>
+                  <li>- Meer feedbackrondes met peers en begeleiders.</li>
                   <li>- Betere planning met vaste reviewmomenten.</li>
                   <li>
                     - Sterkere integratie tussen visuele identiteit en
@@ -594,7 +594,7 @@ export const ProjectCaseStudyModal = ({ project, onClose }) => {
               <section className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
                 <div className="space-y-5">
                   <h3 className="text-2xl sm:text-3xl font-bold text-white">
-                    FitBet - Improving Student Health
+                    FitBet - Studenten gezonder maken
                   </h3>
                   <p className="text-gray-200 text-lg leading-relaxed">
                     Een Design Thinking project gericht op fysieke en mentale
@@ -886,7 +886,7 @@ export const ProjectCaseStudyModal = ({ project, onClose }) => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
                   <div>
-                    <p className="text-sm text-purple-300 mb-2">Case Study</p>
+                    <p className="text-sm text-purple-300 mb-2">Casestudy</p>
                     <h3 className="text-2xl font-bold text-white">
                       Usability Ontwerp - Digno Redesign
                     </h3>
@@ -1054,7 +1054,7 @@ export const ProjectCaseStudyModal = ({ project, onClose }) => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
                   <div>
-                    <p className="text-sm text-purple-300 mb-2">Case Study</p>
+                    <p className="text-sm text-purple-300 mb-2">Casestudy</p>
                     <h3 className="text-2xl font-bold text-white">
                       CVA - Creative Vaardigheden
                     </h3>
@@ -1466,7 +1466,7 @@ export const ProjectCaseStudyModal = ({ project, onClose }) => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
                   <div>
-                    <p className="text-sm text-purple-300 mb-2">Case Study</p>
+                    <p className="text-sm text-purple-300 mb-2">Casestudy</p>
                     <h3 className="text-2xl font-bold text-white">
                       Designing accessible mental health support for students
                     </h3>
@@ -1697,17 +1697,19 @@ export const ProjectCaseStudyModal = ({ project, onClose }) => {
               {/* 14. FINAL TAKEAWAY */}
               <section className="glass-card rounded-xl p-5 border border-white/10">
                 <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                  <FiBookOpen className="text-purple-300" /> Final takeaway
+                  <FiBookOpen className="text-purple-300" /> Kernles
                 </h3>
                 <p className="text-gray-300 leading-relaxed">
-                  This project strengthened my ability to design meaningful
-                  digital experiences in a team setting.
+                  Dit project heeft mijn vermogen versterkt om betekenisvolle
+                  digitale ervaringen te ontwerpen binnen een teamcontext.
                 </p>
               </section>
 
               {/* 15. VISUALS */}
               <section className="glass-card rounded-xl p-5 border border-white/10">
-                <h3 className="text-xl font-bold text-white mb-3">Visuals</h3>
+                <h3 className="text-xl font-bold text-white mb-3">
+                  Visualisaties
+                </h3>
                 <p className="text-gray-300 mb-4">
                   Chatbot UI, roadmap-schermen en procesbeelden van de
                   teamaanpak.
@@ -1825,7 +1827,8 @@ export const ProjectCaseStudyModal = ({ project, onClose }) => {
 
               <section className="glass-card rounded-xl p-5 border border-white/10">
                 <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                  <FiMessageSquare className="text-pink-300" /> Design Challenge
+                  <FiMessageSquare className="text-pink-300" />
+                  Ontwerpuitdaging
                 </h3>
                 <p className="text-gray-300 italic">
                   Hoe kunnen we een toekomstige leerervaring ontwerpen die
@@ -2070,7 +2073,7 @@ export const ProjectCaseStudyModal = ({ project, onClose }) => {
 
               <section className="glass-card rounded-xl p-5 border border-white/10">
                 <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                  <FiBox className="text-cyan-300" /> Visuals
+                  <FiBox className="text-cyan-300" /> Visualisaties
                 </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="rounded-lg overflow-hidden border border-white/10">
@@ -2115,17 +2118,17 @@ export const ProjectCaseStudyModal = ({ project, onClose }) => {
               <div className="relative h-64 sm:h-80 rounded-xl overflow-hidden border border-white/10">
                 <img
                   src={iniMainImage}
-                  alt={project.img?.alt || "Multisensory installation visual"}
+                  alt={project.img?.alt || "Multisensorische installatievisual"}
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
                   <div>
                     <h3 className="text-2xl font-bold text-white mb-2">
-                      Designing an inclusive multisensory experience
+                      Een inclusieve multisensorische ervaring ontwerpen
                     </h3>
                     <p className="text-gray-200 text-sm sm:text-base">
-                      An interactive installation translating sound into light
-                      and color into feeling.
+                      Een interactieve installatie die geluid vertaalt naar
+                      licht en kleur naar gevoel.
                     </p>
                   </div>
                 </div>
@@ -2133,10 +2136,10 @@ export const ProjectCaseStudyModal = ({ project, onClose }) => {
 
               <div className="flex flex-wrap gap-2">
                 {[
-                  "Experience Design",
-                  "Interaction Design",
+                  "Belevingsontwerp",
+                  "Interactieontwerp",
                   "Physical Computing",
-                  "Inclusive Design",
+                  "Inclusief ontwerp",
                 ].map((tag) => (
                   <span
                     key={tag}
@@ -2150,20 +2153,20 @@ export const ProjectCaseStudyModal = ({ project, onClose }) => {
               {/* 2. PROJECT OVERVIEW */}
               <section className="glass-card rounded-xl p-5 border border-white/10">
                 <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                  <FiTarget className="text-blue-300" /> Project overview
+                  <FiTarget className="text-blue-300" /> Projectoverzicht
                 </h3>
                 <div className="space-y-3 text-gray-300">
                   <p>
-                    <strong>Context:</strong> Interactive installation project
-                    focused on immersive experience design.
+                    <strong>Context:</strong> Interactief installatieproject met
+                    focus op immersief belevingsontwerp.
                   </p>
                   <p>
-                    <strong>Goal:</strong> Build an experience, not just an
+                    <strong>Doel:</strong> Een ervaring bouwen, niet alleen een
                     interface.
                   </p>
                   <p>
-                    <strong>Focus:</strong> Inclusivity for blind and deaf
-                    users.
+                    <strong>Focus:</strong> Inclusiviteit voor blinde en dove
+                    gebruikers.
                   </p>
                 </div>
               </section>
@@ -2171,16 +2174,16 @@ export const ProjectCaseStudyModal = ({ project, onClose }) => {
               {/* 3. PROBLEM */}
               <section className="glass-card rounded-xl p-5 border border-white/10">
                 <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                  <FiClipboard className="text-orange-300" /> Problem
+                  <FiClipboard className="text-orange-300" /> Probleem
                 </h3>
                 <p className="text-gray-300 mb-3">
-                  Most installations rely on vision or sound, which excludes
-                  people with sensory impairments.
+                  De meeste installaties leunen op zicht of geluid, waardoor
+                  mensen met zintuiglijke beperkingen worden uitgesloten.
                 </p>
                 <div className="p-3 rounded-lg border border-orange-400/30 bg-orange-500/10">
-                  <p className="text-orange-200 font-semibold">Key insight</p>
+                  <p className="text-orange-200 font-semibold">Kerninzicht</p>
                   <p className="text-gray-300">
-                    There is no shared sensory experience.
+                    Er is geen gedeelde zintuiglijke ervaring.
                   </p>
                 </div>
               </section>
@@ -2191,48 +2194,49 @@ export const ProjectCaseStudyModal = ({ project, onClose }) => {
                   <FiCompass className="text-amber-300" /> Concept
                 </h3>
                 <ul className="space-y-2 text-gray-300">
-                  <li>- Inspired by synesthesia</li>
-                  <li>- Sound becomes light</li>
-                  <li>- Color becomes vibration</li>
-                  <li>- Multiple senses combined into one narrative</li>
+                  <li>- Geinspireerd op synesthesie</li>
+                  <li>- Geluid wordt licht</li>
+                  <li>- Kleur wordt trilling</li>
+                  <li>- Meerdere zintuigen samengebracht in een verhaal</li>
                 </ul>
               </section>
 
               {/* 5. DESIGN CHALLENGE */}
               <section className="glass-card rounded-xl p-5 border border-white/10">
                 <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                  <FiMessageSquare className="text-pink-300" /> Design challenge
+                  <FiMessageSquare className="text-pink-300" />
+                  Ontwerpuitdaging
                 </h3>
                 <p className="text-gray-300 italic">
-                  How might we design a sensory installation where blind and
-                  deaf users can experience color and sound in an equal and
-                  meaningful way?
+                  Hoe kunnen we een zintuiglijke installatie ontwerpen waarin
+                  blinde en dove gebruikers kleur en geluid op een
+                  gelijkwaardige en betekenisvolle manier ervaren?
                 </p>
               </section>
 
               {/* 6. EXPERIENCE FLOW */}
               <section className="glass-card rounded-xl p-5 border border-white/10">
                 <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                  <FiLayers className="text-cyan-300" /> Experience flow
+                  <FiLayers className="text-cyan-300" /> Ervaringsflow
                 </h3>
                 <ul className="space-y-2 text-gray-300">
-                  <li>- Entering a dark room</li>
-                  <li>- Guided by light, sound and vibration</li>
-                  <li>- Choosing to move or stay</li>
-                  <li>- Interaction with the talking wall</li>
+                  <li>- Binnenkomen in een donkere ruimte</li>
+                  <li>- Geleid worden door licht, geluid en trilling</li>
+                  <li>- Kiezen om te bewegen of stil te blijven</li>
+                  <li>- Interactie met de pratende wand</li>
                 </ul>
               </section>
 
               {/* 7. INTERACTION DESIGN */}
               <section className="glass-card rounded-xl p-5 border border-white/10">
                 <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                  <FiLayout className="text-indigo-300" /> Interaction design
+                  <FiLayout className="text-indigo-300" /> Interactieontwerp
                 </h3>
                 <ul className="space-y-2 text-gray-300">
-                  <li>- Braille navigation</li>
-                  <li>- Audio stories</li>
-                  <li>- Light signals</li>
-                  <li>- Haptic feedback</li>
+                  <li>- Braille-navigatie</li>
+                  <li>- Audioverhalen</li>
+                  <li>- Lichtsignalen</li>
+                  <li>- Haptische feedback</li>
                 </ul>
               </section>
 
@@ -2251,19 +2255,20 @@ export const ProjectCaseStudyModal = ({ project, onClose }) => {
               {/* 9. TECHNICAL CHALLENGES */}
               <section className="glass-card rounded-xl p-5 border border-white/10">
                 <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                  <FiClock className="text-amber-300" /> Technical challenges
+                  <FiClock className="text-amber-300" /> Technische uitdagingen
                 </h3>
                 <ul className="space-y-2 text-gray-300 mb-4">
-                  <li>- Voice recognition did not work reliably</li>
-                  <li>- Sound detection was unstable in testing</li>
+                  <li>- Spraakherkenning werkte niet betrouwbaar</li>
+                  <li>- Geluidsdetectie was instabiel tijdens tests</li>
                 </ul>
                 <div className="p-4 rounded-lg border border-amber-400/30 bg-amber-500/10">
                   <p className="text-amber-200 font-semibold mb-1">
-                    Design maturity
+                    Ontwerpvolwassenheid
                   </p>
                   <p className="text-gray-300">
-                    We prioritized concept clarity over broken interaction and
-                    used storytelling to communicate the experience vision.
+                    We prioriteerden conceptuele helderheid boven kapotte
+                    interactie en gebruikten storytelling om de ervaringsvisie
+                    over te brengen.
                   </p>
                 </div>
               </section>
@@ -2271,24 +2276,26 @@ export const ProjectCaseStudyModal = ({ project, onClose }) => {
               {/* 10. FINAL EXPERIENCE */}
               <section className="glass-card rounded-xl p-5 border border-white/10">
                 <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                  <FiCheckCircle className="text-green-300" /> Final experience
+                  <FiCheckCircle className="text-green-300" /> Eindervaring
                 </h3>
                 <ul className="space-y-2 text-gray-300">
-                  <li>- Emotional impact through multisensory translation</li>
-                  <li>- Shared experience instead of separated user groups</li>
-                  <li>- Empathy creation through embodied interaction</li>
+                  <li>- Emotionele impact door multisensorische vertaling</li>
+                  <li>
+                    - Gedeelde ervaring in plaats van gescheiden doelgroepen
+                  </li>
+                  <li>- Empathieopbouw via belichaamde interactie</li>
                 </ul>
               </section>
 
               {/* 11. MY ROLE */}
               <section className="glass-card rounded-xl p-5 border border-white/10">
                 <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                  <FiUser className="text-cyan-300" /> My role
+                  <FiUser className="text-cyan-300" /> Mijn rol
                 </h3>
                 <ul className="space-y-2 text-gray-300">
-                  <li>- Technical development (Arduino)</li>
-                  <li>- Concept thinking (sensory translation)</li>
-                  <li>- Interaction design decisions</li>
+                  <li>- Technische ontwikkeling (Arduino)</li>
+                  <li>- Conceptdenken (zintuiglijke vertaling)</li>
+                  <li>- Beslissingen in interactieontwerp</li>
                 </ul>
               </section>
 
@@ -2296,22 +2303,22 @@ export const ProjectCaseStudyModal = ({ project, onClose }) => {
               <section className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="glass-card rounded-xl p-5 border border-white/10">
                   <h3 className="text-lg font-bold text-white mb-3 flex items-center gap-2">
-                    <FiAward className="text-emerald-300" /> Strengths
+                    <FiAward className="text-emerald-300" /> Sterktes
                   </h3>
                   <ul className="space-y-2 text-gray-300 text-sm">
-                    <li>✓ Strong concept and clear experience vision</li>
-                    <li>✓ Empathy-driven design approach</li>
-                    <li>✓ Inclusive interaction perspective</li>
+                    <li>✓ Sterk concept en heldere ervaringsvisie</li>
+                    <li>✓ Empathiegedreven ontwerpaanpak</li>
+                    <li>✓ Inclusief interactieperspectief</li>
                   </ul>
                 </div>
                 <div className="glass-card rounded-xl p-5 border border-white/10">
                   <h3 className="text-lg font-bold text-white mb-3 flex items-center gap-2">
-                    <FiClock className="text-amber-300" /> Improvements
+                    <FiClock className="text-amber-300" /> Verbeterpunten
                   </h3>
                   <ul className="space-y-2 text-gray-300 text-sm">
-                    <li>→ Earlier technical testing</li>
-                    <li>→ Simpler technical scope</li>
-                    <li>→ Better prioritization</li>
+                    <li>→ Eerder technisch testen</li>
+                    <li>→ Eenvoudigere technische scope</li>
+                    <li>→ Betere prioritering</li>
                   </ul>
                 </div>
               </section>
@@ -2319,20 +2326,23 @@ export const ProjectCaseStudyModal = ({ project, onClose }) => {
               {/* 13. FINAL TAKEAWAY */}
               <section className="glass-card rounded-xl p-5 border border-white/10">
                 <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                  <FiBookOpen className="text-purple-300" /> Final takeaway
+                  <FiBookOpen className="text-purple-300" /> Kernles
                 </h3>
                 <p className="text-gray-300 leading-relaxed">
-                  I learned that meaningful interaction design is not just about
-                  technology, but about creating experiences people can feel.
+                  Ik leerde dat betekenisvol interactieontwerp niet alleen over
+                  technologie gaat, maar over ervaringen die mensen echt kunnen
+                  voelen.
                 </p>
               </section>
 
               {/* 14. VISUALS */}
               <section className="glass-card rounded-xl p-5 border border-white/10">
-                <h3 className="text-xl font-bold text-white mb-3">Visuals</h3>
+                <h3 className="text-xl font-bold text-white mb-3">
+                  Visualisaties
+                </h3>
                 <p className="text-gray-300 mb-4">
-                  Installation renders, prototype photos, Arduino setup,
-                  sketches, and experience flow artifacts.
+                  Installatierenders, prototypefoto's, Arduino-opstelling,
+                  schetsen en artefacten van de ervaringsflow.
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="rounded-lg overflow-hidden border border-white/10">
@@ -2355,7 +2365,7 @@ export const ProjectCaseStudyModal = ({ project, onClose }) => {
               {/* 15. DOWNLOAD PORTFOLIO */}
               <section className="glass-card rounded-xl p-5 border border-white/10">
                 <h3 className="text-xl font-bold text-white mb-3 flex items-center gap-2">
-                  <FiDownload className="text-cyan-300" /> Portfolio download
+                  <FiDownload className="text-cyan-300" /> Portfolio-download
                 </h3>
                 <p className="text-gray-300 mb-4">
                   Download het volledige INI portfolio-document van dit project.
@@ -2387,7 +2397,7 @@ export const ProjectCaseStudyModal = ({ project, onClose }) => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
                   <div className="w-full flex items-end justify-between gap-4">
                     <div>
-                      <p className="text-sm text-purple-300 mb-2">Case Study</p>
+                      <p className="text-sm text-purple-300 mb-2">Casestudy</p>
                       <h3 className="text-2xl font-bold text-white">
                         SAGANET - Storytelling Campagne
                       </h3>

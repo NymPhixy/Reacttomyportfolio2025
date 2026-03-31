@@ -1,25 +1,18 @@
 // Project Filter Component - ProjectFilter.jsx (NEW COMPONENT)
 import { useState, useMemo, useEffect } from "react";
+import {
+  getCategoryLabel,
+  getProjectCategoryKeys,
+  getVisibleCategoryKeys,
+} from "../../utils/projectCategories";
 
 export const ProjectFilter = ({ projects, onFilter }) => {
-  const [selectedCategory, setSelectedCategory] = useState("All");
+  const [selectedCategory, setSelectedCategory] = useState("all");
   const [selectedYear, setSelectedYear] = useState(null);
 
-  // Extract unique categories and years
+  // Extract visible categories and years
   const categories = useMemo(() => {
-    const cats = new Set(["All"]);
-    projects.forEach((p) => {
-      if (Array.isArray(p.tech)) {
-        // Map tech to categories
-        if (p.tech.some((t) => ["Figma", "UX/UI", "Design"].includes(t)))
-          cats.add("UX");
-        if (p.tech.some((t) => ["React", "Frontend", "Web"].includes(t)))
-          cats.add("Frontend");
-        if (p.tech.some((t) => ["Concept", "Strategy"].includes(t)))
-          cats.add("Concept");
-      }
-    });
-    return Array.from(cats);
+    return getVisibleCategoryKeys(projects);
   }, [projects]);
 
   const years = useMemo(() => {
@@ -30,15 +23,10 @@ export const ProjectFilter = ({ projects, onFilter }) => {
   const filtered = useMemo(() => {
     return projects.filter((p) => {
       // Category filter
-      if (selectedCategory !== "All") {
-        const hasCategory =
-          Array.isArray(p.tech) &&
-          ((selectedCategory === "UX" &&
-            p.tech.some((t) => ["Figma", "UX/UI"].includes(t))) ||
-            (selectedCategory === "Frontend" &&
-              p.tech.some((t) => ["React", "Web"].includes(t))) ||
-            (selectedCategory === "Concept" &&
-              p.tech.some((t) => ["Design", "Concept"].includes(t))));
+      if (selectedCategory !== "all") {
+        const hasCategory = getProjectCategoryKeys(p.tech).includes(
+          selectedCategory,
+        );
         if (!hasCategory) return false;
       }
 
@@ -55,10 +43,14 @@ export const ProjectFilter = ({ projects, onFilter }) => {
   }, [filtered, onFilter]);
 
   const categoryConfig = {
-    All: "border-white/30 text-white hover:border-white/50",
-    UX: "border-blue-400/50 text-blue-300 hover:border-blue-400",
-    Frontend: "border-purple-400/50 text-purple-300 hover:border-purple-400",
-    Concept: "border-pink-400/50 text-pink-300 hover:border-pink-400",
+    all: "border-white/30 text-white hover:border-white/50",
+    "ux-onderzoek": "border-blue-400/50 text-blue-300 hover:border-blue-400",
+    "visual-design": "border-cyan-400/50 text-cyan-300 hover:border-cyan-400",
+    development: "border-purple-400/50 text-purple-300 hover:border-purple-400",
+    "video-storytelling":
+      "border-rose-400/50 text-rose-300 hover:border-rose-400",
+    "strategie-concept":
+      "border-amber-400/50 text-amber-300 hover:border-amber-400",
   };
 
   return (
@@ -74,7 +66,6 @@ export const ProjectFilter = ({ projects, onFilter }) => {
               key={cat}
               onClick={() => {
                 setSelectedCategory(cat);
-                setSelectedYear(null); // Reset year filter when changing category
               }}
               className={`px-4 py-2 rounded-full border text-sm font-medium whitespace-nowrap transition-all duration-300 ${
                 selectedCategory === cat
@@ -82,7 +73,7 @@ export const ProjectFilter = ({ projects, onFilter }) => {
                   : "border-white/20 text-gray-300 hover:border-white/40"
               }`}
             >
-              {cat}
+              {cat === "all" ? "Alles" : getCategoryLabel(cat)}
             </button>
           ))}
         </div>
@@ -118,13 +109,14 @@ export const ProjectFilter = ({ projects, onFilter }) => {
           Toon{" "}
           <span className="text-pink-400 font-semibold">{filtered.length}</span>{" "}
           projecten
-          {selectedCategory !== "All" && ` in ${selectedCategory}`}
+          {selectedCategory !== "all" &&
+            ` in ${getCategoryLabel(selectedCategory)}`}
           {selectedYear && ` van ${selectedYear}`}
         </p>
-        {(selectedCategory !== "All" || selectedYear) && (
+        {(selectedCategory !== "all" || selectedYear) && (
           <button
             onClick={() => {
-              setSelectedCategory("All");
+              setSelectedCategory("all");
               setSelectedYear(null);
             }}
             className="text-xs text-gray-400 hover:text-pink-400 transition-colors duration-300 underline"

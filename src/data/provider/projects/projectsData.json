@@ -52,23 +52,23 @@
   {
     "year": "Leerjaar 1",
     "period": "Periode 2",
-    "title": "PST – SAGANET Storytelling Campaign",
+    "title": "PST – SAGANET Storytelling Campagne",
     "img": {
       "src": "/assets/Projecten/Leerjaar 1/p2/pstmain.jpg",
-      "alt": "PST SAGANET Storytelling Campaign"
+      "alt": "PST SAGANET Storytelling Campagne"
     },
-    "description": "Audiovisual storytelling campaign ontworpen om game developers aan te trekken door middel van overtuigende narratieven, concept-development en professionele video-productie.",
+    "description": "Audiovisuele storytelling-campagne ontworpen om game developers aan te trekken met overtuigende narratieven, conceptontwikkeling en professionele videoproductie.",
     "tech": [
       "Storytelling",
-      "Visual Design",
+      "Visueel Ontwerp",
       "Social Media",
-      "Concepting",
-      "Video Editing",
-      "Design Thinking"
+      "Conceptontwikkeling",
+      "Videobewerking",
+      "Designdenken"
     ],
     "action": {
       "type": "case-study",
-      "label": "Bekijk Case Study",
+      "label": "Bekijk casestudy",
       "href": "#"
     },
     "additionalActions": [
@@ -89,10 +89,10 @@
     },
     "description": "Inclusieve multisensorische installatie waarin geluid licht wordt en kleur voelbaar wordt, ontworpen voor een gedeelde ervaring.",
     "tech": [
-      "Experience Design",
-      "Interaction Design",
+      "Belevingsontwerp",
+      "Interactieontwerp",
       "Physical Computing",
-      "Inclusive Design"
+      "Inclusief Ontwerp"
     ],
     "action": {
       "type": "download",
@@ -109,14 +109,14 @@
       "src": "/assets/Projecten/Leerjaar 1/p4/owemain.jpg",
       "alt": "OWE portfolio-website mockup"
     },
-    "description": "Binnen OWE ontwikkelde ik een elegante portfolio-website waarin ik mijn vaardigheden, projecten en resultaten toon, gebouwd met React en Vite.",
+    "description": "Binnen OWE ontwikkelde ik een portfolio-website waarin ik mijn vaardigheden, projecten en resultaten toon, gebouwd met React en Vite.",
     "tech": [
       "Node.JS",
       "React",
       "Javascript",
       "Tailwindcss",
       "Vite",
-      "Web Design"
+      "Webontwerp"
     ],
     "action": {
       "type": "download",
@@ -135,10 +135,10 @@
     },
     "description": "Toekomstgerichte conceptcase over AR-brillen die een naadloze leerervaring mogelijk maken zonder smartphone-afleiding.",
     "tech": [
-      "Experience Design",
-      "Future Design",
-      "Interaction Design",
-      "Concept Design"
+      "Belevingsontwerp",
+      "Toekomstontwerp",
+      "Interactieontwerp",
+      "Conceptontwerp"
     ],
     "action": {
       "type": "download",
@@ -156,7 +156,7 @@
       "alt": "MWE Project"
     },
     "description": "Mediawijsheidsproject voor responsief en toegankelijk design",
-    "tech": ["Mobile Design", "Responsive", "Web"],
+    "tech": ["Mobiel Ontwerp", "Responsief", "Web"],
     "action": {
       "type": "download",
       "label": "Designdocument downloaden 📥",
@@ -215,8 +215,8 @@
     },
     "description": "Interactieve scrollytelling experience die beginnende motorrijders stap voor stap helpt de juiste motorkleding te kiezen.",
     "tech": [
-      "UX Design",
-      "Interaction Design",
+      "UX-ontwerp",
+      "Interactieontwerp",
       "Figma",
       "Javascript",
       "CSS",
@@ -251,24 +251,24 @@
   {
     "year": "Leerjaar 1",
     "period": "Periode 3",
-    "title": "PIA - Hanzey Digital Mental Support Platform",
+    "title": "PIA - Hanzey Digitaal Mentaal Ondersteuningsplatform",
     "img": {
       "src": "/assets/Projecten/Leerjaar 1/P3/piamain.jpg",
       "alt": "PIA calling card"
     },
-    "description": "Teamproject binnen Project Interactive Media waarin we een digitale mentale support-oplossing voor Hanze-studenten ontwikkelden.",
+    "description": "Teamproject binnen Project Interactieve Media waarin we een digitale mentale ondersteuningsoplossing voor Hanze-studenten ontwikkelden.",
     "tech": [
-      "UX Design",
-      "Service Design",
-      "Concept Development",
-      "Team Project",
-      "Interaction Design",
+      "UX-ontwerp",
+      "Serviceontwerp",
+      "Conceptontwikkeling",
+      "Teamproject",
+      "Interactieontwerp",
       "Figma",
       "Design"
     ],
     "action": {
       "type": "case-study",
-      "label": "Bekijk Case Study",
+      "label": "Bekijk casestudy",
       "href": "#"
     }
   },
@@ -278,13 +278,13 @@
     "title": "DIO - Driven by Design",
     "img": {
       "src": "https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop",
-      "alt": "Driven by Design case study visual"
+      "alt": "Driven by Design casestudy visual"
     },
     "description": "Persoonlijke visuele identiteit waarin motorsport, branding en digitale designvaardigheden samenkomen.",
     "tech": [
       "Branding",
-      "Concepting",
-      "Ideation",
+      "Conceptontwikkeling",
+      "Ideevorming",
       "Design",
       "Prototyping",
       "HTML",
@@ -292,7 +292,7 @@
     ],
     "action": {
       "type": "case-study",
-      "label": "Bekijk Case Study",
+      "label": "Bekijk casestudy",
       "href": "#"
     }
   },
@@ -302,19 +302,19 @@
     "title": "POF - Project in Offline Media",
     "img": {
       "src": "https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop",
-      "alt": "FitBet workshop and concept development"
+      "alt": "FitBet workshop en conceptontwikkeling"
     },
-    "description": "Design Thinking groepsproject gericht op fysieke en mentale gezondheid van studenten via onderzoek, concepting en teamwork.",
+    "description": "Designdenken-groepsproject gericht op fysieke en mentale gezondheid van studenten via onderzoek, conceptontwikkeling en teamwerk.",
     "tech": [
-      "UX Design",
-      "Research",
-      "Design Thinking",
-      "Concepting",
-      "Teamwork"
+      "UX-ontwerp",
+      "Onderzoek",
+      "Designdenken",
+      "Conceptontwikkeling",
+      "Teamwerk"
     ],
     "action": {
       "type": "case-study",
-      "label": "Bekijk Case Study",
+      "label": "Bekijk casestudy",
       "href": "#"
     }
   }
