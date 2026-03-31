@@ -63,7 +63,7 @@ export const Contact = () => {
                   required
                   value={formData.email}
                   className="w-full glass-card border rounded-lg px-4 py-3 text-white placeholder:text-gray-300 transition focus:outline-none focus:border-pink-500"
-                  placeholder="your@email.com"
+                  placeholder="jouw@email.com"
                   onChange={(e) =>
                     setFormData({ ...formData, email: e.target.value })
                   }

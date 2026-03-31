@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Oversized media file kept local (exceeds GitHub upload limit)
+public/assets/Projecten/leerjaar1/p2/Eindopdracht_CVA_Ruben_Janssen_469974.mp4

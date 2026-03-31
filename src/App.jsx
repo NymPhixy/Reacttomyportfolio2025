@@ -3,6 +3,7 @@ import "./App.css";
 import "./index.css";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { Home } from "./components/section/Home";
+import { FeaturedProjects } from "./components/section/FeaturedProjects";
 import { SectionDotNav } from "./components/section/SectionDotNav";
 import { FooterSocials } from "./components/section/FooterSocials";
 
@@ -42,6 +43,7 @@ function App() {
         <div className="relative z-10">
           <SectionDotNav />
           <Home />
+          <FeaturedProjects />
           {showDeferredSections && (
             <>
               <Suspense fallback={<SectionFallback />}>

@@ -157,13 +157,12 @@ p {
 }
 
 .footer-social-glow {
-  background-image:
-    linear-gradient(
-      120deg,
-      rgba(236, 72, 153, 0.08),
-      rgba(56, 189, 248, 0.08),
-      rgba(236, 72, 153, 0.08)
-    );
+  background-image: linear-gradient(
+    120deg,
+    rgba(236, 72, 153, 0.08),
+    rgba(56, 189, 248, 0.08),
+    rgba(236, 72, 153, 0.08)
+  );
   background-size: 220% 220%;
   animation: footerGlowShift 9s ease infinite;
 }

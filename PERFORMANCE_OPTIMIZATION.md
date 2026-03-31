@@ -175,7 +175,11 @@ npm preview
 - [ ] Bundle analyzer setup
 - [ ] Deployment & monitoring
 
-## Next Session Tasks
+---
+
+## 🚀 Next Session Tasks
+
+<div align="center">
 
 1. **Compress all images** - Use ImageOptim or similar
 2. **Test production build** - Run `npm run build && npm preview`
@@ -183,7 +187,13 @@ npm preview
 4. **Consider WebP format** - For additional 30-40% image size savings
 5. **Set up deployment** - Deploy to Netlify/Vercel with optimized settings
 
+</div>
+
 ---
 
-**Last Updated:** March 29, 2026
+<div align="center">
+
+**Last Updated:** March 29, 2026  
 **Optimizations Applied By:** AI Assistant
+
+</div>
