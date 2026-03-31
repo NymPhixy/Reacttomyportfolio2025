@@ -38,24 +38,32 @@
     "period": "Periode 2",
     "title": "CVA - Creative Vaardigheden",
     "img": {
-      "src": "https://images.pexels.com/photos/3807517/pexels-photo-3807517.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop",
-      "alt": "CVA-opdracht"
+      "src": "/assets/Projecten/Leerjaar 1/p2/cvafotomain.jpg",
+      "alt": "CVA Creative Vaardigheden"
     },
-    "description": "Communicatie en Visuele Esthetica opdracht voor P2",
-    "tech": ["Design", "Communicatie"],
+    "description": "Communicatie en Visuele Esthetica opdracht met creatief design - bekijk de uitleg in de video",
+    "tech": ["Design", "Communicatie", "Video"],
     "action": {
-      "type": "download",
-      "label": "Designdocument downloaden 📥",
-      "href": "/assets/Projecten/leerjaar1/p2/CVA OPdracht 1 p2.pdf",
-      "filename": "CVA_Ruben_Janssen.pdf"
+      "type": "video",
+      "label": "Video bekijken 🎥",
+      "href": "https://youtu.be/rlQc5IiRPRU"
+    }
+  },
+  {
+    "year": "Leerjaar 1",
+    "period": "Periode 2",
+    "title": "PST – SAGANET Storytelling Campaign",
+    "img": {
+      "src": "/assets/Projecten/Leerjaar 1/p2/pstmain.jpg",
+      "alt": "PST SAGANET Storytelling Campaign"
     },
-    "additionalActions": [
-      {
-        "type": "video",
-        "label": "Video bekijken 🎥",
-        "href": "https://youtu.be/rlQc5IiRPRU"
-      }
-    ]
+    "description": "Audiovisual storytelling campaign ontworpen om game developers aan te trekken door middel van overtuigende narratieven, concept-development en professionele video-productie.",
+    "tech": ["Storytelling", "Visual Design", "Social Media", "Concepting", "Video Editing", "Design Thinking"],
+    "action": {
+      "type": "case-study",
+      "label": "Bekijk Case Study",
+      "href": "#"
+    }
   },
   {
     "year": "Leerjaar 1",

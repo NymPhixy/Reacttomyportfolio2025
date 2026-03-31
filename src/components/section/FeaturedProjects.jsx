@@ -5,6 +5,8 @@ import projects from "../../data/provider/projects/projectsData.json";
 import dioFinalImage from "../../assets/Projecten/Leerjaar 1/p1/diofinal.jpg";
 import pofMainImage from "../../assets/Projecten/Leerjaar 1/p1/pofmain.jpg";
 import usoMainImage from "../../assets/Projecten/Leerjaar 1/p2/usomain.jpg";
+import cvaMainImage from "../../assets/Projecten/Leerjaar 1/p2/cvafotomain.jpg";
+import pstMainImage from "../../assets/Projecten/Leerjaar 1/p2/pstmain.jpg";
 
 // Filter to get only featured projects (you can mark them in JSON)
 // For now, let's get the best projects from each category
@@ -78,7 +80,11 @@ export const FeaturedProjects = ({ onOpenCaseStudy }) => {
                   ? pofMainImage
                   : project.title.includes("USO")
                     ? usoMainImage
-                    : project.img.src;
+                    : project.title.includes("CVA")
+                      ? cvaMainImage
+                      : project.title.includes("PST") || project.title.includes("SAGANET")
+                        ? pstMainImage
+                        : project.img.src;
               return (
                 <div
                   key={`featured-${index}`}
@@ -126,10 +132,18 @@ export const FeaturedProjects = ({ onOpenCaseStudy }) => {
                       {/* CTA Button */}
                       <button
                         type="button"
-                        onClick={() => onOpenCaseStudy?.(project)}
+                        onClick={() => {
+                          if (project.action?.type === "video") {
+                            window.open(project.action?.href, "_blank");
+                          } else {
+                            onOpenCaseStudy?.(project);
+                          }
+                        }}
                         className="w-full mt-4 py-2 px-4 bg-gradient-to-r from-purple-600/80 to-pink-600/80 hover:from-purple-500 hover:to-pink-500 text-white font-semibold rounded-lg transition-all duration-300 flex items-center justify-center gap-2 group/btn"
                       >
-                        Bekijk Case Study
+                        {project.action?.type === "video"
+                          ? "Video bekijken"
+                          : "Bekijk Case Study"}
                         <span className="group-hover/btn:translate-x-1 transition-transform duration-300">
                           →
                         </span>

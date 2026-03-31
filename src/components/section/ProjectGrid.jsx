@@ -4,6 +4,8 @@ import { RevealOnScroll } from "./RevealOnScroll";
 import dioFinalImage from "../../assets/Projecten/Leerjaar 1/p1/diofinal.jpg";
 import pofMainImage from "../../assets/Projecten/Leerjaar 1/p1/pofmain.jpg";
 import usoMainImage from "../../assets/Projecten/Leerjaar 1/p2/usomain.jpg";
+import cvaMainImage from "../../assets/Projecten/Leerjaar 1/p2/cvafotomain.jpg";
+import pstMainImage from "../../assets/Projecten/Leerjaar 1/p2/pstmain.jpg";
 
 export const ProjectGrid = ({
   projects,
@@ -58,7 +60,11 @@ export const ProjectGrid = ({
             ? pofMainImage
             : project.title.includes("USO")
               ? usoMainImage
-              : project.img.src;
+              : project.title.includes("CVA")
+                ? cvaMainImage
+                : project.title.toLowerCase().includes("pst") || project.title.toLowerCase().includes("saganet")
+                  ? pstMainImage
+                  : project.img.src;
 
         return (
           <RevealOnScroll key={`project-${index}`} delay={index * 50}>
@@ -125,10 +131,18 @@ export const ProjectGrid = ({
                   {/* CTA Button */}
                   <button
                     type="button"
-                    onClick={() => onOpenCaseStudy?.(project)}
+                    onClick={() => {
+                      if (project.action?.type === "video") {
+                        window.open(project.action?.href, "_blank");
+                      } else {
+                        onOpenCaseStudy?.(project);
+                      }
+                    }}
                     className="w-full mt-4 py-2.5 px-4 bg-gradient-to-r from-purple-600/80 to-pink-600/80 hover:from-purple-500 hover:to-pink-500 text-white font-semibold rounded-lg transition-all duration-300 flex items-center justify-center gap-2 group/btn text-sm"
                   >
-                    Bekijk Case Study
+                    {project.action?.type === "video"
+                      ? "Video bekijken"
+                      : "Bekijk Case Study"}
                     <span className="group-hover/btn:translate-x-1 transition-transform duration-300">
                       →
                     </span>
