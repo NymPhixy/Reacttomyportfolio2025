@@ -21,11 +21,11 @@
     "period": "Periode 2",
     "title": "USO - Usability Ontwerp",
     "img": {
-      "src": "https://images.pexels.com/photos/6964297/pexels-photo-6964297.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop",
-      "alt": "USO-ontwerpdocument"
+      "src": "/assets/Projecten/Leerjaar 1/p2/usomain.jpg",
+      "alt": "USO Usability Ontwerp"
     },
-    "description": "Usability-gericht ontwerp voor optimalisatie van gebruikerservaring",
-    "tech": ["Figma", "UX/UI", "Design"],
+    "description": "Usability-gericht ontwerp voor optimalisatie van gebruikerservaring met heuristieke evaluatie en front-end implementatie",
+    "tech": ["Figma", "UX/UI", "Design", "HTML", "Javascript", "CSS"],
     "action": {
       "type": "download",
       "label": "Designdocument downloaden 📥",
@@ -111,18 +111,25 @@
   {
     "year": "Leerjaar 1",
     "period": "Periode 4",
-    "title": "OWE - Orientatie op het werkveld",
+    "title": "OWE - Mijn portfolio-website",
     "img": {
-      "src": "https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop",
-      "alt": "OWE - Orientatie op het werkveld"
+      "src": "/assets/laptopmockupportoflio.png",
+      "alt": "OWE portfolio-website mockup"
     },
-    "description": "Orientatie op het werkveld - Introductie tot mijn designreis",
-    "tech": ["Web Design", "UX/UI"],
+    "description": "Binnen OWE ontwikkelde ik een elegante portfolio-website waarin ik mijn vaardigheden, projecten en resultaten toon, gebouwd met React en Vite.",
+    "tech": [
+      "Node.JS",
+      "React",
+      "Javascript",
+      "Tailwindcss",
+      "Vite",
+      "Web Design"
+    ],
     "action": {
       "type": "download",
       "label": "Designdocument downloaden 📥",
       "href": "/assets/Projecten/leerjaar1/p4/OWE_Ruben_Janssen_469974.pdf",
-      "filename": "OWE_Ruben_Janssen.pdf"
+      "filename": "OWE_Verslag_Ruben_Janssen.pdf"
     }
   },
   {
@@ -226,30 +233,6 @@
   },
   {
     "year": "Leerjaar 1",
-    "period": "Periode 4",
-    "title": "Mijn portfolio-website",
-    "img": {
-      "src": "/assets/laptopmockupportoflio.png",
-      "alt": "Portfolio-website mockup"
-    },
-    "description": "Een eenvoudige en elegante portfolio-website waarin ik mijn vaardigheden, projecten en resultaten toon, gebouwd met React en Vite.",
-    "tech": [
-      "Node.JS",
-      "React",
-      "Javascript",
-      "Tailwindcss",
-      "Vite",
-      "Web Design"
-    ],
-    "action": {
-      "type": "download",
-      "label": "Designdocument downloaden 📥",
-      "href": "/assets/Projecten/leerjaar1/p4/OWE_Ruben_Janssen_469974.pdf",
-      "filename": "OWE_Verslag_Ruben_Janssen.pdf"
-    }
-  },
-  {
-    "year": "Leerjaar 1",
     "period": "Periode 3",
     "title": "MKC MOTO Scrollstory",
     "img": {
@@ -276,11 +259,34 @@
     "description": "Persoonlijke visuele identiteit waarin motorsport, branding en digitale designvaardigheden samenkomen.",
     "tech": [
       "Branding",
-      "UX/UI",
-      "Visual Design",
+      "Concepting",
+      "Ideation",
+      "Design",
       "Prototyping",
       "HTML",
       "CSS"
+    ],
+    "action": {
+      "type": "case-study",
+      "label": "Bekijk Case Study",
+      "href": "#"
+    }
+  },
+  {
+    "year": "Leerjaar 1",
+    "period": "Periode 1",
+    "title": "POF - Project in Offline Media",
+    "img": {
+      "src": "https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop",
+      "alt": "FitBet workshop and concept development"
+    },
+    "description": "Design Thinking groepsproject gericht op fysieke en mentale gezondheid van studenten via onderzoek, concepting en teamwork.",
+    "tech": [
+      "UX Design",
+      "Research",
+      "Design Thinking",
+      "Concepting",
+      "Teamwork"
     ],
     "action": {
       "type": "case-study",

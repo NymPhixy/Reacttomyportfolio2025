@@ -2,6 +2,8 @@
 import { useEffect, useState } from "react";
 import { RevealOnScroll } from "./RevealOnScroll";
 import dioFinalImage from "../../assets/Projecten/Leerjaar 1/p1/diofinal.jpg";
+import pofMainImage from "../../assets/Projecten/Leerjaar 1/p1/pofmain.jpg";
+import usoMainImage from "../../assets/Projecten/Leerjaar 1/p2/usomain.jpg";
 
 export const ProjectGrid = ({
   projects,
@@ -27,7 +29,11 @@ export const ProjectGrid = ({
     if (tech.some((t) => ["Figma", "UX/UI"].includes(t))) categories.push("UX");
     if (tech.some((t) => ["React", "Frontend", "Web"].includes(t)))
       categories.push("Frontend");
-    if (tech.some((t) => ["Concept", "Design"].includes(t)))
+    if (
+      tech.some((t) =>
+        ["Concept", "Concepting", "Ideation", "Design"].includes(t),
+      )
+    )
       categories.push("Concept");
     return categories.length > 0 ? categories : ["Design"];
   };
@@ -48,7 +54,11 @@ export const ProjectGrid = ({
         const categories = getProjectCategories(project.tech);
         const previewImage = project.title.includes("DIO")
           ? dioFinalImage
-          : project.img.src;
+          : project.title.includes("POF")
+            ? pofMainImage
+            : project.title.includes("USO")
+              ? usoMainImage
+              : project.img.src;
 
         return (
           <RevealOnScroll key={`project-${index}`} delay={index * 50}>

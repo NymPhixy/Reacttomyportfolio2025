@@ -1,5 +1,5 @@
 // Project Filter Component - ProjectFilter.jsx (NEW COMPONENT)
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 
 export const ProjectFilter = ({ projects, onFilter }) => {
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -50,7 +50,7 @@ export const ProjectFilter = ({ projects, onFilter }) => {
   }, [projects, selectedCategory, selectedYear]);
 
   // Trigger parent callback
-  useMemo(() => {
+  useEffect(() => {
     onFilter(filtered);
   }, [filtered, onFilter]);
 
